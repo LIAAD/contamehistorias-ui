@@ -1,0 +1,324 @@
+{% extends 'layouts/main.html' %}
+{% block title %} {{ _('Sobre') }} {% endblock %}
+{% block content %}
+
+<div id="main-hero" class="hero-body">
+  <div class="container">
+    <h1 class="title is-1">{{ _('sobre') }}</h1>
+  </div>
+</div>
+
+<section class="section help-section">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column ">
+        <div class="flex-card category-card light-bordered">
+          <div class="card-body" style="font-size: 20px;">
+
+            <p>
+              <br/>
+              <strong>{{ _('O que é o Conta-me Histórias?') }}</strong>
+              <br/>
+
+              {{ _('O Conta-me Histórias é um projeto científico, criado no âmbito dos Prémios Arquivo.pt 2018, que
+              permite aos utilizadores a possibilidade de criarem automaticamente uma sumarização temporal das notícias
+              preservadas pelo') }}
+              {% if session.get('lang_code') == "pt" %}
+                <a style="display: inline" target="_blank" href="https://arquivo.pt/">Arquivo.pt</a>.
+              {% else %}
+                <a style="display: inline" target="_blank" href="https://arquivo.pt/?l=en">Portuguese Web Archive</a>.
+              {% endif %}
+              {{ _('Numa era marcada pela pós-verdade e pelas fake news, o
+              Conta-me Histórias é um importante contributo para uma democracia mais transparente. Esta aplicação
+              permite a qualquer cidadão um acesso livre e democrático a informação contextualizada, assente em fatos e
+              tendencialmente livre de filtros, fazendo uso de diversas fontes. Jornalistas, estudantes e investigadores
+              de diversas áreas, tais como a sociologia, a ciência política, as ciências da comunicaçãos, a história e
+              outras humanidades, encontram aqui uma ferramenta poderosa para o seu trabalho.') }}
+
+            </p>
+
+            <div class="content-wrapper">
+              <div class="is-centered is-gapless is-vcentered is-multiline">
+                <div style="is-vcentered is-centered column is-6;">
+                  <figure class="image is-16by9">
+                    <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/DrX1PjpyNHw" frameborder="0"
+                      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+            <br/>
+
+            <p>
+              <br/>
+              <strong>{{ _('Como funciona?') }}</strong>
+              <br/>
+
+            <p>
+
+              {{ _('O Arquivo.pt preserva milhões de ficheiros recolhidos da web desde 1996 e disponibiliza um serviço
+              público de pesquisa sobre esta informação. Periodicamente recolhe e armazena informação publicada na Web.
+              Este processo de preservação é realizado de forma automática através de um sistema informático distribuído
+              de larga-escala.') }}
+            </p>
+            <p>
+
+              {{ _('Para mostrar os dados do Arquivo.pt, mostramos ao utilizador os excertos mais importantes
+              (nomeadamente títulos noticiosos) de um tópico ao longo do tempo. Para a seleção dos melhores títulos de
+              notícias, recorremos a ') }}
+              <a style="display: inline" target="_blank" href="http://yake.inesctec.pt">YAKE!</a> {{ _('um extrator de
+              palavras-chave desenvolvido pela nossa equipa, e que recentemente foi premiado como Best Short Paper na
+              40ª edição da European Conference for Information Retrieval ') }}
+              (<a style="display: inline" target="_blank" href="https://www.ecir2018.org/">ECIR'18</a>).
+            </p>
+
+            <br/>
+            <br/>
+
+            <strong>{{ _('Contribuições') }}</strong>
+            <p>
+              {{ _('Acreditamos que o Conta-me Histórias é, neste contexto, um importante contributo para uma democracia
+              mais transparente, ao permitir a qualquer cidadão (incluindo jornalistas, estudantes, cientistas sociais
+              de áreas como sociologia, ciência política, ciências da comunicação e história, etc) um acesso livre e
+              democrático a informação contextualizada (assente em fatos e tendencialmente livre de filtros ao fazer uso
+              de diversas fontes jornalísticas).') }}
+            </p>
+
+            <br/>
+
+            <br/>
+            <strong>{{ _('Origem do nome') }}</strong>
+            <p>
+              {{ _('O nome ‘Conta-me Histórias’ é uma homenagem à música dos Xutos & Pontapés de mesmo nome, com o
+              intuito de retratar um dos objetivos do projeto, ou seja, o de quereremos contar histórias ao utilizador,
+              que, tal como diz a música, sejam relativas a algo que este não viu ou do qual não se recorda.') }}
+            </p>
+
+            <div class="content-wrapper">
+              <div class="is-centered is-gapless is-vcentered is-multiline">
+                <div style="is-vcentered is-centered column is-6;">
+                  <figure class="image is-16by9">
+                    <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/b4_ZBr2ijVw" frameborder="0"
+                      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </figure>
+                </div>
+              </div>
+              <small>{{ _('Design da apresentação e edição') }}: Livia Stroschoen Pinent </small>
+            </div>
+
+            <br/>
+            <br/>
+            <div style="is-vcentered is-centered column is-6 has-text-centered box">
+              <strong>{{ _('Portais de Notícias') }}</strong>
+              <br/>
+              <br/>
+              <a style="display: inline" href="https://www.aeiou.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/aeiou.png') }}" title="aeiou"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.cmjornal.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/correio_da_manha.png') }}" title="Correio da Manhã"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.dn.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/dn.png') }}" title="Diário de Notícias"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.dnoticias.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/dnoticias.png') }}" title="DNoticias"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.dinheirovivo.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/dinheiro_vivo.jpg') }}" title="Dinheiro Vivo"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://expresso.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/expresso.jpg') }}" title="Expresso"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://ionline.sapo.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/jornal_i.png') }}" title="Jornal I"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://jornaleconomico.sapo.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/jornal_economico.png') }}" title="Jornal Económico"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.lux.iol.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/lux.png') }}" title="Lux"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.jn.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/jn.jpg') }}" title="Jornal de Notícias"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.sabado.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/sabado.png') }}" title="Sábado"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://sicnoticias.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/sic_noticias.svg') }}" title="Sic Notícias"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.tsf.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/tsf.svg') }}" title="TSF"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://tvi24.iol.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/tvi24.png') }}" title="TVI24"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://news.google.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/google_news.png') }}" title="Google News"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.iol.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/iol.png') }}" title="IOL"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.jornaldenegocios.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/jornal_negocios.png') }}" title="Jornal de Negócios"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.publico.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/publico.png') }}" title="Público"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.meiosepublicidade.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/meios_publicidade.jpg') }}" title="Meios & Publicidade"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.sapo.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/sapo.png') }}" title="Sapo"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://sol.sapo.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/sol.png') }}" title="Sol"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://abola.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/abola.png') }}" title="A Bola"
+                  style="max-height: 80px; max-width: 100px;"></a>
+              <a style="display: inline" href="https://www.rtp.pt/" target="_blank"><img
+                  src="{{ url_for('static', filename='img/news_sources/rtp.jpg') }}" title="RTP"
+                  style="max-height: 80px; max-width: 100px;"></a>
+            </div>
+            
+            <br/>
+            <br/>
+
+            <strong>{{ _('Referências académicas') }}</strong>
+            <div style="font-size: 16px;">
+              <br/>
+
+              <em>Campos, R., Pasquali, A., Jatowt, A., Mangaravite, V., Jorge, A. (2021).
+                Automatic Generation of Timelines for Past-Web Events. In Gomes, D., Demidova, E., Winters, J., Risse, T. (Eds.),
+                 The Past Web. Exploring Web Archives (pp. 225-242).</em>
+
+              <br/>
+              <br/>
+
+              <em>Pasquali, A., Mangaravite, V., Campos, R., Jorge, A. M., & Jatowt, A. (2019). Interactive system for
+                automatically generating temporal narratives. In Proceedings of the 41st European Conference on
+                Information Retrieval (ECIR'19). Cologne, Germany, April 14-17, pp. 251-255. <strong>(Best Demo
+                  Paper)</strong></em>
+
+              <br/>
+              <br/>
+              
+              <em>
+                Campos, R., Mangaravite, V., Pasquali, A., Jorge, A., Nunes, C., Jatowt, A. (2018). A Text Feature Based
+                Automatic Keyword Extraction Method for Single Documents. In Proceedings of the 40th European Conference
+                on Information Retrieval (ECIR'18). Grenoble, France, March 26- 29, pp. 684 - 691. <strong>(Best Short
+                  Paper)</strong>
+              </em>
+
+              <br/>
+              <br/>
+              
+              <em>
+                Campos, R., Mangaravite, V., Pasquali, A., Jorge, A., Nunes, C., Jatowt, A. (2018). YAKE!
+                Collection-independent Automatic Keyword Extractor. In Proceedings of the 40th European Conference on
+                Information Retrieval (ECIR'18). Grenoble, France, March 22 - 29, pp. 806 - 810.
+              </em>
+
+              <a target="_blank" href="http://yake.inesctec.pt">[Online Demo]</a>
+              
+              <br/>
+
+              <em>
+                Gomes D. and Cruz D. and Miranda J. and Costa M. and Fontes S.: Acquiring
+                and providing access to historical web collections, 10th International Conference on
+                Preservation of Digital Objects, (2013)
+              </em>
+            </div>
+
+            <br/>
+            <br/>
+
+            <strong>{{ _('Instituições')}}</strong>
+
+          </div>
+
+          <div class="columns is-centered is-vcentered">
+
+            <div class="column">
+              <p>
+                {% if session.get('lang_code') == "pt" %}
+                  <a href="https://www.inesctec.pt/pt/centros/liaad" target="_blank">
+                {% else %}
+                  <a href="https://www.inesctec.pt/en/centres/liaad" target="_blank">
+                {% endif %}
+                  <img src="{{ url_for('static', filename='img/institutions/logo_liaad.png') }}"
+                    alt=""
+                    style="max-width: 100%; height: auto; margin-left: 30px;"
+                    height="180">
+                  </a>
+                </p>
+            </div>
+
+            <div class="column">
+              <p>
+                {% if session.get('lang_code') == "pt" %}
+                  <a href="http://www.ci2.ipt.pt/" target="_blank">
+                {% else %}
+                  <a href="http://www.ci2.ipt.pt/en/" target="_blank">
+                {% endif %}
+                  <img src="{{ url_for('static', filename='img/institutions/logo_ci2.png') }}"
+                    alt=""
+                    style="max-width: 100%; height: auto;"
+                    height="180">
+                </a>
+              </p>
+            </div>
+
+            <div class="column">
+              <p>
+                {% if session.get('lang_code') == "pt" %}
+                  <a href="http://www.ipt.pt/" target="_blank">
+                {% else %}
+                  <a href="http://www.ipt.pt/?lng=en" target="_blank">
+                {% endif %}
+                  <img src="{{ url_for('static', filename='img/institutions/logo_ipt.png') }}"
+                    alt=""
+                    style="max-width: 100%; height: auto;"
+                    height="180">
+                </a>
+              </p>
+            </div>
+
+            <div class="column">
+              <p>
+                {% if session.get('lang_code') == "pt" %}
+                  <a href="https://sigarra.up.pt/up/" target="_blank">
+                {% else %}
+                  <a href="https://sigarra.up.pt/up/en/" target="_blank">
+                {% endif %}
+                  <img src="{{ url_for('static', filename='img/institutions/logo_up_fcup.png') }}"
+                    alt=""
+                    style="max-width: 100%; height: auto;"
+                    height="180">
+                </a>
+              </p>
+            </div>
+
+            <div class="column">
+              <p>
+                <a href="https://www.uibk.ac.at/" target="_blank">
+                  <img src="{{ url_for('static', filename='img/institutions/logo_universitaet_innsbruck.png') }}"
+                    alt=""
+                    style="max-width: 100%; height: auto;"
+                    height="180">
+                </a>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+        <title>{{ _('conta-me histórias') }}</title>
+
+        <link rel="icon" href="{{ url_for('static', filename='img/vintage-typewriter.png') }}">
+
+        <!-- CSS files -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/bulma.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/core_demo.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/js/ggpopover/ggtooltip.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/js/ggpopover/ggpopover.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/js/slick-carousel/slick.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/js/slick-carousel/slick-theme.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/icons.min.css') }}">
+    </head>
+
+    <body class="hero" style="background-color: lightblue">
+        <div class="hero" style="background-color: lightblue;">
+            <div class="hero-body " style="background-color: lightblue;">
+                <div class="container has-text-centered">
+                    <div class="columns is-vcentered" style="color: darkslategray">
+                        <div class="column is-6 is-offset-3 has-text-centered" style="color: black">
+
+                            <a href="{{ url_for('pages.home')}}">
+                                <img alt="take me home"
+                                    src="{{ url_for('static', filename='img/vintage-typewriter-ops.png') }}">
+                            </a>
+
+                            <h1 class="title components-title is-2 ">
+                                {{ _('Algo inesperado aconteceu') }}
+                            </h1>
+                            
+                            <br>
+                            
+                            <h1 class="subtitle is-3 dark-text " style="color: darkslategray">
+                                {{ _('Já estamos a verificar o que aconteceu e esperamos que seja temporário.') }}
+                                <br>
+                                {{ _('Por favor tente novamente mais tarde.') }}
+                            </h1>
+
+                            <br>
+                            <p class="has-text-centered">
+
+                                <a href="{{ url_for('pages.home')}}" style="color: darkslategray"
+                                    class="button button-cta btn-align light-btn btn-outlined is-bold rounded z-index-2">
+                                    {{ _('voltar ao início') }}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

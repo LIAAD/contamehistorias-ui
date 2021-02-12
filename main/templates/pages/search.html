@@ -1,0 +1,618 @@
+{% extends 'layouts/main.html' %}
+{% block title %} {{ _('conta-me histórias') }} {% endblock %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='horizontal-timeline/css/timeline.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/dashboard.css') }}">
+
+<div class="pageloader" style="background: #4FC1EA !important;"></div>
+<div class="infraloader is-active"></div>
+
+<div id="main-hero" class="hero-body" style="padding:0.5rem 0rem 1.5rem 0rem">
+    <div class="container">
+        <div class=" is-vcentered">
+            <div class="help-header">
+                <h1 class="subtitle components-title is-3 light-text" style="padding: 0px">
+                    {{ _('conta-me histórias') }}
+                </h1>
+            </div>
+            <div class="help-subheader" style="padding: 0px 0 15px 0;">
+                <h1 class="title is-4">
+                    <span class="" data-toggle="popover" data-placement="bottom" data-trigger="hover"
+                        data-content="A pesquisa é realizada dentro do repositório do Arquivo.pt, que compreende o período entre 1996 até 2016"
+                        data-original-title="">
+                        {{ _('Crie uma linha do tempo sobre qualquer assunto') }}
+                    </span>
+                </h1>
+            </div>
+            <form name="searchForm" method="get" action="{{ url_for('pages.search') }}" class="form-signin">
+                <div class="help-search-wrapper">
+                    {{ form.query(class_ = 'form-control first-input', placeholder = form.query.label.text) }}
+                    <i class="sl sl-icon-magnifier"></i>
+                    <p class="has-text-centered">
+                        <span id='invalidQuery' style="color:red"></span>
+                    </p>
+                </div>
+
+                <a id="advanced_options_btn" style="color: white;text-decoration: underline">{{ _('opções avançadas')}}</a>
+                <div id="advanced_options_view" style="display: none" class="field">
+                    <div class="control mt-20 ">
+                        <div class="select">
+                            <select name="last_years">
+                                <option value="5">{{ _('Últimos 5 anos') }}</option>
+                                <option selected="selected" value="10">{{ _('Últimos 10 anos') }}</option>
+                                <option value="15">{{ _('Últimos 15 anos') }}</option>
+                                <option value="20">{{ _('Últimos 20 anos') }}</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="button btn-align info-btn raised">{{ _('aplicar') }}</button>
+                    </div>
+                </div>
+                <input type="hidden" id="lang_code" name="lang_code" value="{{lang_code}}">
+            </form>
+
+        </div>
+    </div>
+</div>
+<!-- /Help center title -->
+</div>
+<!-- /Hero and nav -->
+
+{% if result and hasNarrative %}
+
+<div class="section help-section is-relative" style="padding: 0rem 1.5rem;">
+    <div class="container">
+        <div class="section help-section is-relative" style="padding: 0rem 0rem;">
+            <div class="container" style="padding-top: 0rem">
+                <div class="columns ">
+                    <div class="column is-12 help-container">
+                        <div class="navigation-tabs primary animated-tabs" style="padding-top: 0px;">
+
+                            <div class="tabs is-right" style="font-size: 14px; margin-bottom: 0rem;">
+                                <ul>
+                                    <li class="tab-link is-active" data-tab="tab-g1"><a>{{ _('Narrativa') }}</a></li>
+                                    <li class="tab-link is-hidden-mobile" data-tab="tab-g2"><a>{{ _('Termos relacionados') }}</a></li>
+                                </ul>
+                            </div>
+
+                            <div id="tab-g2" class="navtab-content flex-card single-help-article"
+                                style="padding: 20px 20px 20px 20px; margin-top: 0px;">
+
+                                <h3 class="title is-4 dark-text">
+                                    <strong> {{ _('Termos relacionados') }} </strong> {{ _('sobre') }} <strong> {{result_header["query"].title() }} </strong> {{ _('durante os últimos') }} <strong> {{result_header["last_years"]}} {{ _('anos') }} </strong> 
+                                    {% if selected_provider %}
+                                        {{ _('em') }} <strong> {{selected_provider}} </strong>
+                                    {% endif %}
+
+                                </h3>
+
+                                <div class="navigation-tabs simple-tabs">
+
+                                    <div id="tab-b1" class="navtab-content">
+                                        <div id="body-cloud"></div>
+                                    </div>
+                                    <div id="tab-b2" class="navtab-content is-active">
+                                        <div id="entities-cloud"></div>
+                                    </div>
+
+                                    <div class="tabs is-right">
+                                        <ul>
+                                            <li class="tab-link is-active" data-tab="tab-b2"><a>{{ _('Entidades') }}</a></li>
+                                            <li class="tab-link" data-tab="tab-b1"><a>{{ _('Termos') }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <h4 class="title is-4 dark-text" style="padding-bottom: 0px;">
+                                    {{ _('Portais de Notícias') }}:
+                                    <small><span>
+                                            {% for news_provider_domain in domains %}
+                                                <a style="color:gray; font-size: 15px;"
+                                                    href="https://arquivo.pt/search.jsp?l=pt&query={{news_provider_domain}}"
+                                                    target="_blank">
+                                                    {{ "
+                                                    ".join(news_provider_domain.replace("www.","").replace(".pt","").split(".")).title()
+                                                    }},
+                                                </a>
+                                            {% endfor %}
+
+                                        </span></small>
+                                </h4>
+
+                            </div>
+
+                            <div id="tab-g1" class="navtab-content is-active flex-card single-help-article"
+                                style="padding: 25px;margin-top: 0;">
+
+                                <h3 class="title is-4 dark-text">
+                                    <strong> {{ _('Narrativa')}} </strong> {{ _('sobre')}} <strong> {{result_header["query"].title() }} </strong> {{ _('durante os últimos')}} <strong> {{result_header["last_years"]}} {{ _('anos')}} </strong>
+                                    {% if selected_provider %}
+                                        {{ _('em')}} <strong>{{selected_provider}}</strong>
+                                    {% endif %}
+                                </h3>
+
+                                <div class="navigation-tabs simple-tabs">
+
+                                    <div id="tab-a1" class="navtab-content is-active">
+
+                                        <div class="">
+                                            <section class="cd-horizontal-timeline" style="margin-top: 5px;">
+                                                <canvas id="overallTimeseriesChart" width="" height="50"
+                                                    class="is-hidden-mobile"></canvas>
+
+                                                <div class="my-timeline" style="width: 100%;max-width: 1000px;">
+
+                                                    <div class="events-wrapper">
+
+                                                        <div class="events_background" style="width: 100%" ;>
+                                                        </div>
+                                                        <div class="events">
+                                                            <ol>
+                                                                {% for event in events %}
+                                                                <li>
+                                                                    <a href="#0" class="{{ event['selected'] }}"
+                                                                        data-date="{{ event['date_id_str'] }}">{{
+                                                                        event['date_readable_str'] }}</a>
+                                                                </li>
+                                                                {% endfor %}
+                                                            </ol>
+
+                                                            <span class="filling-line" aria-hidden="true"></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="cd-timeline-navigation cd-timeline-navigation-m">
+                                                        <div><a href="#0" id="timeline-prev"
+                                                                class="text--replace cd-timeline-navigation prev cd-timeline-navigation--inactive">Prev</a>
+                                                        </div>
+                                                        <div><a href="#0" id="timeline-next"
+                                                                class="text--replace cd-timeline-navigation next">Next</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <br/>
+
+                                                <div class="events-content">
+                                                    <ol>
+                                                        {% for event in events %}
+                                                        <li class="{{ event['selected'] }}"
+                                                            data-date="{{ event['date_id_str'] }}"
+                                                            style="padding: 0 0; ">
+                                                            <em style="font-size: 1.5rem; font-style: unset; font-weight: 450;">
+                                                                {{_('Notícias relevantes entre')}} <span style="font-weight: bold;">{{event["from_date_full_readable_str"]}}</span>
+                                                                {{_('e')}}
+                                                                <span style="font-weight: bold;">{{event['date_full_readable_str'] }}</span>
+                                                            </em>
+                                                            <p>
+                                                                {% for keywords in event['description']["all"] %}
+                                                                    {% for kw in keywords %}
+                                                                        {% if kw.kw.split() | length >= 4 %}
+                                                                            {% if (kw.kw not in blacklist_ngrams) %}
+                                                                                <span class="classToken is-tooltip-info tooltip"
+                                                                                    data-toggle="tooltip" data-placement="left"
+                                                                                    data-title="{{kw.date.split()[0] }}"
+                                                                                    data-original-title="">
+
+                                                                                    <a style="font-size:16px;color:black"
+                                                                                        href="{{ kw.docs[0][1] }}" target="_blank"
+                                                                                        title="{{kw.docs[0][0]}}">
+                                                                                        {{kw.kw }}.
+                                                                                    </a>
+
+                                                                                </span>
+                                                                                <br/>
+                                                                            {% endif %}
+                                                                        {% endif %}
+                                                                    {% endfor %}
+                                                                {% endfor %}
+                                                            </p>
+                                                        </li>
+                                                        {% endfor %}
+                                                    </ol>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+
+                                    <div id="tab-a2" class="navtab-content">
+                                        <section class="section">
+                                            <div class="container">
+                                                <div class="columns is-vcentered pt-30">
+                                                    <div class="column is-10 is-offset-1">
+                                                        <div class="timeline doted" style="margin:0px">
+
+                                                            {% for event in events | reverse %}
+                                                                <div class="timeline-item">
+                                                                    <div class="timeline-icon g-item"
+                                                                        style="background: #4FC1EA !important"></div>
+                                                                    <div class="timeline-content {{ loop.cycle('', 'right') }}"
+                                                                        style="width: 45%;">
+                                                                        <div class="content-body">
+                                                                            <div class="timeline-text">
+                                                                                <div>
+                                                                                    <span style="font-weight: bold;">{{event["from_date_full_readable_str"]}}</span>
+                                                                                    <span style="font-weight: bold;">{{event['date_full_readable_str']}}</span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    {% for keywords in event['description']["all"] %}
+                                                                                        {% for kw in keywords[:10] %}
+                                                                                            <a href="{{ kw.docs[0][1] }}"
+                                                                                                target="_blank">
+                                                                                                <span style="color:#363636">{{ kw.kw
+                                                                                                    }}</span>
+                                                                                            </a>
+                                                                                            <br/>
+                                                                                        {% endfor %}
+                                                                                    {% endfor %}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            {% endfor %}
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                    <div class="tabs is-right is-hidden-mobile">
+                                        <ul>
+                                            <li class="tab-link is-active" data-tab="tab-a1"><a>Horizontal</a></li>
+                                            <li class="tab-link " data-tab="tab-a2"><a>Vertical</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <h4 class="title is-4 dark-text" style="padding-bottom: 0px;">
+                                    {{ _('Portais de Notícias') }} :
+                                    <small>
+                                        <span>
+                                            {% for news_provider_domain in domains %}
+                                                <a style="color:gray; font-size: 15px;"
+                                                    href="https://arquivo.pt/search.jsp?l=pt&query={{news_provider_domain}}"
+                                                    target="_blank">
+                                                    {{ "
+                                                    ".join(news_provider_domain.replace("www.","").replace(".pt","").split(".")).title()
+                                                    }},
+                                                </a>
+                                            {% endfor %}
+                                        </span>
+                                    </small>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="columns is-vcentered has-text-centered">
+
+                            <div class="column is-4">
+                                <div class="simple-counter" data-toggle="popover" data-placement="top"
+                                    data-trigger="hover"
+                                    data-content="{{ _('Número de páginas encontradas em Arquivo.pt') }}">
+                                    <div class="counter counter-number is-bold">{{ result_header["ndocs"] }}</div>
+                                    <div class="counter-text">{{ _('Páginas encontradas') }}</div>
+                                </div>
+                            </div>
+
+                            <div class="column is-4">
+                                <div class="simple-counter" data-toggle="popover" data-placement="top"
+                                    data-trigger="hover"
+                                    data-content="{{ _('Número de notícias consideradas para construir a narrativa') }}">
+                                    <div class="counter counter-number is-bold">{{ result_header["nunique_docs"] }}
+                                    </div>
+                                    <div class="counter-text">{{ _('Notícias consideradas') }}</div>
+                                </div>
+                            </div>
+
+                            <div class="column is-4">
+                                <div class="simple-counter" data-toggle="popover" data-placement="top"
+                                    data-trigger="hover"
+                                    data-content="{{ _('Número de portais de notícias considerados para construir a narrativa') }}">
+                                    <div class="counter counter-number is-bold">{{ result_header["ndomains"] }}</div>
+                                    <div class="counter-text">{{ _('Portais de notícia') }}</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="column is-12 help-container">
+
+                            <div class="" style="padding: 15px; margin-top: 0px; ">
+                                <h4 class="title is-4 dark-text" style="padding-bottom: 0px;">
+
+                                    <small><span style="color:gray; font-size: 15px;">
+                                            {{ _('Narrativa construída em') }} {{
+                                            '{0:0.2f}'.format(result_header["time_total"]) }} {{ _('segundos') }}
+                                        </span></small>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% else %}
+
+{%if (hasNarrative == False and (user_query != None and user_query != "")) %}
+<section class="section">
+    <div class="container has-text-centered">
+        
+        <div class='card-content is-flex' style="justify-content: center;">
+            <img class="has-ratio" width="320" height="180" src="{{ url_for('static', filename='img/vintage-typewriter-ops.png') }}" alt=""/>
+        </div>
+
+        <h3 class="subtitle is-3 dark-text">
+            {{ _('A sua consulta não retornou resultados suficientes para construir uma narrativa.') }}
+            <br/><br/>
+            {{ _('Experimente uma consulta menos específica ou tente esta consulta diretamente no ') }} <a
+                target="_blank" href="https://arquivo.pt/search.jsp?l=pt&query={{user_query}}">Arquivo.pt</a>.
+        </h3>
+
+    </div>
+</section>
+{%endif%}
+
+{% endif %}
+
+
+<script src="{{ url_for('static', filename='horizontal-timeline/js/jquery-2.1.4.js')}}"></script>
+<script src="{{ url_for('static', filename='horizontal-timeline/js/jquery.mobile.custom.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/moment.js')}}"></script>
+<script src="{{ url_for('static', filename='horizontal-timeline/js/timeline.js')}}"></script>
+<script src="{{ url_for('static', filename='wordcloud/js/d3.js')}}"></script>
+<script src="{{ url_for('static', filename='wordcloud/js/d3.layout.cloud.js')}}"></script>
+<script src="{{ url_for('static', filename='js/jquery.loading.js')}}"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        // Check if user typed something in query
+        $(".form-signin").submit(function(){
+            if (document.searchForm.query.value == ''){
+                return false;
+            }
+            else{
+            } return true;
+
+        });
+
+
+        // Advanced Options
+        $("#advanced_options_btn").click(function () {
+            $("#advanced_options_view").toggle();
+        });
+
+
+        // Open news article in Arquivo
+        function openInNewTab(date, query) {
+            let newdate_str = moment(date, "YYYY-MM-DD").format("DD/MM/YYYY");;
+            let url = "https://arquivo.pt/search.jsp?l=pt&query="+query+"&btnSubmit=Pesquisar&dateStart="+newdate_str+"&dateEnd="+newdate_str;
+            window.open(url, '_blank');
+        }
+
+
+        // Timeline
+        {% if sources_overall %}
+            
+            let ctx = document.getElementById("overallTimeseriesChart").getContext('2d');
+
+            let ts_labels = {{ overall_timeseries["labels"] | tojson}};
+
+            let myChart = new Chart(ctx, {
+    
+                type: 'line',
+                animation: false,
+                data: {
+                    labels: ts_labels,
+                    datasets: [
+                        {
+                            label: 'Number of headlines',
+                            radius: {{ overall_timeseries["radius"] }},
+                            data: {{ overall_timeseries["data"] }},
+                            fill:"start",
+                            backgroundColor: "rgba(151,187,205,1)",
+                            borderColor:"rgba(151,187,205,1)",                        
+                            fillColor: "rgba(151,187,205,1)",
+                            strokeColor: "rgba(151,187,205,1)",
+                            pointColor: "rgba(151,187,205,1)",
+                            pointStrokeColor: "rgba(151,187,205,1)",
+                            pointHighlightFill: "rgba(151,187,205,.6)",
+                            pointHighlightStroke: "rgba(151,187,205,.6)",
+                            backgroundColor:"rgba(151,187,205,.6)",
+                            borderWidth:1
+                        },
+                        {
+                            label: 'Relevant time period boundaries',
+                            radius: {{ overall_timeseries["intervals_series_radius"] }},
+                            data: {{ overall_timeseries["intervals_series"] }},
+                            backgroundColor:"rgba(200, 102, 100,0.5)"   ,
+                            borderColor:"rgba(200, 100, 100,0.5)",
+                            fillColor: "rgba(200, 100, 100,0.5)",
+                            pointStrokeColor:"rgba(200, 100, 100,0.5)",
+                            strokeColor: "rgba(200, 100, 100,0.5)",
+                            pointColor:  "rgba(200, 100, 100,0.5)",
+                            borderWidth:1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    legend: {"position": "top", "display": false},
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                display: false,
+                                drawBorder: false,
+                                drawOnChartArea: false,
+                                drawTicks: false,
+                                tickMarkLength: 7
+                            },
+                            type: 'time',
+                            distribution: 'series',
+                            ticks: {
+                                // source: 'labels'
+                                padding: 7
+                            }
+                        }],
+                        yAxes: [{
+                            display: false,
+                            // type: 'logarithmic',
+                            gridLines: {
+                                display: false,
+                                drawBorder: false,
+                                drawOnChartArea: false,
+                                drawTicks: false,
+                            },
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+            });
+
+        {%endif%}
+    
+        $('#overallTimeseriesChart').click(function (event){
+            
+            let activePoints = myChart.getElementsAtEvent(event);
+            let activeDataSet = myChart.getDatasetAtEvent(event);
+
+            if (activePoints.length > 0)
+            {
+                let clickedDatasetIndex = activeDataSet[0]._datasetIndex;
+                let clickedElementIndex = activePoints[0]._index;
+                let value = myChart.data.datasets[clickedDatasetIndex].data[clickedElementIndex];
+
+                {% if result_header %}
+                    openInNewTab(ts_labels[clickedElementIndex],"{{result_header["query"]}}");
+                {% endif %}
+            }
+        });
+
+
+        // Word Clouds
+        function scale(value, min, max, term) {
+            let minFont = 30;
+            let maxFont = 70;
+            return d3.scale.linear().domain([min, max]).range([minFont, maxFont])(value);
+        }
+
+        function getMinFromCollection(collection) {
+            let min = 9999999999999;
+            for (let i = 0; i < collection.length; i++) {
+                if (collection[i].size < min) min = collection[i].size;
+            }
+            return min;
+        }
+
+        function getMaxFromCollection(collection) {
+            let max = 0;
+            for (let i = 0; i < collection.length; i++) {
+                if (collection[i].size > max) max = collection[i].size;
+            }
+            return max;
+        }
+
+        function color(i) {
+            let colors = ["#888888", "#D6812F", "#7f9650", "#d9534f", "#a66c54"];
+            return colors[i % colors.length];
+        }
+
+        let fill = d3.scale.category20();
+
+        {%if entity_terms %}
+
+            let entities_ngrams = {{ entity_terms | tojson}};
+
+            let minValue_entities_ngrams = getMinFromCollection(entities_ngrams);
+            let maxValue_entities_ngrams = getMaxFromCollection(entities_ngrams);
+
+            function drawEnts(words) {
+                d3.select("#entities-cloud").append("svg")
+                    .attr("width", 1000)
+                    .attr("height", 500)
+                    .append("g")
+                    .attr("transform", "translate(500,250)")
+                    .selectAll("text")
+                    .data(words)
+                    .enter().append("text")
+                    .attr('opacity', 1)
+                    .style("font-size", function (d) { return d.size + "px"; })
+                    .style("font-family", "Impact")
+                    .style("fill", function (d, i) { return color(i); })
+                    .attr("text-anchor", "middle")
+                    .attr("transform", function (d) {
+                        return "rotate(" + d.rotate + ")";
+                    })
+                    .attr("transform", function (d) {
+                        return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                    })
+                    .text(function (d) { return d.text; });
+            }
+
+            d3.layout.cloud().size([1000, 500])
+                .words(entities_ngrams)
+                .padding(1)
+                .rotate(function () { return ~~(Math.random() * 2) * 2; })
+                .font("Impact")
+                .fontSize(function (d) { return scale(d.size, minValue_entities_ngrams, maxValue_entities_ngrams, d.text); })
+                .on("end", drawEnts)
+                .start();
+
+        {%endif%}
+
+        {%if related_terms %}
+
+            let ngrams = {{ related_terms | tojson}};
+
+            let minValue_ngrams = getMinFromCollection(ngrams);
+            let maxValue_ngrams = getMaxFromCollection(ngrams);
+
+            function drawTerms(words) {
+                d3.select("#body-cloud").append("svg")
+                    .attr("width", 1000)
+                    .attr("height", 500)
+                    .append("g")
+                    .attr("transform", "translate(500,250)")
+                    .selectAll("text")
+                    .data(words)
+                    .enter().append("text")
+                    .attr('opacity', 1)
+                    .style("font-size", function (d) { return d.size + "px"; })
+                    .style("font-family", "Impact")
+                    .style("fill", function (d, i) { return color(i); })
+                    .attr("text-anchor", "middle")
+                    .attr("transform", function (d) {
+                        return "rotate(" + d.rotate + ")";
+                    })
+                    .attr("transform", function (d) {
+                        return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                    })
+                    .text(function (d) { return d.text; });
+            }
+
+            d3.layout.cloud().size([1000, 500])
+                .words(ngrams)
+                .padding(1)
+                .rotate(function () { return ~~(Math.random() * 2) * 2; })
+                .font("Impact")
+                .fontSize(function (d) { return scale(d.size, minValue_ngrams, maxValue_ngrams, d.text); })
+                .on("end", drawTerms)
+                .start();
+
+        {%endif%}
+
+    });
+
+</script>
+
+{% endblock %}

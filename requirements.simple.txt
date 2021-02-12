@@ -1,0 +1,13 @@
+Flask
+Flask-WTF
+Flask-Babel
+flask-talisman
+sentry-sdk[flask]
+Jinja2
+requests
+furl
+Werkzeug
+gunicorn
+redis
+celery
+pyopenssl

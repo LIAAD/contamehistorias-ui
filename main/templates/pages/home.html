@@ -1,0 +1,133 @@
+{% extends 'layouts/main.html' %}
+{% block title %}{{ _('conta-me histórias') }}{% endblock %}
+{% block content %}
+
+<div class="hero-body ">
+    <div class="container has-text-centered">
+        <div class="columns is-vcentered">
+            <div class="column is-6 is-offset-3 has-text-centered">
+                
+                <h1 class="subtitle components-title is-2 light-text">
+                    {{ _('conta-me histórias') }}
+                </h1>
+
+                <h1 class="subtitle is-4 light-text">
+                    {{ _('Crie uma linha do tempo sobre qualquer assunto') }}
+                </h1>
+
+                <br>
+
+                <p class="has-text-centered">
+
+                <form name="searchForm" method="get" action="{{ url_for('pages.search') }}" class="form-signin">
+                    <div class="help-search-wrapper">
+                        {{ form.query(class_ = 'form-control first-input', placeholder = form.query.label.text) }}
+                        <i class="sl sl-icon-magnifier"></i>
+                    </div>
+                    <input type="hidden" id="lang_code" name="lang_code" value="{{lang_code}}">
+                </form>
+                
+                </p>
+
+                <span id='invalidQuery' style="color:red"></span>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <br />
+
+    <h2 class="subtitle components-title is-4">{{ _('Economia e Atualidade') }}</h2>
+    <div class="example-slick" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+        {%for story in stories_examples["geral"] %}
+        <div>
+            <a style="color: black" href="{{ url_for('pages.search', query=story.title) }}">
+                <div class="flex-card light-bordered hover-raised" style="height: 150px;">
+
+                    <div class="card-body">
+                        <div class="content">
+                            <h2 class="no-margin title-bold">{{story["title"]}}</h2>
+                            <p class="pt-10">{{story["type"]}}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+<div class="container">
+    <br />
+    <h2 class="subtitle components-title is-4">{{ _('Política, Justiça e Jornalismo') }}</h2>
+    <div class="example-slick" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+        {%for story in stories_examples["politica"] %}
+        <div>
+            <a style="color: black" href="{{ url_for('pages.search', query=story.title) }}">
+                <div class="flex-card light-bordered hover-raised" style="height: 150px;">
+
+                    <div class="card-body">
+                        <div class="content">
+                            <h2 class="no-margin title-bold"> {{story["title"]}}</h2>
+                            <p class="pt-10">{{story["type"]}}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+<div class="container">
+    <br />
+    <h2 class="subtitle components-title is-4">{{ _('Desporto e Cultura') }}</h2>
+    <div class="example-slick" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+        {%for story in stories_examples["personas"] %}
+        <div>
+            <a style="color: black" href="{{ url_for('pages.search', query=story.title) }}">
+                <div class="flex-card light-bordered hover-raised" style="height: 150px;">
+
+                    <div class="card-body">
+                        <div class="content">
+                            <h2 class="no-margin title-bold"> {{story["title"]}}</h2>
+                            <p class="pt-10">{{story["type"]}}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='horizontal-timeline/js/jquery-2.1.4.js')}}"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        // Check if user typed something in query
+        $(".form-signin").submit(function(){
+            if (document.searchForm.query.value == ''){
+                return false;
+            }
+            else{
+            } return true;
+
+        });
+
+    });
+
+</script>
+
+{% endblock %}

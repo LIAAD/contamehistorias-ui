@@ -1,0 +1,99 @@
+{% extends 'layouts/main.html' %}
+{% block title %}{{ _('conta-me histórias') }}{% endblock %}
+{% block content %}
+
+<div class="hero-body ">
+    <div class="container has-text-centered">
+        <div class="columns is-vcentered">
+            <div class="column is-6 is-offset-3 has-text-centered">
+
+                <h1 class="subtitle components-title is-2 light-text">
+                    {{ _('conta-me histórias') }}
+                </h1>
+
+                <h1 class="subtitle is-4 light-text">
+                    {{ _('Crie uma linha do tempo sobre qualquer assunto') }}
+                </h1>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section is-medium">
+    <div class="container">
+
+        <h1 class="subtitle is-4 dark-text" style="text-align:center">{{ _('A analisar milhares de resultados sobre') }}
+            <b>{{ query }}</b> {{ _('nos últimos') }} <b>{{ last_years }} {{ _('anos') }}</b>
+        </h1>
+        <br>
+        <h1 class="subtitle is-4 dark-text" style="text-align:center">
+            {{ _('Aguarde um momento, por favor') }}
+        </h1>
+        <br>
+        <div id="loading" style="text-align: center"><img src="{{ url_for('static', filename='img/loading.gif') }}" alt=""/></div>
+                
+    </div>
+
+</section>
+
+<!-- https://blog.miguelgrinberg.com/post/using-celery-with-flask -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    function start_long_task() {
+        // add task status elements
+        $('#loading').show();
+
+        var query = '{{ query }}';
+        var last_years = '{{ last_years }}';
+        // send ajax GET request to start background job
+        $.ajax({
+            type: 'GET',
+            url: '/arquivopt/longtask',
+            data: { 'query': query, 'last_years': last_years },
+            success: function (data, status, request) {
+                status_url = request.getResponseHeader('Location');
+                update_progress(status_url);
+            },
+            error: function (data, status, request) {
+                alert('Unexpected error');
+            }
+        });
+    }
+    function update_progress(status_url) {
+        // send GET request to status URL
+        $.getJSON(status_url, function (data) {
+            // update UI
+            if (data['state'] != 'PENDING' && data['state'] != 'PROGRESS') {
+                if ('result' in data) {
+
+                    // handle language code param
+                    var route = data['url_for'];
+
+                    const urlParams = new URLSearchParams(window.location.search);
+                    
+                    let lang_code = 'pt'
+                    if (urlParams.has('lang_code')) {
+                        lang_code = urlParams.get('lang_code');
+                    }
+                    route = data['url_for'] + '&lang_code=' + lang_code + '&id=' + data['task_id'];
+
+                    // redirect to show results
+                    window.location.href = route;
+                }
+                else {
+                    // something unexpected happened
+                }
+            }
+            else {
+                // rerun in 2 seconds
+                setTimeout(function () {
+                    update_progress(status_url);
+                }, 2000);
+            }
+        });
+    }
+    $(window).load(start_long_task());
+</script>
+
+{% endblock %}

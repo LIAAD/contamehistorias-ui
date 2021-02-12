@@ -1,0 +1,215 @@
+{% extends 'layouts/main.html' %}
+{% block title %}{{ _('Equipa') }}{% endblock %}
+{% block content %}
+
+<div id="main-hero" class="hero-body">
+    <div class="container">
+        <h1 class="title is-1">{{ _('conheça a equipa') }}</h1>
+    </div>
+</div>
+
+<section class="section is-medium">
+    <div class="container">
+
+        <p style="font-size: 20px;">
+            {{ _('Esta plataforma foi desenvolvida por Ricardo Campos investigador do LIAAD INESC TEC, do Ci2 - Centro de Investigação em Cidades Inteligentes e docente do
+            Instituto Politécnico de Tomar (IPT), Arian Pasquali, Vitor Mangaravite e Alexandre Ribeiro, também investigadores do LIAAD INESC
+            TEC, Alípio Jorge, coordenador do LIAAD INESC TEC e docente na Faculdade de Ciências da Universidade do
+            Porto, e Adam Jatwot docente da Universidade de Innsbruck.') }}
+        </p>
+
+        <div class="content-wrapper">
+            <div class="card-team">
+                <div class="columns is-gapless is-vcentered is-multiline">
+
+                    <div class="column is-3">
+                        <div class="card-team-item">
+                            <div class="flex-card light-bordered hover-raised">
+                                <div class="card-body">
+                                    <div class="team-avatar">
+                                        <img src="{{ url_for('static', filename='img/team/arian.jpg') }}" alt="">
+                                    </div>
+                                    <div class="member-id">
+                                        <div class="name">
+                                            Arian Pasquali
+                                        </div>
+                                        <div class="position" style="font-size: 1rem; font-weight: bold">
+                                            Software Developer and Researcher
+                                        </div>
+                                    </div>
+                                    <div class="card-social-links">
+                                        <a target="_blank" href="https://www.linkedin.com/in/arianpasquali/"><i
+                                                class="fa fa-linkedin"></i></a>
+                                        <a target="_blank" href="mailto:arrp@inesctec.pt"><i
+                                                class="fa fa-envelope "></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-3">
+                        <div class="card-team-item">
+                            <div class="flex-card light-bordered hover-raised">
+                                <div class="card-body">
+                                    <div class="team-avatar">
+                                        <img src="{{ url_for('static', filename='img/team/vitor.jpg') }}" alt="">
+                                    </div>
+                                    <div class="member-id">
+                                        <div class="name">
+                                            Vitor Mangaravite
+                                        </div>
+                                        <div class="position" style="font-size: 1rem; font-weight: bold">
+                                            Software Developer and Researcher
+                                        </div>
+                                    </div>
+                                    <div class="card-social-links">
+                                        <a target="_blank"
+                                            href="https://www.linkedin.com/in/v%C3%ADtor-mangaravite-81998222/"><i
+                                                class="fa fa-linkedin"></i></a>
+                                        <a target="_blank" href="mailto:vima@inesctec.pt"><i
+                                                class="fa fa-envelope "></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-3">
+                        <div class="card-team-item">
+                            <div class="flex-card light-bordered hover-raised">
+                                <div class="card-body">
+                                    <div class="team-avatar">
+                                        <img src="{{ url_for('static', filename='img/team/ricardo.jpg') }}" alt="">
+                                    </div>
+                                    <div class="member-id">
+                                        <div class="name">
+                                            Ricardo Campos
+                                        </div>
+                                        <div class="position" style="font-size: 1rem; font-weight: bold">
+                                            Researcher and Professor
+                                        </div>
+                                    </div>
+                                    <div class="card-social-links">
+                                        <a target="_blank" href="https://www.linkedin.com/in/camposricardo/"><i
+                                                class="fa fa-linkedin"></i></a>
+                                        <a target="_blank" href="mailto:ricardo.campos@ipt.pt"><i
+                                                class="fa fa-envelope "></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-3">
+                        <div class="card-team-item">
+                            <div class="flex-card light-bordered hover-raised">
+                                <div class="card-body">
+                                    <div class="team-avatar">
+                                        <img src="{{ url_for('static', filename='img/team/alipio.png') }}" alt="">
+                                    </div>
+                                    <div class="member-id">
+                                        <div class="name">
+                                            Alípio Jorge
+                                        </div>
+                                        <div class="position" style="font-size: 1rem; font-weight: bold">
+                                            Researcher and Professor
+                                        </div>
+                                    </div>
+                                    <div class="card-social-links">
+                                        <a target="_blank"
+                                            href="https://www.linkedin.com/in/al%C3%ADpio-jorge-29085813/"><i
+                                                class="fa fa-linkedin"></i></a>
+                                        <a target="_blank" href="mailto:amjorge@fc.up.pt"><i
+                                                class="fa fa-envelope "></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-3">
+                        <div class="card-team-item">
+                            <div class="flex-card light-bordered hover-raised">
+                                <div class="card-body">
+                                    <div class="team-avatar">
+                                        <img src="{{ url_for('static', filename='img/team/adam.png') }}" alt="">
+                                    </div>
+                                    <div class="member-id">
+                                        <div class="name">
+                                            Adam Jatowt
+                                        </div>
+                                        <div class="position" style="font-size: 1rem; font-weight: bold">
+                                            Researcher and Professor
+                                        </div>
+                                    </div>
+                                    <div class="card-social-links">
+                                        <a target="_blank" href="https://www.linkedin.com/in/adam-jatowt-a1869b4/"><i
+                                                class="fa fa-linkedin"></i></a>
+                                        <a target="_blank" href="mailto:adam.jatowt@uibk.ac.at"><i
+                                                class="fa fa-envelope "></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-3">
+                        <div class="card-team-item">
+                            <div class="flex-card light-bordered hover-raised">
+                                <div class="card-body">
+                                    <div class="team-avatar">
+                                        <img src="{{ url_for('static', filename='img/team/livia.jpg') }}" alt="">
+                                    </div>
+                                    <div class="member-id">
+                                        <div class="name">
+                                            Livia Stroschoen
+                                        </div>
+                                        <div class="position" style="font-size: 1rem; font-weight: bold">
+                                            Communications
+                                        </div>
+                                    </div>
+                                    <div class="card-social-links">
+                                        <a target="_blank" href="https://www.linkedin.com/in/liviastroschoen/"><i
+                                                class="fa fa-linkedin"></i></a>
+                                        <a target="_blank" href="mailto:liviapinent@gmail.com"><i
+                                                class="fa fa-envelope "></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-3">
+                        <div class="card-team-item">
+                            <div class="flex-card light-bordered hover-raised">
+                                <div class="card-body">
+                                    <div class="team-avatar">
+                                        <img src="{{ url_for('static', filename='img/team/alexandre.jpg') }}" alt="">
+                                    </div>
+                                    <div class="member-id">
+                                        <div class="name">
+                                            Alexandre Ribeiro
+                                        </div>
+                                        <div class="position" style="font-size: 1rem; font-weight: bold">
+                                            Software Developer and Researcher
+                                        </div>
+                                    </div>
+                                    <div class="card-social-links">
+                                        <a target="_blank" href="https://www.linkedin.com/in/alexandremcribeiro/"><i
+                                                class="fa fa-linkedin"></i></a>
+                                        <a target="_blank" href="mailto:alexandre.m.ribeiro@inesctec.pt"><i
+                                                class="fa fa-envelope "></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

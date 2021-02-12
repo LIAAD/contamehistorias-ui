@@ -1,0 +1,449 @@
+# English translations for PROJECT.
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-02-11 23:38+0000\n"
+"PO-Revision-Date: 2018-11-09 20:56+0000\n"
+"Last-Translator: \n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: main/templates/layouts/main.html:153 main/templates/layouts/main.html:226
+msgid "Início"
+msgstr "Home"
+
+#: main/templates/layouts/main.html:157 main/templates/layouts/main.html:230
+msgid "Pesquisar"
+msgstr "Search"
+
+#: main/templates/layouts/main.html:170 main/templates/layouts/main.html:234
+#: main/templates/layouts/main.html:344 main/templates/pages/about.html:2
+msgid "Sobre"
+msgstr "About"
+
+#: main/templates/layouts/main.html:174 main/templates/layouts/main.html:238
+#: main/templates/layouts/main.html:345 main/templates/pages/team.html:2
+msgid "Equipa"
+msgstr "Team"
+
+#: main/templates/layouts/main.html:178 main/templates/layouts/main.html:242
+#: main/templates/layouts/main.html:346 main/templates/pages/press.html:2
+msgid "Media"
+msgstr "Press"
+
+#: main/templates/layouts/main.html:183 main/templates/layouts/main.html:247
+#: main/templates/layouts/main.html:347
+msgid "Open Source"
+msgstr "Open Source"
+
+#: main/templates/layouts/main.html:188 main/templates/layouts/main.html:252
+#: main/templates/layouts/main.html:348
+msgid "Aplicação Móvel"
+msgstr "Mobile Application"
+
+#: main/templates/layouts/main.html:195 main/templates/layouts/main.html:259
+msgid "Projetos Relacionados"
+msgstr "Related Projects"
+
+#: main/templates/layouts/main.html:214 main/templates/layouts/main.html:278
+#: main/templates/layouts/main.html:354
+msgid "Português"
+msgstr "Português"
+
+#: main/templates/layouts/main.html:219 main/templates/layouts/main.html:283
+#: main/templates/layouts/main.html:356
+msgid "English"
+msgstr "English"
+
+#: main/templates/layouts/main.html:303
+msgid ""
+"O Conta-me Histórias é um projeto científico que permite aos utilizadores"
+" a possibilidade de\n"
+"                  criarem automaticamente uma sumarização temporal das "
+"notícias preservadas pelo Arquivo.pt "
+msgstr ""
+"Tell me stories is a research project that allows users to automatically "
+"build interactive temporal summarization based on news preserved by the "
+"Portuguese Web Archive "
+
+#: main/templates/layouts/main.html:309
+msgid "Desenvolvido por"
+msgstr "Developed by"
+
+#: main/templates/layouts/main.html:310
+msgid "investigadores"
+msgstr "researchers"
+
+#: main/templates/layouts/main.html:310
+msgid "do"
+msgstr "at"
+
+#: main/templates/layouts/main.html:321
+msgid "e afiliados às instituições"
+msgstr "and affiliated to"
+
+#: main/templates/layouts/main.html:331
+msgid "Universidade de Innsbruck"
+msgstr "University of Innsbruck"
+
+#: main/templates/layouts/main.html:342
+msgid "Conta-me Histórias"
+msgstr "Tell me stories"
+
+#: main/templates/layouts/main.html:349
+msgid "Fale Connosco"
+msgstr "Contact Us"
+
+#: main/templates/layouts/main.html:363
+msgid "O conteúdo deste site é licenciado sob"
+msgstr "The content presented here is licensed under"
+
+#: main/templates/pages/404.html:10 main/templates/pages/500.html:10
+#: main/templates/pages/502.html:10 main/templates/pages/home.html:2
+#: main/templates/pages/home.html:11 main/templates/pages/search.html:2
+#: main/templates/pages/search.html:16 main/templates/pages/searching.html:2
+#: main/templates/pages/searching.html:11
+msgid "conta-me histórias"
+msgstr "tell me stories"
+
+#: main/templates/pages/404.html:39
+msgid "Página não encontrada"
+msgstr "Page not found"
+
+#: main/templates/pages/404.html:45
+msgid "A página que procura não existe."
+msgstr "The page you are looking for does not exist."
+
+#: main/templates/pages/404.html:53 main/templates/pages/500.html:55
+#: main/templates/pages/502.html:55
+msgid "voltar ao início"
+msgstr "back to home"
+
+#: main/templates/pages/500.html:39
+msgid "Algo inesperado aconteceu"
+msgstr "Something unexpected happened"
+
+#: main/templates/pages/500.html:45 main/templates/pages/502.html:45
+msgid "Já estamos a verificar o que aconteceu e esperamos que seja temporário."
+msgstr "We are investigating and we hope it is temporary."
+
+#: main/templates/pages/500.html:47 main/templates/pages/502.html:47
+msgid "Por favor tente novamente mais tarde."
+msgstr "Please try again later."
+
+#: main/templates/pages/502.html:39
+msgid "Sistema com muita procura"
+msgstr "System too busy"
+
+#: main/templates/pages/about.html:7 main/templates/pages/search.html:82
+#: main/templates/pages/search.html:128
+msgid "sobre"
+msgstr "about"
+
+#: main/templates/pages/about.html:20
+msgid "O que é o Conta-me Histórias?"
+msgstr "What is Tell me stories?"
+
+#: main/templates/pages/about.html:23
+msgid ""
+"O Conta-me Histórias é um projeto científico, criado no âmbito dos "
+"Prémios Arquivo.pt 2018, que\n"
+"              permite aos utilizadores a possibilidade de criarem "
+"automaticamente uma sumarização temporal das notícias\n"
+"              preservadas pelo"
+msgstr ""
+"Tell me stories is a research project that allows users to automatically "
+"build interactive temporal summarization based on news preserved by the"
+
+#: main/templates/pages/about.html:31
+msgid ""
+"Numa era marcada pela pós-verdade e pelas fake news, o\n"
+"              Conta-me Histórias é um importante contributo para uma "
+"democracia mais transparente. Esta aplicação\n"
+"              permite a qualquer cidadão um acesso livre e democrático a "
+"informação contextualizada, assente em fatos e\n"
+"              tendencialmente livre de filtros, fazendo uso de diversas "
+"fontes. Jornalistas, estudantes e investigadores\n"
+"              de diversas áreas, tais como a sociologia, a ciência "
+"política, as ciências da comunicaçãos, a história e\n"
+"              outras humanidades, encontram aqui uma ferramenta poderosa "
+"para o seu trabalho."
+msgstr ""
+"During the last decade, we have been witnessing an ever-growing number of"
+" online content posing new challenges for those who aim to understand a "
+"given event. This exponential growth of the volume of data, together with"
+" the phenomenon of media bias, fake news and filter bubbles, has "
+"contributed to the creation of new challenges in information access and "
+"transparency. For instance, following the media coverage of long-lasting "
+"events like wars, migration or economic crises can be oftentimes "
+"confusing and demanding. One possible solution is the adoption of "
+"timelines to support story-telling as a way to organize the different "
+"phases of complex events. In this context, we invite students, "
+"journalists and researchers to explore our solution in this beta "
+"application."
+
+#: main/templates/pages/about.html:55
+msgid "Como funciona?"
+msgstr "How does it work?"
+
+#: main/templates/pages/about.html:60
+msgid ""
+"O Arquivo.pt preserva milhões de ficheiros recolhidos da web desde 1996 e"
+" disponibiliza um serviço\n"
+"              público de pesquisa sobre esta informação. Periodicamente "
+"recolhe e armazena informação publicada na Web.\n"
+"              Este processo de preservação é realizado de forma "
+"automática através de um sistema informático distribuído\n"
+"              de larga-escala."
+msgstr ""
+"The Portuguese Web Archive project archives the web periodically. It "
+"collects and stores entire websites, processing the data to make it "
+"searchable and finally providing a full-text search service that enables "
+"the retrieval of the past versions of the site."
+
+#: main/templates/pages/about.html:67
+msgid ""
+"Para mostrar os dados do Arquivo.pt, mostramos ao utilizador os excertos "
+"mais importantes\n"
+"              (nomeadamente títulos noticiosos) de um tópico ao longo do "
+"tempo. Para a seleção dos melhores títulos de\n"
+"              notícias, recorremos a "
+msgstr ""
+"To showcase the data archived by the Portuguese Web Arquive, we show the "
+"user the most important excerpts (namely text titles) of a topic over "
+"time. For the selection of the best news titles we resort to "
+
+#: main/templates/pages/about.html:70
+msgid ""
+"um extrator de\n"
+"              palavras-chave desenvolvido pela nossa equipa, e que "
+"recentemente foi premiado como Best Short Paper na\n"
+"              40ª edição da European Conference for Information Retrieval "
+msgstr ""
+"a keyword extractor designed by our team, and recently awarded as Best "
+"Short Paper at the 40th European Conference for Information Retrieval "
+
+#: main/templates/pages/about.html:79
+msgid "Contribuições"
+msgstr "Contributions"
+
+#: main/templates/pages/about.html:81
+msgid ""
+"Acreditamos que o Conta-me Histórias é, neste contexto, um importante "
+"contributo para uma democracia\n"
+"              mais transparente, ao permitir a qualquer cidadão "
+"(incluindo jornalistas, estudantes, cientistas sociais\n"
+"              de áreas como sociologia, ciência política, ciências da "
+"comunicação e história, etc) um acesso livre e\n"
+"              democrático a informação contextualizada (assente em fatos "
+"e tendencialmente livre de filtros ao fazer uso\n"
+"              de diversas fontes jornalísticas)."
+msgstr ""
+"We presented a web application that allows users to generate temporal "
+"summarization on large news data sets. One of the main goals of this work"
+" is to attract the attention of the public for this promising research "
+"area. In the era of post-truth and fake news, web and news archives "
+"initiatives are important contributions to preserve history. In this "
+"context, our project may be considered an additional solution that allows"
+" users to better explore this kind of data."
+
+#: main/templates/pages/about.html:91
+msgid "Origem do nome"
+msgstr "Origins of the project name"
+
+#: main/templates/pages/about.html:93
+msgid ""
+"O nome ‘Conta-me Histórias’ é uma homenagem à música dos Xutos & Pontapés"
+" de mesmo nome, com o\n"
+"              intuito de retratar um dos objetivos do projeto, ou seja, o"
+" de quereremos contar histórias ao utilizador,\n"
+"              que, tal como diz a música, sejam relativas a algo que este"
+" não viu ou do qual não se recorda."
+msgstr ""
+"The name  ‘Conta-me Histórias’ is a reference to a popular song from one "
+"of the most important Portuguese rock musicians group  Xutos & Pontapés."
+
+#: main/templates/pages/about.html:107
+msgid "Design da apresentação e edição"
+msgstr "Design, video and presentation"
+
+#: main/templates/pages/about.html:113 main/templates/pages/search.html:107
+#: main/templates/pages/search.html:272
+msgid "Portais de Notícias"
+msgstr "News sources"
+
+#: main/templates/pages/about.html:190
+msgid "Referências académicas"
+msgstr "Academic references"
+
+#: main/templates/pages/about.html:239
+msgid "Instituições"
+msgstr "Institutions"
+
+#: main/templates/pages/home.html:15 main/templates/pages/search.html:24
+#: main/templates/pages/searching.html:15
+msgid "Crie uma linha do tempo sobre qualquer assunto"
+msgstr "Create a timeline about any subject"
+
+#: main/templates/pages/home.html:43
+msgid "Economia e Atualidade"
+msgstr "Economy and Society"
+
+#: main/templates/pages/home.html:67
+msgid "Política, Justiça e Jornalismo"
+msgstr "Politics, Justice and Journalism"
+
+#: main/templates/pages/home.html:91
+msgid "Desporto e Cultura"
+msgstr "Sports and Culture"
+
+#: main/templates/pages/press.html:7
+msgid "nos media"
+msgstr "press"
+
+#: main/templates/pages/search.html:37
+msgid "opções avançadas"
+msgstr "advanced options"
+
+#: main/templates/pages/search.html:42
+msgid "Últimos 5 anos"
+msgstr "Last 5 years"
+
+#: main/templates/pages/search.html:43
+msgid "Últimos 10 anos"
+msgstr "Last 10 years"
+
+#: main/templates/pages/search.html:44
+msgid "Últimos 15 anos"
+msgstr "Last 15 years"
+
+#: main/templates/pages/search.html:45
+msgid "Últimos 20 anos"
+msgstr "Last 20 years"
+
+#: main/templates/pages/search.html:48
+msgid "aplicar"
+msgstr "confirm"
+
+#: main/templates/pages/search.html:73 main/templates/pages/search.html:128
+msgid "Narrativa"
+msgstr "Narrative"
+
+#: main/templates/pages/search.html:74 main/templates/pages/search.html:82
+msgid "Termos relacionados"
+msgstr "Related terms"
+
+#: main/templates/pages/search.html:82 main/templates/pages/search.html:128
+msgid "durante os últimos"
+msgstr "during the last"
+
+#: main/templates/pages/search.html:82 main/templates/pages/search.html:128
+#: main/templates/pages/searching.html:27
+msgid "anos"
+msgstr "years"
+
+#: main/templates/pages/search.html:84 main/templates/pages/search.html:130
+msgid "em"
+msgstr "at"
+
+#: main/templates/pages/search.html:100
+msgid "Entidades"
+msgstr "Entities"
+
+#: main/templates/pages/search.html:101
+msgid "Termos"
+msgstr "Terms"
+
+#: main/templates/pages/search.html:184
+msgid "Notícias relevantes entre"
+msgstr "Relevant news between"
+
+#: main/templates/pages/search.html:185
+msgid "e"
+msgstr "and"
+
+#: main/templates/pages/search.html:295
+msgid "Número de páginas encontradas em Arquivo.pt"
+msgstr "Number of pages found in Arquivo.pt"
+
+#: main/templates/pages/search.html:297
+msgid "Páginas encontradas"
+msgstr "Pages found"
+
+#: main/templates/pages/search.html:304
+msgid "Número de notícias consideradas para construir a narrativa"
+msgstr "Number of news articles considered to build narrative"
+
+#: main/templates/pages/search.html:307
+msgid "Notícias consideradas"
+msgstr "Considered news articles"
+
+#: main/templates/pages/search.html:314
+msgid "Número de portais de notícias considerados para construir a narrativa"
+msgstr "Number of news sources considered to build narrative"
+
+#: main/templates/pages/search.html:316
+msgid "Portais de notícia"
+msgstr "News sources"
+
+#: main/templates/pages/search.html:328
+msgid "Narrativa construída em"
+msgstr "Narrative built in"
+
+#: main/templates/pages/search.html:329
+msgid "segundos"
+msgstr "seconds"
+
+#: main/templates/pages/search.html:352
+msgid ""
+"A sua consulta não retornou resultados suficientes para construir uma "
+"narrativa."
+msgstr "Your query did not return documents to build a narrative."
+
+#: main/templates/pages/search.html:354
+msgid ""
+"Experimente uma consulta menos específica ou tente esta consulta "
+"diretamente no "
+msgstr "Try a simpler query or try directly at "
+
+#: main/templates/pages/searching.html:26
+msgid "A analisar milhares de resultados sobre"
+msgstr "Analyzing thousands of results about"
+
+#: main/templates/pages/searching.html:27
+msgid "nos últimos"
+msgstr "during the last"
+
+#: main/templates/pages/searching.html:31
+msgid "Aguarde um momento, por favor"
+msgstr "Wait a moment, please"
+
+#: main/templates/pages/team.html:7
+msgid "conheça a equipa"
+msgstr "meet the team"
+
+#: main/templates/pages/team.html:15
+msgid ""
+"Esta plataforma foi desenvolvida por Ricardo Campos investigador do LIAAD"
+" INESC TEC, do Ci2 - Centro de Investigação em Cidades Inteligentes e "
+"docente do\n"
+"            Instituto Politécnico de Tomar (IPT), Arian Pasquali, Vitor "
+"Mangaravite e Alexandre Ribeiro, também investigadores do LIAAD INESC\n"
+"            TEC, Alípio Jorge, coordenador do LIAAD INESC TEC e docente "
+"na Faculdade de Ciências da Universidade do\n"
+"            Porto, e Adam Jatwot docente da Universidade de Innsbruck."
+msgstr ""
+"This project was developed by researchers affiliated to LIAAD INESC TEC, "
+"Smart Cities Research Center (CI2), Polytechnic Institute of Tomar, "
+"University of Porto and University of Innsbruck."
+
