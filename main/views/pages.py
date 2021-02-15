@@ -8,3 +8,7 @@ blueprint = Blueprint('pages', __name__)
 def home():
     if session['dataset'] == 'arquivopt':
         return redirect(url_for('pages_arquivopt.home'))
+    elif session['dataset'] == 'tls-covid19':
+        return redirect(url_for('pages_tlscovid19.home'))
+    else:
+        return redirect(url_for('pages_arquivopt.home'))

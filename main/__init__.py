@@ -5,8 +5,7 @@ from flask_talisman import Talisman
 from flask_babel import Babel
 from celery import Celery
 
-from main.views import pages
-from main.views import pages_arquivopt
+from main.views import pages, pages_arquivopt, pages_tlscovid19
 
 from settings import config
 
@@ -31,6 +30,7 @@ def create_app(config_filename):
 
     app.register_blueprint(pages.blueprint)
     app.register_blueprint(pages_arquivopt.blueprint, url_prefix='/arquivopt')
+    app.register_blueprint(pages_tlscovid19.blueprint, url_prefix='/tls-covid19')
 
     # Talisman(app, content_security_policy={
     #     'style-src': [
