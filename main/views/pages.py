@@ -20,6 +20,7 @@ API_ARQUIVOPT_ENDPOINT = 'http://localhost:5001/api/arquivopt/'
 
 @blueprint.before_request
 def before_request():
+    session['dataset'] = 'arquivopt'
     print("------before_request----")
     print("request", request)
     print("request.full_path", request.full_path)
