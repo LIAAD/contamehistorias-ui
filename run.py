@@ -17,7 +17,6 @@ locale.setlocale(locale.LC_TIME, 'pt_PT.utf8')
 
 # Create and config Flask app
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
-app.config['APPLICATION_ROOT'] = '/arquivopt'
 
 # Create and config Celery
 app.config.update(
@@ -50,12 +49,12 @@ def add_session_config():
 @app.errorhandler(404)
 def page_not_found(error):
    app.logger.error('Page not found:')
-   return render_template('pages/404.html'), 404
+   return render_template('pages/errors/404.html'), 404
 
 #@app.errorhandler(500)
 #def page_internal_server_error(error):
 #   app.logger.error('Internal server error:')
-#   return render_template('pages/500.html'), 500
+#   return render_template('pages/errors/500.html'), 500
 
 @app.errorhandler(Exception)
 def page_globalerror(error):
@@ -65,7 +64,7 @@ def page_globalerror(error):
    else:
        raise error
    
-   return render_template('pages/500.html'), 500
+   return render_template('pages/errors/500.html'), 500
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port="5000")

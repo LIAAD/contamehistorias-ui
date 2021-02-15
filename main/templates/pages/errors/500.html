@@ -30,15 +30,19 @@
                     <div class="columns is-vcentered" style="color: darkslategray">
                         <div class="column is-6 is-offset-3 has-text-centered" style="color: black">
 
-                            <a href="{{ url_for('pages.home')}}">
-                                <img alt="take me home"
-                                    src="{{ url_for('static', filename='img/vintage-typewriter-ops.png') }}">
-                            </a>
-                        
-                            <h1 class="title components-title is-2 ">
-                                {{ _('Sistema com muita procura') }}
-                            </h1>
+                            {% if session.get('dataset') == "arquivopt" %}
+                                <a href="{{ url_for('pages_arquivopt.home')}}">
+                                    <img alt="take me home"
+                                        src="{{ url_for('static', filename='img/vintage-typewriter-ops.png') }}">
+                                </a>
+                            {% else %}
+                                
+                            {% endif %}
 
+                            <h1 class="title components-title is-2 ">
+                                {{ _('Algo inesperado aconteceu') }}
+                            </h1>
+                            
                             <br>
                             
                             <h1 class="subtitle is-3 dark-text " style="color: darkslategray">
@@ -50,10 +54,15 @@
                             <br>
                             <p class="has-text-centered">
 
-                                <a href="{{ url_for('pages.home')}}" style="color: darkslategray"
-                                    class="button button-cta btn-align light-btn btn-outlined is-bold rounded z-index-2">
-                                    {{ _('voltar ao início') }}
-                                </a>
+                                {% if session.get('dataset') == "arquivopt" %}
+                                    <a href="{{ url_for('pages_arquivopt.home')}}" style="color: darkslategray"
+                                        class="button button-cta btn-align light-btn btn-outlined is-bold rounded z-index-2">
+                                        {{ _('voltar ao início') }}
+                                    </a>
+                                {% else %}
+                                    
+                                {% endif %}
+                                
                             </p>
                         </div>
                     </div>

@@ -25,7 +25,7 @@
                     </span>
                 </h1>
             </div>
-            <form name="searchForm" method="get" action="{{ url_for('pages.search') }}" class="form-signin">
+            <form name="searchForm" method="get" action="{{ url_for('pages_arquivopt.search') }}" class="form-signin">
                 <div class="help-search-wrapper">
                     {{ form.query(class_ = 'form-control first-input', placeholder = form.query.label.text) }}
                     <i class="sl sl-icon-magnifier"></i>

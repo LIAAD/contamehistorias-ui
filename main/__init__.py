@@ -1,35 +1,16 @@
 import logging
 
-from flask import Flask, g, session, Blueprint, request
+from flask import Flask, g, session, request
 from flask_talisman import Talisman
 from flask_babel import Babel
 from celery import Celery
 
 from main.views import pages
+from main.views import pages_arquivopt
+
 from settings import config
 
 babel = Babel()
-
-bp = Blueprint('arquivopt', __name__,
-               template_folder='arquivopt', url_prefix="arquivopt")
-
-
-class PrefixMiddleware(object):
-
-    def __init__(self, app, prefix=''):
-        self.app = app
-        self.prefix = prefix
-
-    def __call__(self, environ, start_response):
-
-        if environ['PATH_INFO'].startswith(self.prefix):
-            environ['PATH_INFO'] = environ['PATH_INFO'][len(self.prefix):]
-            environ['SCRIPT_NAME'] = self.prefix
-            return self.app(environ, start_response)
-        else:
-            start_response('301 Moved Permanently', [
-                           ('Location', "http://contamehistorias.pt/arquivopt/")])
-            return []
 
 
 class YourFlask(Flask):
@@ -45,11 +26,11 @@ def create_app(config_filename):
 
     app.config.from_object(config[config_filename])
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-    app.wsgi_app = PrefixMiddleware(app.wsgi_app, prefix='/arquivopt')
 
     app.logger.setLevel(logging.NOTSET)
 
     app.register_blueprint(pages.blueprint)
+    app.register_blueprint(pages_arquivopt.blueprint, url_prefix='/arquivopt')
 
     # Talisman(app, content_security_policy={
     #     'style-src': [

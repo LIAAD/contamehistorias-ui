@@ -19,7 +19,7 @@
 
                 <p class="has-text-centered">
 
-                <form name="searchForm" method="get" action="{{ url_for('pages.search') }}" class="form-signin">
+                <form name="searchForm" method="get" action="{{ url_for('pages_arquivopt.search') }}" class="form-signin">
                     <div class="help-search-wrapper">
                         {{ form.query(class_ = 'form-control first-input', placeholder = form.query.label.text) }}
                         <i class="sl sl-icon-magnifier"></i>
@@ -44,7 +44,7 @@
     <div class="example-slick" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
         {%for story in stories_examples["geral"] %}
         <div>
-            <a style="color: black" href="{{ url_for('pages.search', query=story.title) }}">
+            <a style="color: black" href="{{ url_for('pages_arquivopt.search', query=story.title) }}">
                 <div class="flex-card light-bordered hover-raised" style="height: 150px;">
 
                     <div class="card-body">
@@ -68,7 +68,7 @@
     <div class="example-slick" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
         {%for story in stories_examples["politica"] %}
         <div>
-            <a style="color: black" href="{{ url_for('pages.search', query=story.title) }}">
+            <a style="color: black" href="{{ url_for('pages_arquivopt.search', query=story.title) }}">
                 <div class="flex-card light-bordered hover-raised" style="height: 150px;">
 
                     <div class="card-body">
@@ -92,7 +92,7 @@
     <div class="example-slick" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
         {%for story in stories_examples["personas"] %}
         <div>
-            <a style="color: black" href="{{ url_for('pages.search', query=story.title) }}">
+            <a style="color: black" href="{{ url_for('pages_arquivopt.search', query=story.title) }}">
                 <div class="flex-card light-bordered hover-raised" style="height: 150px;">
 
                     <div class="card-body">
