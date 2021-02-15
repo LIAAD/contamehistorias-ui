@@ -1,6 +1,6 @@
 <div align="center">
     <a href="http://contamehistorias.pt/arquivopt/" target="_blank">
-	    <img width="300" height="250" src="main/static/img/vintage-typewriter.png" alt="Conta-me Histórias">
+	    <img width="300" height="250" src="main/static/img/contamehistorias-logo.png" alt="Conta-me Histórias">
     </a>
     <br>
     <b> This repository contains the source code of the user interface of <a href="http://contamehistorias.pt/arquivopt/" target="_blank">conta-me historias</a>. </b>
