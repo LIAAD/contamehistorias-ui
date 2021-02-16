@@ -6,6 +6,8 @@ from flask import redirect, url_for, g, current_app, session
 
 import requests
 
+from furl import furl
+
 from main.forms.search import SearchForm
 
 blueprint = Blueprint('pages_arquivopt', __name__)
@@ -23,6 +25,18 @@ def before_request():
     print("request", request)
     print("request.full_path", request.full_path)
     print("session.keys", session.keys())
+
+
+@blueprint.url_defaults
+def add_language_code(endpoint, values):
+    if current_app.url_map.is_endpoint_expecting(endpoint, 'lang_code'):
+        values['lang_code'] = session.get('lang_code', "pt")
+        g.lang_code = session.get('lang_code', "pt")
+
+    try:
+        values.setdefault('lang_code', g.lang_code)
+    except:
+        values.setdefault('lang_code', session.get('lang_code', "pt"))
 
 
 @blueprint.url_value_preprocessor
@@ -131,6 +145,21 @@ def press():
 @blueprint.route('/about')
 def about():
     return render_template('pages/common/about.html')
+
+
+@blueprint.route('/change/<new_lang_code>')
+def change(new_lang_code):
+
+    if not(new_lang_code in LANGUAGES):
+        new_lang_code = "pt"
+
+    session['lang_code'] = new_lang_code
+
+    # Redirect to same page with changed lang_code
+    redirect_url = furl(request.referrer)
+    redirect_url.args['lang_code'] = new_lang_code
+
+    return redirect(redirect_url)
 
 
 @blueprint.route('/search', methods=['GET'])
