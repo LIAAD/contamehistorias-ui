@@ -36,7 +36,7 @@
                                         src="{{ url_for('static', filename='img/vintage-typewriter-ops.png') }}">
                                 </a>
                             {% elif session.get('dataset') == "tls-covid19" %}
-                                <a href="{{ url_for('pages_tlscovid19.home')}}">
+                                <a href="{{ url_for('pages_tlscovid.home')}}">
                                     <img alt="take me home"
                                         src="{{ url_for('static', filename='img/vintage-typewriter-ops.png') }}">
                                 </a>
@@ -68,7 +68,7 @@
                                         {{ _('voltar ao início') }}
                                     </a>
                                 {% elif session.get('dataset') == "tls-covid19" %}
-                                    <a href="{{ url_for('pages_tlscovid19.home')}}" style="color: darkslategray"
+                                    <a href="{{ url_for('pages_tlscovid.home')}}" style="color: darkslategray"
                                         class="button button-cta btn-align light-btn btn-outlined is-bold rounded z-index-2">
                                         {{ _('voltar ao início') }}
                                     </a>

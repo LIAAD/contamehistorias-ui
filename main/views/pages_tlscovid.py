@@ -6,16 +6,14 @@ from flask import redirect, url_for, g, current_app, session
 
 import requests
 
-from furl import furl
-
 from main.forms.search import SearchForm
 
-blueprint = Blueprint('pages_tlscovid19', __name__)
+blueprint = Blueprint('pages_tlscovid', __name__)
 
 
 LANGUAGES = ['en', 'pt']
 
-API_ARQUIVOPT_ENDPOINT = 'http://localhost:5001/api/arquivopt/'
+API_TLSCOVID_ENDPOINT = 'http://localhost:5001/api/tlscovid/'
 
 
 @blueprint.before_request
@@ -25,18 +23,6 @@ def before_request():
     print("request", request)
     print("request.full_path", request.full_path)
     print("session.keys", session.keys())
-
-
-@blueprint.url_defaults
-def add_language_code(endpoint, values):
-    if current_app.url_map.is_endpoint_expecting(endpoint, 'lang_code'):
-        values['lang_code'] = session.get('lang_code', "pt")
-        g.lang_code = session.get('lang_code', "pt")
-
-    try:
-        values.setdefault('lang_code', g.lang_code)
-    except:
-        values.setdefault('lang_code', session.get('lang_code', "pt"))
 
 
 @blueprint.url_value_preprocessor
@@ -58,21 +44,21 @@ def pull_lang_code(endpoint, values):
 def searching():
     
     query = request.args.get('query', type=str)
-    last_years = request.args.get('last_years', default=10, type=int)
+    index = request.args.get('index', default='pt', type=str)
 
-    return render_template('pages/arquivopt/searching.html', query=query, last_years=last_years)
+    return render_template('pages/tlscovid/searching.html', query=query, index=index)
 
 
 @blueprint.route('/longtask', methods=['GET'])
 def long_task():
 
     query = request.args.get('query', type=str)
-    last_years = request.args.get('last_years', default=10, type=int)
+    index = request.args.get('index', default='pt', type=str)
 
     task_id = current_app.celery.send_task(
-        'celery_tasks.execute_engine', args=[query, int(last_years)])
+        'celery_tasks.execute_engine_tlscovid', args=[query, index])
 
-    return jsonify({}), 202, {'Location': url_for('pages_arquivopt.task_status',
+    return jsonify({}), 202, {'Location': url_for('pages_tlscovid.task_status',
                                                   task_id=task_id)}
 
 
@@ -98,7 +84,7 @@ def task_status(task_id):
             response['task_id'] = task_id
             response['result'] = task.info['result']
             response['url_for'] = url_for(
-                'pages_arquivopt.search', query=task.info['query'], last_years=task.info['last_years'])
+                'pages_tlscovid.search', query=task.info['query'], index=task.info['index'])
     else:
         # something went wrong in the background job
         response = {
@@ -120,46 +106,30 @@ def home():
     if(lang_code == None):
         lang_code = "pt"
 
-    r = requests.get(API_ARQUIVOPT_ENDPOINT + 'get-examples')
+    r = requests.get(API_TLSCOVID_ENDPOINT + 'get-examples')
     examples = r.json()
 
     stories_examples = {
-        "geral": examples['stories_general'] + examples['stories_history'],
-        "politica": examples['stories_persons'] + examples['stories_justice'],
-        "personas": examples['stories_culture'] + examples['stories_sports']
+        "topics_pt": examples['pt'],
+        "topics_en": examples['en'],
     }
 
-    return render_template('pages/arquivopt/home.html', stories_examples=stories_examples, form=form, lang_code=lang_code)
-
-
-@blueprint.route('/change/<new_lang_code>')
-def change(new_lang_code):
-
-    if not(new_lang_code in LANGUAGES):
-        new_lang_code = "pt"
-
-    session['lang_code'] = new_lang_code
-
-    # Redirect to same page with changed lang_code
-    redirect_url = furl(request.referrer)
-    redirect_url.args['lang_code'] = new_lang_code
-
-    return redirect(redirect_url)
+    return render_template('pages/tlscovid/home.html', stories_examples=stories_examples, form=form, lang_code=lang_code)
 
 
 @blueprint.route('/team')
 def team():
-    return render_template('pages/arquivopt/team.html')
+    return render_template('pages/common/team.html')
 
 
 @blueprint.route('/press')
 def press():
-    return render_template('pages/arquivopt/press.html')
+    return render_template('pages/common/press.html')
 
 
 @blueprint.route('/about')
 def about():
-    return render_template('pages/arquivopt/about.html')
+    return render_template('pages/common/about.html')
 
 
 @blueprint.route('/search', methods=['GET'])
@@ -167,7 +137,7 @@ def search():
 
     # Default parameters
     hasNarrative = False
-    flast_years = 10
+    index = 'pt'
     source_name = None
 
     # Lang Code
@@ -188,24 +158,14 @@ def search():
     fquery = request.args.get('query', default="", type=str)
     form.query.data = fquery
 
-    flast_years = request.args.get('last_years', default="10", type=int)
-
-    try:
-        flast_years = int(flast_years)
-    except:
-        flast_years = 10
-
-    if(flast_years < 5):
-        flast_years = 5
-    elif(flast_years > 25):
-        flast_years = 25
+    index = request.args.get('index', default="pt", type=str)
 
     print('Query:', fquery)
-    print('Last years:', int(flast_years))
+    print('Index:', index)
     print('Lang code:', lang_code)
 
     # Call API to get news domains
-    r = requests.get(API_ARQUIVOPT_ENDPOINT + 'get-domains')
+    r = requests.get(API_TLSCOVID_ENDPOINT + 'get-domains')
     news_domains = r.json()
 
     # Task already processed
@@ -219,11 +179,11 @@ def search():
             result = task.info['result']
         except TypeError:
             print('Invalid task')
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, providers=news_domains, user_query=None, hasNarrative=hasNarrative)
+            return render_template('pages/tlscovid/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, user_query=None, hasNarrative=hasNarrative)
         
         if not result:
             print('Invalid result')
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, providers=news_domains, user_query=fquery, hasNarrative=hasNarrative)
+            return render_template('pages/tlscovid/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, user_query=fquery, hasNarrative=hasNarrative)
 
         else:
             print('Result ok')
@@ -239,23 +199,19 @@ def search():
                 "ndocs": result["stats"]["n_docs"],
                 "nunique_docs": result["stats"]["n_unique_docs"],
                 "ndomains": result["stats"]["n_domains"],
-                "last_years": flast_years
+                "index": index
             }
 
             domains = result["domains"]
 
-            # Call API to get blacklist ngrams
-            r = requests.get(API_ARQUIVOPT_ENDPOINT + 'get-examples')
-            blacklist_ngrams = r.json()['blacklist_ngrams']
-
             if(result["status"] != "OK"):
-                return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, providers=news_domains, hasNarrative=hasNarrative)
+                return render_template('pages/tlscovid/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, hasNarrative=hasNarrative)
 
             if(int(result["stats"]["n_unique_docs"]) == 0):
-                return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, providers=news_domains, hasNarrative=hasNarrative)
+                return render_template('pages/tlscovid/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, hasNarrative=hasNarrative)
 
             # Call API to get events and end_intervals_dates
-            r = requests.get(API_ARQUIVOPT_ENDPOINT +
+            r = requests.get(API_TLSCOVID_ENDPOINT +
                              'get-events', json=result)
             get_events_result = r.json()
 
@@ -263,7 +219,7 @@ def search():
             end_intervals_dates = get_events_result['end_intervals_dates']
 
             # Call API to get titles
-            r = requests.get(API_ARQUIVOPT_ENDPOINT +
+            r = requests.get(API_TLSCOVID_ENDPOINT +
                              'get-titles', json=res_events)
             all_titles = r.json()
 
@@ -281,7 +237,7 @@ def search():
                 'all_titles': all_titles,
                 'query_term_corr': result['query_term_corr']
             }
-            r = requests.get(API_ARQUIVOPT_ENDPOINT +
+            r = requests.get(API_TLSCOVID_ENDPOINT +
                              'get-entities-terms', json=payload)
             get_entities_terms_result = r.json()
 
@@ -293,7 +249,7 @@ def search():
                 'result': result,
                 'end_intervals_dates': end_intervals_dates
             }
-            r = requests.get(API_ARQUIVOPT_ENDPOINT +
+            r = requests.get(API_TLSCOVID_ENDPOINT +
                              'get-timeseries', json=payload)
             get_timeseries_result = r.json()
 
@@ -301,13 +257,12 @@ def search():
             sources_overall = get_timeseries_result['sources_overall']
             overall_timeseries = get_timeseries_result['overall_timeseries']
 
-            return render_template('pages/arquivopt/search.html', form=form,
+            return render_template('pages/tlscovid/search.html', form=form,
                                    result=result,
                                    events=res_events,
                                    result_header=result_header,
                                    related_terms=related_terms,
                                    domains=domains,
-                                   providers=news_domains,
                                    selected_provider=source_name,
                                    advanced_mode=True,
                                    sources_overall=sources_overall,
@@ -316,7 +271,6 @@ def search():
                                    last_date=news_timeseries_rs["last_date"],
                                    entity_terms=entity_terms,
                                    hasNarrative=hasNarrative,
-                                   blacklist_ngrams=blacklist_ngrams,
                                    user_query=fquery,
                                    lang_code=lang_code)
     
@@ -325,9 +279,9 @@ def search():
 
         # If request contains query, redirect to searching and process for the first time
         if 'query' in request.args:
-            return redirect(url_for('pages_arquivopt.searching', query=fquery, last_years=flast_years))
+            return redirect(url_for('pages_tlscovid.searching', query=fquery, index=index))
 
         # If request doesn't contain neither id nor query, redirect to search page to perform new search
         else:
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, providers=news_domains, user_query=None, hasNarrative=hasNarrative)
+            return render_template('pages/tlscovid/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, user_query=None, hasNarrative=hasNarrative)
         

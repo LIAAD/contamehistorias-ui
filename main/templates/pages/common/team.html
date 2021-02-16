@@ -1,4 +1,9 @@
-{% extends 'layouts/main.html' %}
+{% if session.get('dataset') == "arquivopt" %}
+  {% extends 'layouts/arquivopt/main.html' %}
+{% elif session.get('dataset') == "tls-covid19" %}
+  {% extends 'layouts/tlscovid/main.html' %}
+{% endif %}
+
 {% block title %}{{ _('Equipa') }}{% endblock %}
 {% block content %}
 

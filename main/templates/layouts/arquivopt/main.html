@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='img/contamehistorias-logo.png') }}">
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/bulma.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/core_demo.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/js/ggpopover/ggtooltip.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/js/ggpopover/ggpopover.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/js/slick-carousel/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/js/slick-carousel/slick-theme.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/icons.min.css') }}">
+  </head>
+
+  <style>
+    .tooltip-inner {
+      background-color: white !important;
+    }
+
+    .cd-timeline-navigation a {
+      position: absolute;
+      z-index: 1;
+      top: 80%;
+      bottom: auto;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      height: 34px;
+      width: 34px;
+      border-radius: 53%;
+      border: 7px solid #dfdfdf;
+      border-color: #dfdfdf;
+
+      overflow: hidden;
+      /* color: transparent; */
+      color: white;
+      text-indent: 100%;
+      white-space: nowrap;
+      -webkit-transition: border-color 0.3s;
+      -moz-transition: border-color 0.3s;
+      transition: border-color 0.3s;
+    }
+
+    .text--replace {
+      overflow: hidden;
+      color: transparent;
+      text-indent: 100%;
+      white-space: nowrap
+    }
+
+    /* arrow icon */
+    .cd-timeline-navigation a::after {
+      content: '';
+      position: absolute;
+      height: 16px;
+      width: 16px;
+      left: 50%;
+      top: 50%;
+      bottom: auto;
+      right: auto;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -o-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      background: url({{ url_for('static', filename='horizontal-timeline/img/cd-arrow.svg')}}) no-repeat 0 0;
+    }
+
+    .cd-timeline-navigation a.prev {
+      left: -30px;
+      -webkit-transform: translateY(-50%) rotate(180deg);
+      -moz-transform: translateY(-50%) rotate(180deg);
+      -ms-transform: translateY(-50%) rotate(180deg);
+      -o-transform: translateY(-50%) rotate(180deg);
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .cd-timeline-navigation a.next {
+      right: -30px;
+    }
+
+    .no-touch .cd-timeline-navigation a:hover {
+      border-color: #7b9d6f;
+    }
+
+    .cd-timeline-navigation a.inactive {
+      cursor: not-allowed;
+    }
+
+    .cd-timeline-navigation a.inactive::after {
+      background-position: 0 -16px;
+    }
+
+    .no-touch .cd-timeline-navigation a.inactive:hover {
+      border-color: #dfdfdf;
+    }
+
+    .timeline:before {
+      content: "";
+      width: 22px;
+      height: 100%;
+      background: #ededed;
+      left: 51%;
+      top: 0;
+      position: absolute;
+    }
+
+    .timeline.doted .timeline-icon {
+      background: white;
+      border: 2px solid #ededed;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 22%;
+      overflow: hidden;
+      margin: -5px;
+      cursor: pointer;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      border-radius: 50%;
+      -webkit-box-shadow: 0px 5px 43px rgba(0, 0, 0, 0.18);
+      -moz-box-shadow: 0px 5px 43px rgba(0, 0, 0, 0.18);
+      -ms-box-shadow: 0px 5px 43px rgba(0, 0, 0, 0.18);
+      box-shadow: 0px 5px 43px rgba(0, 0, 0, 0.18);
+    }
+  </style>
+
+  <body>
+
+    <div class="hero is-theme-primary">
+      <div class="navbar-wrapper navbar-fade navbar-light">
+        <div class="hero-head">
+          <div class="container">
+            <nav class="nav">
+              <div class="container big">
+                <div class="nav-left">
+
+                    <a href="{{ url_for('pages_arquivopt.home') }}" class="nav-item is-tab nav-inner is-not-mobile">
+                      {{ _('Início') }}
+                    </a>
+                    <a href="{{ url_for('pages_arquivopt.search') }}" class="nav-item is-tab nav-inner is-not-mobile">
+                      {{ _('Pesquisar') }}
+                    </a>
+                  
+                </div>
+
+                <span class="nav-toggle">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+                
+                <div class="nav-right nav-menu">
+
+                  <a href="{{ url_for('pages_arquivopt.about') }}" class="nav-item is-tab nav-inner is-not-mobile">
+                    {{ _('Sobre') }}
+                  </a>
+
+                  <a href="{{ url_for('pages_arquivopt.team') }}" class="nav-item is-tab nav-inner is-not-mobile">
+                    {{ _('Equipa') }}
+                  </a>
+                  
+                  <a href="{{ url_for('pages_arquivopt.press') }}" class="nav-item is-tab nav-inner is-not-mobile">
+                    {{ _('Media') }}
+                  </a>
+                  
+                  <a href="https://github.com/LIAAD/TemporalSummarizationFramework" target="_blank"
+                    class="nav-item is-tab nav-inner is-not-mobile">
+                    {{ _('Open Source') }}
+                  </a>
+                  
+                  <a href="https://play.google.com/store/apps/details?id=com.app.projetofinal" target="_blank"
+                    class="nav-item is-tab nav-inner is-not-mobile">
+                    {{ _('Aplicação Móvel') }}
+                  </a>
+
+                  <div class="nav-item is-tab nav-inner is-not-mobile">
+                    <div class="dropdown" id="dropdown-desktop">
+                      <div class="dropdown-trigger">
+                        <a class="nav-item is-tab nav-inner is-not-mobile" aria-haspopup="true" aria-controls="dropdown-menu">
+                          {{ _('Projetos Relacionados') }}
+                        </a>
+                      </div>
+                      <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                          <a href="http://nlplab.inesctec.pt/tellmestories/" target="_blank" class="dropdown-item">
+                            Tell me stories
+                          </a>
+                          <a href="http://yake.inesctec.pt/" target="_blank" class="dropdown-item">
+                            YAKE!
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {% if session.get('lang_code') == "en" %}
+                    <a href="{{ url_for('pages.change', new_lang_code='pt') }}"
+                      class="nav-item is-tab nav-inner is-not-mobile">
+                      {{ _('Português') }}
+                    </a>
+                  {% else %}
+                    <a href="{{ url_for('pages.change', new_lang_code='en') }}"
+                      class="nav-item is-tab nav-inner is-not-mobile">
+                      {{ _('English') }}
+                    </a>
+                  {% endif %}
+
+                  <!-- Mobile elements -->
+
+                  <a href="{{ url_for('pages_arquivopt.home') }}" class="nav-item is-tab nav-inner is-menu-mobile">
+                    {{ _('Início') }}
+                  </a>
+                  
+                  <a href="{{ url_for('pages_arquivopt.search') }}" class="nav-item is-tab nav-inner is-menu-mobile">
+                    {{ _('Pesquisar') }}
+                  </a>
+
+                  <a href="{{ url_for('pages_arquivopt.about') }}" class="nav-item is-tab nav-inner is-menu-mobile">
+                    {{ _('Sobre') }}
+                  </a>
+
+                  <a href="{{ url_for('pages_arquivopt.team') }}" class="nav-item is-tab nav-inner is-menu-mobile">
+                    {{ _('Equipa') }}
+                  </a>
+
+                  <a href="{{ url_for('pages_arquivopt.press') }}" class="nav-item is-tab nav-inner is-menu-mobile">
+                    {{ _('Media') }}
+                  </a>
+
+                  <a href="https://github.com/LIAAD/TemporalSummarizationFramework" target="_blank"
+                    class="nav-item is-tab nav-inner is-menu-mobile">
+                    {{ _('Open Source') }}
+                  </a>
+
+                  <a href="https://play.google.com/store/apps/details?id=com.app.projetofinal" target="_blank"
+                    class="nav-item is-tab nav-inner is-menu-mobile">
+                    {{ _('Aplicação Móvel') }}
+                  </a>
+
+                  <div class="nav-item is-tab nav-inner is-menu-mobile">
+                    <div class="dropdown" id="dropdown-mobile">
+                      <div class="dropdown-trigger">
+                        <a class="nav-item is-tab nav-inner" aria-haspopup="true" aria-controls="dropdown-menu">
+                          {{ _('Projetos Relacionados') }}
+                        </a>
+                      </div>
+                      <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                          <a href="http://nlplab.inesctec.pt/tellmestories/" target="_blank" class="dropdown-item">
+                            Tell me stories
+                          </a>
+                          <a href="http://yake.inesctec.pt/" target="_blank" class="dropdown-item">
+                            YAKE!
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {% if session.get('lang_code') == "en" %}
+                    <a href="{{ url_for('pages.change', new_lang_code='pt') }}"
+                      class="nav-item is-tab nav-inner is-menu-mobile">
+                      {{ _('Português') }}
+                    </a>
+                  {% else %}
+                    <a href="{{ url_for('pages.change', new_lang_code='en') }}"
+                      class="nav-item is-tab nav-inner is-menu-mobile">
+                      {{ _('English') }}
+                    </a>
+                  {% endif %}
+
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      {% block content %}{% endblock %}
+
+      <footer class="footer footer-light-medium" style="margin-left: 0px !important;">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-4">
+              <div class="pt-10 pb-10">
+                <img class="small-footer-logo" src="" alt="">
+                <div class="footer-description pt-10 pb-10">
+                  {{ _('O Conta-me Histórias é um projeto científico que permite aos utilizadores a possibilidade de
+                  criarem automaticamente uma sumarização temporal das notícias preservadas pelo Arquivo.pt ') }}
+                </div>
+              </div>
+              <div>
+                
+                <span class="moto">{{ _('Desenvolvido por') }} 
+                  <a style="color: #A9ABAC; text-decoration:underline" href="{{ url_for('pages_arquivopt.team') }}"> {{ _('investigadores') }} </a> {{ _('do') }}
+                  {% if session.get('lang_code') == "pt" %}
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://www.inesctec.pt/pt/centros/liaad">Laboratório de Inteligência Artificial e Apoio a Decisão (LIAAD</a> -
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://www.inesctec.pt">INESCTEC</a>), 
+                  {% else %}
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://www.inesctec.pt/en/centres/liaad">Artificial Intelligence and Decision Support Laboratory (LIAAD</a> -
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://www.inesctec.pt/en">INESCTEC</a>), 
+                  {% endif %}
+                </span>
+
+                <span class="moto">
+                  {{ _('e afiliados às instituições') }}
+                  {% if session.get('lang_code') == "pt" %}
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://www.ipt.pt/">Instituto Politécnico de Tomar</a> - 
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://www.ci2.ipt.pt/">Centro de Investigação em Cidades Inteligentes (CI2)</a>;
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://sigarra.up.pt/up/">Universidade do Porto</a>;
+                  {% else %}
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://www.ipt.pt/?lng=en">Polytechnic Institute of Tomar</a> - 
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://www.ci2.ipt.pt/en/">Smart Cities Research Center (CI2)</a>;
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://sigarra.up.pt/up/en/">University of Porto</a>;
+                  {% endif %}
+                  <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://www.uibk.ac.at/">{{ _('Universidade de Innsbruck') }}</a>
+                </span>
+
+              </div>
+            </div>
+
+            <div class="column is-7 is-offset-2">
+              <div class="columns">
+                <div class="column">
+                  <ul class="footer-column">
+                    <li class="column-header">
+                      {{ _('Conta-me Histórias') }}
+                    </li>
+                    <li class="column-item"><a href="{{ url_for('pages_arquivopt.about') }}">{{ _('Sobre') }}</a></li>
+                    <li class="column-item"><a href="{{ url_for('pages_arquivopt.team') }}">{{ _('Equipa') }}</a></li>
+                    <li class="column-item"><a href="{{ url_for('pages_arquivopt.press') }}">{{ _('Media') }}</a></li>
+                    <li class="column-item"><a target="_blank" href="https://github.com/LIAAD/TemporalSummarizationFramework">{{ _('Open Source') }}</a></li>
+                    <li class="column-item"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.app.projetofinal">{{ _('Aplicação Móvel') }}</a></li>
+                    <li class="column-item"><a href="mailto:contamehistorias@googlegroups.com"> {{ _('Fale Connosco') }}</a></li>
+
+                    <li class="column-item">______</li>
+
+                    {% if session.get('lang_code') == "en" %}
+                      <li class="column-item"><a href="{{ url_for('pages.change', new_lang_code='pt') }}">{{ _('Português')}}</a></li>
+                    {% else %}
+                      <li class="column-item"><a href="{{ url_for('pages.change', new_lang_code='en') }}">{{ _('English')}}</a></li>
+                    {% endif %}
+                  </ul>
+
+                  <br/> <br/>
+
+                  <span class="moto">
+                    {{ _('O conteúdo deste site é licenciado sob') }} <a
+                      href="https://creativecommons.org/licenses/by/4.0/" style="color: #A9ABAC;text-decoration:underline"
+                      target="_blank">Creative Commons Attribution 4.0 International license</a>
+                  </span>
+                </div>
+
+                <div class="column">
+                  <ul class="footer-column">
+                    <li class="column-header">
+                      Arquivo.pt
+                    </li>
+                    {% if session.get('lang_code') == "en" %}
+                      <li class="column-item"><a target="_blank" href="https://sobre.arquivo.pt/en/collaborate/rd/">Research</a></li>
+                      <li class="column-item"><a target="_blank" href="https://sobre.arquivo.pt/en/help/">FAQs</a></li>
+                    {% else %}
+                      <li class="column-item"><a target="_blank" href="https://sobre.arquivo.pt/pt/colabore/id/">Investigação</a></li>
+                      <li class="column-item"><a target="_blank" href="https://sobre.arquivo.pt/pt/ajuda/">Perguntas frequentes</a></li>
+                    {% endif %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <div id="backtotop"><a href="#"></a></div>
+
+      <!-- JS files -->
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+      <script src="{{ url_for('static', filename='assets/js/core/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='assets/js/ggpopover/ggtooltip.js')}}"></script>
+      <script src="{{ url_for('static', filename='assets/js/main.js')}}"></script>
+      <script src="{{ url_for('static', filename='assets/js/slick-carousel/slick.min.js')}}"></script>
+      <script src="{{ url_for('static', filename='assets/js/waypoints/jquery.waypoints.min.js')}}"></script>
+      <script src="{{ url_for('static', filename='assets/js/waypoints/sticky.min.js')}}"></script>
+      <script src="{{ url_for('static', filename='assets/js/ggpopover/ggpopover.min.js')}}"></script>
+      <script src="{{ url_for('static', filename='assets/js/datepicker/datepicker.min.js')}}"></script>
+      <script src="{{ url_for('static', filename='assets/js/counterup/jquery.counterup.min.js')}}"></script>
+
+      <script>
+        $(document).ready(function () {
+          
+          // Toggle dropdown desktop
+          var dropdownDesktop = document.querySelector('#dropdown-desktop');
+
+          $(dropdownDesktop).click(function (event) {
+            event.stopPropagation();
+            dropdownDesktop.classList.toggle('is-active');
+          });
+
+          // Close dropdown if clicking anywhere
+          $(document).click(function (event) {
+            var clickover = $(event.target);
+            var _opened = $("#dropdown-desktop").hasClass("is-active");
+            if (_opened === true && !clickover.hasClass("#dropdown-desktop")) {
+              dropdownDesktop.classList.toggle('is-active');
+            }
+          });
+
+          var dropdownMobile = document.querySelector('#dropdown-mobile');
+
+          // Toggle dropdown mobile
+          $(dropdownMobile).click(function (event) {
+            event.stopPropagation();
+            dropdownMobile.classList.toggle('is-active');
+          });
+
+          // Close dropdown if clicking anywhere
+          $(document).click(function (event) {
+            var clickover = $(event.target);
+            var _opened = $("#dropdown-mobile").hasClass("is-active");
+            if (_opened === true && !clickover.hasClass("#dropdown-mobile")) {
+              dropdownMobile.classList.toggle('is-active');
+            }
+          });
+
+          $('.example-slick').slick({
+            autoplay: true,
+            autoplaySpeed: 6000,
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  infinite: true,
+                  dots: true
+                }
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              }
+            ]
+          }
+          );
+        });
+      </script>
+
+  </body>
+
+</html>

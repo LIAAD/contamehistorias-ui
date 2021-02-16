@@ -6,8 +6,6 @@ from flask import redirect, url_for, g, current_app, session
 
 import requests
 
-from furl import furl
-
 from main.forms.search import SearchForm
 
 blueprint = Blueprint('pages_arquivopt', __name__)
@@ -25,18 +23,6 @@ def before_request():
     print("request", request)
     print("request.full_path", request.full_path)
     print("session.keys", session.keys())
-
-
-@blueprint.url_defaults
-def add_language_code(endpoint, values):
-    if current_app.url_map.is_endpoint_expecting(endpoint, 'lang_code'):
-        values['lang_code'] = session.get('lang_code', "pt")
-        g.lang_code = session.get('lang_code', "pt")
-
-    try:
-        values.setdefault('lang_code', g.lang_code)
-    except:
-        values.setdefault('lang_code', session.get('lang_code', "pt"))
 
 
 @blueprint.url_value_preprocessor
@@ -70,7 +56,7 @@ def long_task():
     last_years = request.args.get('last_years', default=10, type=int)
 
     task_id = current_app.celery.send_task(
-        'celery_tasks.execute_engine', args=[query, int(last_years)])
+        'celery_tasks.execute_engine_arquivopt', args=[query, int(last_years)])
 
     return jsonify({}), 202, {'Location': url_for('pages_arquivopt.task_status',
                                                   task_id=task_id)}
@@ -132,34 +118,19 @@ def home():
     return render_template('pages/arquivopt/home.html', stories_examples=stories_examples, form=form, lang_code=lang_code)
 
 
-@blueprint.route('/change/<new_lang_code>')
-def change(new_lang_code):
-
-    if not(new_lang_code in LANGUAGES):
-        new_lang_code = "pt"
-
-    session['lang_code'] = new_lang_code
-
-    # Redirect to same page with changed lang_code
-    redirect_url = furl(request.referrer)
-    redirect_url.args['lang_code'] = new_lang_code
-
-    return redirect(redirect_url)
-
-
 @blueprint.route('/team')
 def team():
-    return render_template('pages/arquivopt/team.html')
+    return render_template('pages/common/team.html')
 
 
 @blueprint.route('/press')
 def press():
-    return render_template('pages/arquivopt/press.html')
+    return render_template('pages/common/press.html')
 
 
 @blueprint.route('/about')
 def about():
-    return render_template('pages/arquivopt/about.html')
+    return render_template('pages/common/about.html')
 
 
 @blueprint.route('/search', methods=['GET'])
@@ -219,11 +190,11 @@ def search():
             result = task.info['result']
         except TypeError:
             print('Invalid task')
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, providers=news_domains, user_query=None, hasNarrative=hasNarrative)
+            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, user_query=None, hasNarrative=hasNarrative)
         
         if not result:
             print('Invalid result')
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, providers=news_domains, user_query=fquery, hasNarrative=hasNarrative)
+            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, user_query=fquery, hasNarrative=hasNarrative)
 
         else:
             print('Result ok')
@@ -249,10 +220,10 @@ def search():
             blacklist_ngrams = r.json()['blacklist_ngrams']
 
             if(result["status"] != "OK"):
-                return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, providers=news_domains, hasNarrative=hasNarrative)
+                return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, hasNarrative=hasNarrative)
 
             if(int(result["stats"]["n_unique_docs"]) == 0):
-                return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, providers=news_domains, hasNarrative=hasNarrative)
+                return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, hasNarrative=hasNarrative)
 
             # Call API to get events and end_intervals_dates
             r = requests.get(API_ARQUIVOPT_ENDPOINT +
@@ -307,7 +278,6 @@ def search():
                                    result_header=result_header,
                                    related_terms=related_terms,
                                    domains=domains,
-                                   providers=news_domains,
                                    selected_provider=source_name,
                                    advanced_mode=True,
                                    sources_overall=sources_overall,
@@ -329,5 +299,5 @@ def search():
 
         # If request doesn't contain neither id nor query, redirect to search page to perform new search
         else:
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, providers=news_domains, user_query=None, hasNarrative=hasNarrative)
+            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, user_query=None, hasNarrative=hasNarrative)
         

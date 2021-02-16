@@ -1,4 +1,4 @@
-{% extends 'layouts/arquivopt/main.html' %}
+{% extends 'layouts/tlscovid/main.html' %}
 {% block title %}{{ _('conta-me histórias') }}{% endblock %}
 {% block content %}
 
@@ -24,7 +24,7 @@
     <div class="container">
 
         <h1 class="subtitle is-4 dark-text" style="text-align:center">{{ _('A analisar milhares de resultados sobre') }}
-            <b>{{ query }}</b> {{ _('nos últimos') }} <b>{{ last_years }} {{ _('anos') }}</b>
+            <b>{{ query }}</b>
         </h1>
         <br>
         <h1 class="subtitle is-4 dark-text" style="text-align:center">
@@ -45,12 +45,12 @@
         $('#loading').show();
 
         var query = '{{ query }}';
-        var last_years = '{{ last_years }}';
+        var index = '{{ index }}';
         // send ajax GET request to start background job
         $.ajax({
             type: 'GET',
-            url: '/arquivopt/longtask',
-            data: { 'query': query, 'last_years': last_years },
+            url: '/tls-covid19/longtask',
+            data: { 'query': query, 'index': index },
             success: function (data, status, request) {
                 status_url = request.getResponseHeader('Location');
                 update_progress(status_url);

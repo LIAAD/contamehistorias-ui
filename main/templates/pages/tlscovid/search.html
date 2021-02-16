@@ -1,4 +1,4 @@
-{% extends 'layouts/arquivopt/main.html' %}
+{% extends 'layouts/tlscovid/main.html' %}
 {% block title %} {{ _('conta-me histórias') }} {% endblock %}
 {% block content %}
 
@@ -19,13 +19,13 @@
             <div class="help-subheader" style="padding: 0px 0 15px 0;">
                 <h1 class="title is-4">
                     <span class="" data-toggle="popover" data-placement="bottom" data-trigger="hover"
-                        data-content="A pesquisa é realizada dentro do repositório do Arquivo.pt, que compreende o período entre 1996 até 2016"
+                        data-content="A pesquisa é realizada no dataset TLS-Covid19, no ano de 2019"
                         data-original-title="">
                         {{ _('Crie uma linha do tempo sobre qualquer assunto') }}
                     </span>
                 </h1>
             </div>
-            <form name="searchForm" method="get" action="{{ url_for('pages_arquivopt.search') }}" class="form-signin">
+            <form name="searchForm" method="get" action="{{ url_for('pages_tlscovid.search') }}" class="form-signin">
                 <div class="help-search-wrapper">
                     {{ form.query(class_ = 'form-control first-input', placeholder = form.query.label.text) }}
                     <i class="sl sl-icon-magnifier"></i>
@@ -79,7 +79,7 @@
                                 style="padding: 20px 20px 20px 20px; margin-top: 0px;">
 
                                 <h3 class="title is-4 dark-text">
-                                    <strong> {{ _('Termos relacionados') }} </strong> {{ _('sobre') }} <strong> {{result_header["query"].title() }} </strong> {{ _('durante os últimos') }} <strong> {{result_header["last_years"]}} {{ _('anos') }} </strong> 
+                                    <strong> {{ _('Termos relacionados') }} </strong> {{ _('sobre') }} <strong> {{result_header["query"].title() }} </strong>
                                     {% if selected_provider %}
                                         {{ _('em') }} <strong> {{selected_provider}} </strong>
                                     {% endif %}
@@ -108,11 +108,13 @@
                                     <small><span>
                                             {% for news_provider_domain in domains %}
                                                 <a style="color:gray; font-size: 15px;"
-                                                    href="https://arquivo.pt/search.jsp?l=pt&query={{news_provider_domain}}"
+                                                    href="{{ ''.join(['https://', news_provider_domain]) }}"
                                                     target="_blank">
-                                                    {{ "
-                                                    ".join(news_provider_domain.replace("www.","").replace(".pt","").split(".")).title()
-                                                    }},
+                                                    {% if loop.index < (domains|length) %}
+                                                        {{news_provider_domain}},
+                                                    {% else %}
+                                                        {{news_provider_domain}}
+                                                    {% endif %}
                                                 </a>
                                             {% endfor %}
 
@@ -125,7 +127,7 @@
                                 style="padding: 25px;margin-top: 0;">
 
                                 <h3 class="title is-4 dark-text">
-                                    <strong> {{ _('Narrativa')}} </strong> {{ _('sobre')}} <strong> {{result_header["query"].title() }} </strong> {{ _('durante os últimos')}} <strong> {{result_header["last_years"]}} {{ _('anos')}} </strong>
+                                    <strong> {{ _('Narrativa')}} </strong> {{ _('sobre')}} <strong> {{result_header["query"].title() }} </strong>
                                     {% if selected_provider %}
                                         {{ _('em')}} <strong>{{selected_provider}}</strong>
                                     {% endif %}
@@ -189,21 +191,27 @@
                                                                 {% for keywords in event['description']["all"] %}
                                                                     {% for kw in keywords %}
                                                                         {% if kw.kw.split() | length >= 4 %}
-                                                                            {% if (kw.kw not in blacklist_ngrams) %}
-                                                                                <span class="classToken is-tooltip-info tooltip"
-                                                                                    data-toggle="tooltip" data-placement="left"
-                                                                                    data-title="{{kw.date.split()[0] }}"
-                                                                                    data-original-title="">
+                                                                            <span class="classToken is-tooltip-info tooltip"
+                                                                                data-toggle="tooltip" data-placement="left"
+                                                                                data-title="{{kw.date.split()[0] }}"
+                                                                                data-original-title="">
 
-                                                                                    <a style="font-size:16px;color:black"
-                                                                                        href="{{ kw.docs[0][1] }}" target="_blank"
-                                                                                        title="{{kw.docs[0][0]}}">
-                                                                                        {{kw.kw }}.
-                                                                                    </a>
+                                                                                {% if kw.is_km == "True" %}
+                                                                                <a style="font-size:16px;color:green"
+                                                                                    href="{{ kw.docs[0][1] }}" target="_blank"
+                                                                                    title="{{kw.docs[0][0]}}">
+                                                                                    {{kw.kw }}.
+                                                                                </a>
+                                                                                {% else %}
+                                                                                <a style="font-size:16px;color:black"
+                                                                                    href="{{ kw.docs[0][1] }}" target="_blank"
+                                                                                    title="{{kw.docs[0][0]}}">
+                                                                                    {{kw.kw }}.
+                                                                                </a>
+                                                                                {% endif %}
 
-                                                                                </span>
-                                                                                <br/>
-                                                                            {% endif %}
+                                                                            </span>
+                                                                            <br/>
                                                                         {% endif %}
                                                                     {% endfor %}
                                                                 {% endfor %}
@@ -274,11 +282,13 @@
                                         <span>
                                             {% for news_provider_domain in domains %}
                                                 <a style="color:gray; font-size: 15px;"
-                                                    href="https://arquivo.pt/search.jsp?l=pt&query={{news_provider_domain}}"
+                                                    href="{{ ''.join(['https://', news_provider_domain]) }}"
                                                     target="_blank">
-                                                    {{ "
-                                                    ".join(news_provider_domain.replace("www.","").replace(".pt","").split(".")).title()
-                                                    }},
+                                                    {% if loop.index < (domains|length) %}
+                                                        {{news_provider_domain}},
+                                                    {% else %}
+                                                        {{news_provider_domain}}
+                                                    {% endif %}
                                                 </a>
                                             {% endfor %}
                                         </span>
@@ -292,7 +302,7 @@
                             <div class="column is-4">
                                 <div class="simple-counter" data-toggle="popover" data-placement="top"
                                     data-trigger="hover"
-                                    data-content="{{ _('Número de páginas encontradas em Arquivo.pt') }}">
+                                    data-content="{{ _('Número de páginas encontradas') }}">
                                     <div class="counter counter-number is-bold">{{ result_header["ndocs"] }}</div>
                                     <div class="counter-text">{{ _('Páginas encontradas') }}</div>
                                 </div>
@@ -351,8 +361,7 @@
         <h3 class="subtitle is-3 dark-text">
             {{ _('A sua consulta não retornou resultados suficientes para construir uma narrativa.') }}
             <br/><br/>
-            {{ _('Experimente uma consulta menos específica ou tente esta consulta diretamente no ') }} <a
-                target="_blank" href="https://arquivo.pt/search.jsp?l=pt&query={{user_query}}">Arquivo.pt</a>.
+            {{ _('Experimente uma consulta menos específica.') }}
         </h3>
 
     </div>
@@ -389,14 +398,6 @@
         $("#advanced_options_btn").click(function () {
             $("#advanced_options_view").toggle();
         });
-
-
-        // Open news article in Arquivo
-        function openInNewTab(date, query) {
-            let newdate_str = moment(date, "YYYY-MM-DD").format("DD/MM/YYYY");;
-            let url = "https://arquivo.pt/search.jsp?l=pt&query="+query+"&btnSubmit=Pesquisar&dateStart="+newdate_str+"&dateEnd="+newdate_str;
-            window.open(url, '_blank');
-        }
 
 
         // Timeline
@@ -491,10 +492,6 @@
                 let clickedDatasetIndex = activeDataSet[0]._datasetIndex;
                 let clickedElementIndex = activePoints[0]._index;
                 let value = myChart.data.datasets[clickedDatasetIndex].data[clickedElementIndex];
-
-                {% if result_header %}
-                    openInNewTab(ts_labels[clickedElementIndex],"{{result_header["query"]}}");
-                {% endif %}
             }
         });
 
