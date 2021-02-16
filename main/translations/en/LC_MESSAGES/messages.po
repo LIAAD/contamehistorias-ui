@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-11 23:38+0000\n"
+"POT-Creation-Date: 2021-02-16 19:38+0000\n"
 "PO-Revision-Date: 2018-11-09 20:56+0000\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -18,54 +18,95 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: main/templates/layouts/main.html:153 main/templates/layouts/main.html:226
+#: main/templates/layouts/arquivopt/main.html:153
+#: main/templates/layouts/arquivopt/main.html:226
+#: main/templates/layouts/tlscovid/main.html:153
+#: main/templates/layouts/tlscovid/main.html:226
 msgid "Início"
 msgstr "Home"
 
-#: main/templates/layouts/main.html:157 main/templates/layouts/main.html:230
+#: main/templates/layouts/arquivopt/main.html:156
+#: main/templates/layouts/arquivopt/main.html:230
+#: main/templates/layouts/tlscovid/main.html:156
+#: main/templates/layouts/tlscovid/main.html:230
 msgid "Pesquisar"
 msgstr "Search"
 
-#: main/templates/layouts/main.html:170 main/templates/layouts/main.html:234
-#: main/templates/layouts/main.html:344 main/templates/pages/about.html:2
+#: main/templates/layouts/arquivopt/main.html:170
+#: main/templates/layouts/arquivopt/main.html:234
+#: main/templates/layouts/arquivopt/main.html:344
+#: main/templates/layouts/tlscovid/main.html:170
+#: main/templates/layouts/tlscovid/main.html:234
+#: main/templates/layouts/tlscovid/main.html:344
+#: main/templates/pages/common/about.html:7
 msgid "Sobre"
 msgstr "About"
 
-#: main/templates/layouts/main.html:174 main/templates/layouts/main.html:238
-#: main/templates/layouts/main.html:345 main/templates/pages/team.html:2
+#: main/templates/layouts/arquivopt/main.html:174
+#: main/templates/layouts/arquivopt/main.html:238
+#: main/templates/layouts/arquivopt/main.html:345
+#: main/templates/layouts/tlscovid/main.html:174
+#: main/templates/layouts/tlscovid/main.html:238
+#: main/templates/layouts/tlscovid/main.html:345
+#: main/templates/pages/common/team.html:7
 msgid "Equipa"
 msgstr "Team"
 
-#: main/templates/layouts/main.html:178 main/templates/layouts/main.html:242
-#: main/templates/layouts/main.html:346 main/templates/pages/press.html:2
+#: main/templates/layouts/arquivopt/main.html:178
+#: main/templates/layouts/arquivopt/main.html:242
+#: main/templates/layouts/arquivopt/main.html:346
+#: main/templates/layouts/tlscovid/main.html:178
+#: main/templates/layouts/tlscovid/main.html:242
+#: main/templates/layouts/tlscovid/main.html:346
+#: main/templates/pages/common/press.html:7
 msgid "Media"
 msgstr "Press"
 
-#: main/templates/layouts/main.html:183 main/templates/layouts/main.html:247
-#: main/templates/layouts/main.html:347
+#: main/templates/layouts/arquivopt/main.html:183
+#: main/templates/layouts/arquivopt/main.html:247
+#: main/templates/layouts/arquivopt/main.html:347
+#: main/templates/layouts/tlscovid/main.html:183
+#: main/templates/layouts/tlscovid/main.html:247
+#: main/templates/layouts/tlscovid/main.html:347
 msgid "Open Source"
 msgstr "Open Source"
 
-#: main/templates/layouts/main.html:188 main/templates/layouts/main.html:252
-#: main/templates/layouts/main.html:348
+#: main/templates/layouts/arquivopt/main.html:188
+#: main/templates/layouts/arquivopt/main.html:252
+#: main/templates/layouts/arquivopt/main.html:348
+#: main/templates/layouts/tlscovid/main.html:188
+#: main/templates/layouts/tlscovid/main.html:252
+#: main/templates/layouts/tlscovid/main.html:348
 msgid "Aplicação Móvel"
 msgstr "Mobile Application"
 
-#: main/templates/layouts/main.html:195 main/templates/layouts/main.html:259
+#: main/templates/layouts/arquivopt/main.html:195
+#: main/templates/layouts/arquivopt/main.html:259
+#: main/templates/layouts/tlscovid/main.html:195
+#: main/templates/layouts/tlscovid/main.html:259
 msgid "Projetos Relacionados"
 msgstr "Related Projects"
 
-#: main/templates/layouts/main.html:214 main/templates/layouts/main.html:278
-#: main/templates/layouts/main.html:354
+#: main/templates/layouts/arquivopt/main.html:214
+#: main/templates/layouts/arquivopt/main.html:278
+#: main/templates/layouts/arquivopt/main.html:354
+#: main/templates/layouts/tlscovid/main.html:214
+#: main/templates/layouts/tlscovid/main.html:278
+#: main/templates/layouts/tlscovid/main.html:354
 msgid "Português"
 msgstr "Português"
 
-#: main/templates/layouts/main.html:219 main/templates/layouts/main.html:283
-#: main/templates/layouts/main.html:356
+#: main/templates/layouts/arquivopt/main.html:219
+#: main/templates/layouts/arquivopt/main.html:283
+#: main/templates/layouts/arquivopt/main.html:356
+#: main/templates/layouts/tlscovid/main.html:219
+#: main/templates/layouts/tlscovid/main.html:283
+#: main/templates/layouts/tlscovid/main.html:356
 msgid "English"
 msgstr "English"
 
-#: main/templates/layouts/main.html:303
+#: main/templates/layouts/arquivopt/main.html:303
+#: main/templates/layouts/tlscovid/main.html:303
 msgid ""
 "O Conta-me Histórias é um projeto científico que permite aos utilizadores"
 " a possibilidade de\n"
@@ -76,85 +117,254 @@ msgstr ""
 "build interactive temporal summarization based on news preserved by the "
 "Portuguese Web Archive "
 
-#: main/templates/layouts/main.html:309
+#: main/templates/layouts/arquivopt/main.html:309
+#: main/templates/layouts/tlscovid/main.html:309
 msgid "Desenvolvido por"
 msgstr "Developed by"
 
-#: main/templates/layouts/main.html:310
+#: main/templates/layouts/arquivopt/main.html:310
+#: main/templates/layouts/tlscovid/main.html:310
 msgid "investigadores"
 msgstr "researchers"
 
-#: main/templates/layouts/main.html:310
+#: main/templates/layouts/arquivopt/main.html:310
+#: main/templates/layouts/tlscovid/main.html:310
 msgid "do"
 msgstr "at"
 
-#: main/templates/layouts/main.html:321
+#: main/templates/layouts/arquivopt/main.html:321
+#: main/templates/layouts/tlscovid/main.html:321
 msgid "e afiliados às instituições"
 msgstr "and affiliated to"
 
-#: main/templates/layouts/main.html:331
+#: main/templates/layouts/arquivopt/main.html:331
+#: main/templates/layouts/tlscovid/main.html:331
 msgid "Universidade de Innsbruck"
 msgstr "University of Innsbruck"
 
-#: main/templates/layouts/main.html:342
+#: main/templates/layouts/arquivopt/main.html:342
+#: main/templates/layouts/tlscovid/main.html:342
 msgid "Conta-me Histórias"
 msgstr "Tell me stories"
 
-#: main/templates/layouts/main.html:349
+#: main/templates/layouts/arquivopt/main.html:349
+#: main/templates/layouts/tlscovid/main.html:349
 msgid "Fale Connosco"
 msgstr "Contact Us"
 
-#: main/templates/layouts/main.html:363
+#: main/templates/layouts/arquivopt/main.html:363
+#: main/templates/layouts/tlscovid/main.html:363
 msgid "O conteúdo deste site é licenciado sob"
 msgstr "The content presented here is licensed under"
 
-#: main/templates/pages/404.html:10 main/templates/pages/500.html:10
-#: main/templates/pages/502.html:10 main/templates/pages/home.html:2
-#: main/templates/pages/home.html:11 main/templates/pages/search.html:2
-#: main/templates/pages/search.html:16 main/templates/pages/searching.html:2
-#: main/templates/pages/searching.html:11
+#: main/templates/pages/arquivopt/home.html:2
+#: main/templates/pages/arquivopt/home.html:11
+#: main/templates/pages/arquivopt/search.html:2
+#: main/templates/pages/arquivopt/search.html:16
+#: main/templates/pages/arquivopt/searching.html:2
+#: main/templates/pages/arquivopt/searching.html:11
+#: main/templates/pages/errors/404.html:10
+#: main/templates/pages/errors/500.html:10
+#: main/templates/pages/errors/502.html:10
+#: main/templates/pages/tlscovid/home.html:2
+#: main/templates/pages/tlscovid/home.html:11
+#: main/templates/pages/tlscovid/search.html:2
+#: main/templates/pages/tlscovid/search.html:16
+#: main/templates/pages/tlscovid/searching.html:2
+#: main/templates/pages/tlscovid/searching.html:11
 msgid "conta-me histórias"
 msgstr "tell me stories"
 
-#: main/templates/pages/404.html:39
-msgid "Página não encontrada"
-msgstr "Page not found"
+#: main/templates/pages/arquivopt/home.html:15
+#: main/templates/pages/arquivopt/search.html:24
+#: main/templates/pages/arquivopt/searching.html:15
+#: main/templates/pages/tlscovid/home.html:15
+#: main/templates/pages/tlscovid/search.html:24
+#: main/templates/pages/tlscovid/searching.html:15
+msgid "Crie uma linha do tempo sobre qualquer assunto"
+msgstr "Create a timeline about any subject"
 
-#: main/templates/pages/404.html:45
-msgid "A página que procura não existe."
-msgstr "The page you are looking for does not exist."
+#: main/templates/pages/arquivopt/home.html:43
+msgid "Economia e Atualidade"
+msgstr "Economy and Society"
 
-#: main/templates/pages/404.html:53 main/templates/pages/500.html:55
-#: main/templates/pages/502.html:55
-msgid "voltar ao início"
-msgstr "back to home"
+#: main/templates/pages/arquivopt/home.html:67
+msgid "Política, Justiça e Jornalismo"
+msgstr "Politics, Justice and Journalism"
 
-#: main/templates/pages/500.html:39
-msgid "Algo inesperado aconteceu"
-msgstr "Something unexpected happened"
+#: main/templates/pages/arquivopt/home.html:91
+msgid "Desporto e Cultura"
+msgstr "Sports and Culture"
 
-#: main/templates/pages/500.html:45 main/templates/pages/502.html:45
-msgid "Já estamos a verificar o que aconteceu e esperamos que seja temporário."
-msgstr "We are investigating and we hope it is temporary."
+#: main/templates/pages/arquivopt/search.html:37
+#: main/templates/pages/tlscovid/search.html:37
+msgid "opções avançadas"
+msgstr "advanced options"
 
-#: main/templates/pages/500.html:47 main/templates/pages/502.html:47
-msgid "Por favor tente novamente mais tarde."
-msgstr "Please try again later."
+#: main/templates/pages/arquivopt/search.html:42
+#: main/templates/pages/tlscovid/search.html:42
+msgid "Últimos 5 anos"
+msgstr "Last 5 years"
 
-#: main/templates/pages/502.html:39
-msgid "Sistema com muita procura"
-msgstr "System too busy"
+#: main/templates/pages/arquivopt/search.html:43
+#: main/templates/pages/tlscovid/search.html:43
+msgid "Últimos 10 anos"
+msgstr "Last 10 years"
 
-#: main/templates/pages/about.html:7 main/templates/pages/search.html:82
-#: main/templates/pages/search.html:128
+#: main/templates/pages/arquivopt/search.html:44
+#: main/templates/pages/tlscovid/search.html:44
+msgid "Últimos 15 anos"
+msgstr "Last 15 years"
+
+#: main/templates/pages/arquivopt/search.html:45
+#: main/templates/pages/tlscovid/search.html:45
+msgid "Últimos 20 anos"
+msgstr "Last 20 years"
+
+#: main/templates/pages/arquivopt/search.html:48
+#: main/templates/pages/tlscovid/search.html:48
+msgid "aplicar"
+msgstr "confirm"
+
+#: main/templates/pages/arquivopt/search.html:73
+#: main/templates/pages/arquivopt/search.html:128
+#: main/templates/pages/tlscovid/search.html:73
+#: main/templates/pages/tlscovid/search.html:130
+msgid "Narrativa"
+msgstr "Narrative"
+
+#: main/templates/pages/arquivopt/search.html:74
+#: main/templates/pages/arquivopt/search.html:82
+#: main/templates/pages/tlscovid/search.html:74
+#: main/templates/pages/tlscovid/search.html:82
+msgid "Termos relacionados"
+msgstr "Related terms"
+
+#: main/templates/pages/arquivopt/search.html:82
+#: main/templates/pages/arquivopt/search.html:128
+#: main/templates/pages/common/about.html:12
+#: main/templates/pages/tlscovid/search.html:82
+#: main/templates/pages/tlscovid/search.html:130
 msgid "sobre"
 msgstr "about"
 
-#: main/templates/pages/about.html:20
+#: main/templates/pages/arquivopt/search.html:82
+#: main/templates/pages/arquivopt/search.html:128
+msgid "durante os últimos"
+msgstr "during the last"
+
+#: main/templates/pages/arquivopt/search.html:82
+#: main/templates/pages/arquivopt/search.html:128
+#: main/templates/pages/arquivopt/searching.html:27
+msgid "anos"
+msgstr "years"
+
+#: main/templates/pages/arquivopt/search.html:84
+#: main/templates/pages/arquivopt/search.html:130
+#: main/templates/pages/tlscovid/search.html:84
+#: main/templates/pages/tlscovid/search.html:132
+msgid "em"
+msgstr "at"
+
+#: main/templates/pages/arquivopt/search.html:100
+#: main/templates/pages/tlscovid/search.html:100
+msgid "Entidades"
+msgstr "Entities"
+
+#: main/templates/pages/arquivopt/search.html:101
+#: main/templates/pages/tlscovid/search.html:101
+msgid "Termos"
+msgstr "Terms"
+
+#: main/templates/pages/arquivopt/search.html:107
+#: main/templates/pages/arquivopt/search.html:272
+#: main/templates/pages/common/about.html:118
+#: main/templates/pages/tlscovid/search.html:107
+#: main/templates/pages/tlscovid/search.html:280
+msgid "Portais de Notícias"
+msgstr "News sources"
+
+#: main/templates/pages/arquivopt/search.html:184
+#: main/templates/pages/tlscovid/search.html:186
+msgid "Notícias relevantes entre"
+msgstr "Relevant news between"
+
+#: main/templates/pages/arquivopt/search.html:185
+#: main/templates/pages/tlscovid/search.html:187
+msgid "e"
+msgstr "and"
+
+#: main/templates/pages/arquivopt/search.html:295
+msgid "Número de páginas encontradas em Arquivo.pt"
+msgstr "Number of pages found in Arquivo.pt"
+
+#: main/templates/pages/arquivopt/search.html:297
+#: main/templates/pages/tlscovid/search.html:307
+msgid "Páginas encontradas"
+msgstr "Pages found"
+
+#: main/templates/pages/arquivopt/search.html:304
+#: main/templates/pages/tlscovid/search.html:314
+msgid "Número de notícias consideradas para construir a narrativa"
+msgstr "Number of news articles considered to build narrative"
+
+#: main/templates/pages/arquivopt/search.html:307
+#: main/templates/pages/tlscovid/search.html:317
+msgid "Notícias consideradas"
+msgstr "Considered news articles"
+
+#: main/templates/pages/arquivopt/search.html:314
+#: main/templates/pages/tlscovid/search.html:324
+msgid "Número de portais de notícias considerados para construir a narrativa"
+msgstr "Number of news sources considered to build narrative"
+
+#: main/templates/pages/arquivopt/search.html:316
+#: main/templates/pages/tlscovid/search.html:326
+msgid "Portais de notícia"
+msgstr "News sources"
+
+#: main/templates/pages/arquivopt/search.html:328
+#: main/templates/pages/tlscovid/search.html:338
+msgid "Narrativa construída em"
+msgstr "Narrative built in"
+
+#: main/templates/pages/arquivopt/search.html:329
+#: main/templates/pages/tlscovid/search.html:339
+msgid "segundos"
+msgstr "seconds"
+
+#: main/templates/pages/arquivopt/search.html:352
+#: main/templates/pages/tlscovid/search.html:362
+msgid ""
+"A sua consulta não retornou resultados suficientes para construir uma "
+"narrativa."
+msgstr "Your query did not return documents to build a narrative."
+
+#: main/templates/pages/arquivopt/search.html:354
+msgid ""
+"Experimente uma consulta menos específica ou tente esta consulta "
+"diretamente no "
+msgstr "Try a simpler query or try directly at "
+
+#: main/templates/pages/arquivopt/searching.html:26
+#: main/templates/pages/tlscovid/searching.html:26
+msgid "A analisar milhares de resultados sobre"
+msgstr "Analyzing thousands of results about"
+
+#: main/templates/pages/arquivopt/searching.html:27
+msgid "nos últimos"
+msgstr "during the last"
+
+#: main/templates/pages/arquivopt/searching.html:31
+#: main/templates/pages/tlscovid/searching.html:31
+msgid "Aguarde um momento, por favor"
+msgstr "Wait a moment, please"
+
+#: main/templates/pages/common/about.html:25
 msgid "O que é o Conta-me Histórias?"
 msgstr "What is Tell me stories?"
 
-#: main/templates/pages/about.html:23
+#: main/templates/pages/common/about.html:28
 msgid ""
 "O Conta-me Histórias é um projeto científico, criado no âmbito dos "
 "Prémios Arquivo.pt 2018, que\n"
@@ -165,7 +375,7 @@ msgstr ""
 "Tell me stories is a research project that allows users to automatically "
 "build interactive temporal summarization based on news preserved by the"
 
-#: main/templates/pages/about.html:31
+#: main/templates/pages/common/about.html:36
 msgid ""
 "Numa era marcada pela pós-verdade e pelas fake news, o\n"
 "              Conta-me Histórias é um importante contributo para uma "
@@ -192,11 +402,11 @@ msgstr ""
 "journalists and researchers to explore our solution in this beta "
 "application."
 
-#: main/templates/pages/about.html:55
+#: main/templates/pages/common/about.html:60
 msgid "Como funciona?"
 msgstr "How does it work?"
 
-#: main/templates/pages/about.html:60
+#: main/templates/pages/common/about.html:65
 msgid ""
 "O Arquivo.pt preserva milhões de ficheiros recolhidos da web desde 1996 e"
 " disponibiliza um serviço\n"
@@ -211,7 +421,7 @@ msgstr ""
 "searchable and finally providing a full-text search service that enables "
 "the retrieval of the past versions of the site."
 
-#: main/templates/pages/about.html:67
+#: main/templates/pages/common/about.html:72
 msgid ""
 "Para mostrar os dados do Arquivo.pt, mostramos ao utilizador os excertos "
 "mais importantes\n"
@@ -223,7 +433,7 @@ msgstr ""
 "user the most important excerpts (namely text titles) of a topic over "
 "time. For the selection of the best news titles we resort to "
 
-#: main/templates/pages/about.html:70
+#: main/templates/pages/common/about.html:75
 msgid ""
 "um extrator de\n"
 "              palavras-chave desenvolvido pela nossa equipa, e que "
@@ -233,11 +443,11 @@ msgstr ""
 "a keyword extractor designed by our team, and recently awarded as Best "
 "Short Paper at the 40th European Conference for Information Retrieval "
 
-#: main/templates/pages/about.html:79
+#: main/templates/pages/common/about.html:84
 msgid "Contribuições"
 msgstr "Contributions"
 
-#: main/templates/pages/about.html:81
+#: main/templates/pages/common/about.html:86
 msgid ""
 "Acreditamos que o Conta-me Histórias é, neste contexto, um importante "
 "contributo para uma democracia\n"
@@ -257,11 +467,11 @@ msgstr ""
 "context, our project may be considered an additional solution that allows"
 " users to better explore this kind of data."
 
-#: main/templates/pages/about.html:91
+#: main/templates/pages/common/about.html:96
 msgid "Origem do nome"
 msgstr "Origins of the project name"
 
-#: main/templates/pages/about.html:93
+#: main/templates/pages/common/about.html:98
 msgid ""
 "O nome ‘Conta-me Histórias’ é uma homenagem à música dos Xutos & Pontapés"
 " de mesmo nome, com o\n"
@@ -273,166 +483,27 @@ msgstr ""
 "The name  ‘Conta-me Histórias’ is a reference to a popular song from one "
 "of the most important Portuguese rock musicians group  Xutos & Pontapés."
 
-#: main/templates/pages/about.html:107
+#: main/templates/pages/common/about.html:112
 msgid "Design da apresentação e edição"
 msgstr "Design, video and presentation"
 
-#: main/templates/pages/about.html:113 main/templates/pages/search.html:107
-#: main/templates/pages/search.html:272
-msgid "Portais de Notícias"
-msgstr "News sources"
-
-#: main/templates/pages/about.html:190
+#: main/templates/pages/common/about.html:195
 msgid "Referências académicas"
 msgstr "Academic references"
 
-#: main/templates/pages/about.html:239
+#: main/templates/pages/common/about.html:244
 msgid "Instituições"
 msgstr "Institutions"
 
-#: main/templates/pages/home.html:15 main/templates/pages/search.html:24
-#: main/templates/pages/searching.html:15
-msgid "Crie uma linha do tempo sobre qualquer assunto"
-msgstr "Create a timeline about any subject"
-
-#: main/templates/pages/home.html:43
-msgid "Economia e Atualidade"
-msgstr "Economy and Society"
-
-#: main/templates/pages/home.html:67
-msgid "Política, Justiça e Jornalismo"
-msgstr "Politics, Justice and Journalism"
-
-#: main/templates/pages/home.html:91
-msgid "Desporto e Cultura"
-msgstr "Sports and Culture"
-
-#: main/templates/pages/press.html:7
+#: main/templates/pages/common/press.html:12
 msgid "nos media"
 msgstr "press"
 
-#: main/templates/pages/search.html:37
-msgid "opções avançadas"
-msgstr "advanced options"
-
-#: main/templates/pages/search.html:42
-msgid "Últimos 5 anos"
-msgstr "Last 5 years"
-
-#: main/templates/pages/search.html:43
-msgid "Últimos 10 anos"
-msgstr "Last 10 years"
-
-#: main/templates/pages/search.html:44
-msgid "Últimos 15 anos"
-msgstr "Last 15 years"
-
-#: main/templates/pages/search.html:45
-msgid "Últimos 20 anos"
-msgstr "Last 20 years"
-
-#: main/templates/pages/search.html:48
-msgid "aplicar"
-msgstr "confirm"
-
-#: main/templates/pages/search.html:73 main/templates/pages/search.html:128
-msgid "Narrativa"
-msgstr "Narrative"
-
-#: main/templates/pages/search.html:74 main/templates/pages/search.html:82
-msgid "Termos relacionados"
-msgstr "Related terms"
-
-#: main/templates/pages/search.html:82 main/templates/pages/search.html:128
-msgid "durante os últimos"
-msgstr "during the last"
-
-#: main/templates/pages/search.html:82 main/templates/pages/search.html:128
-#: main/templates/pages/searching.html:27
-msgid "anos"
-msgstr "years"
-
-#: main/templates/pages/search.html:84 main/templates/pages/search.html:130
-msgid "em"
-msgstr "at"
-
-#: main/templates/pages/search.html:100
-msgid "Entidades"
-msgstr "Entities"
-
-#: main/templates/pages/search.html:101
-msgid "Termos"
-msgstr "Terms"
-
-#: main/templates/pages/search.html:184
-msgid "Notícias relevantes entre"
-msgstr "Relevant news between"
-
-#: main/templates/pages/search.html:185
-msgid "e"
-msgstr "and"
-
-#: main/templates/pages/search.html:295
-msgid "Número de páginas encontradas em Arquivo.pt"
-msgstr "Number of pages found in Arquivo.pt"
-
-#: main/templates/pages/search.html:297
-msgid "Páginas encontradas"
-msgstr "Pages found"
-
-#: main/templates/pages/search.html:304
-msgid "Número de notícias consideradas para construir a narrativa"
-msgstr "Number of news articles considered to build narrative"
-
-#: main/templates/pages/search.html:307
-msgid "Notícias consideradas"
-msgstr "Considered news articles"
-
-#: main/templates/pages/search.html:314
-msgid "Número de portais de notícias considerados para construir a narrativa"
-msgstr "Number of news sources considered to build narrative"
-
-#: main/templates/pages/search.html:316
-msgid "Portais de notícia"
-msgstr "News sources"
-
-#: main/templates/pages/search.html:328
-msgid "Narrativa construída em"
-msgstr "Narrative built in"
-
-#: main/templates/pages/search.html:329
-msgid "segundos"
-msgstr "seconds"
-
-#: main/templates/pages/search.html:352
-msgid ""
-"A sua consulta não retornou resultados suficientes para construir uma "
-"narrativa."
-msgstr "Your query did not return documents to build a narrative."
-
-#: main/templates/pages/search.html:354
-msgid ""
-"Experimente uma consulta menos específica ou tente esta consulta "
-"diretamente no "
-msgstr "Try a simpler query or try directly at "
-
-#: main/templates/pages/searching.html:26
-msgid "A analisar milhares de resultados sobre"
-msgstr "Analyzing thousands of results about"
-
-#: main/templates/pages/searching.html:27
-msgid "nos últimos"
-msgstr "during the last"
-
-#: main/templates/pages/searching.html:31
-msgid "Aguarde um momento, por favor"
-msgstr "Wait a moment, please"
-
-#: main/templates/pages/team.html:7
+#: main/templates/pages/common/team.html:12
 msgid "conheça a equipa"
 msgstr "meet the team"
 
-#: main/templates/pages/team.html:15
+#: main/templates/pages/common/team.html:20
 msgid ""
 "Esta plataforma foi desenvolvida por Ricardo Campos investigador do LIAAD"
 " INESC TEC, do Ci2 - Centro de Investigação em Cidades Inteligentes e "
@@ -446,4 +517,50 @@ msgstr ""
 "This project was developed by researchers affiliated to LIAAD INESC TEC, "
 "Smart Cities Research Center (CI2), Polytechnic Institute of Tomar, "
 "University of Porto and University of Innsbruck."
+
+#: main/templates/pages/errors/404.html:51
+msgid "Página não encontrada"
+msgstr "Page not found"
+
+#: main/templates/pages/errors/404.html:57
+msgid "A página que procura não existe."
+msgstr "The page you are looking for does not exist."
+
+#: main/templates/pages/errors/404.html:66
+#: main/templates/pages/errors/404.html:71
+#: main/templates/pages/errors/404.html:76
+#: main/templates/pages/errors/500.html:68
+#: main/templates/pages/errors/500.html:73
+#: main/templates/pages/errors/500.html:78
+#: main/templates/pages/errors/502.html:68
+#: main/templates/pages/errors/502.html:73
+#: main/templates/pages/errors/502.html:78
+msgid "voltar ao início"
+msgstr "back to home"
+
+#: main/templates/pages/errors/500.html:51
+msgid "Algo inesperado aconteceu"
+msgstr "Something unexpected happened"
+
+#: main/templates/pages/errors/500.html:57
+#: main/templates/pages/errors/502.html:57
+msgid "Já estamos a verificar o que aconteceu e esperamos que seja temporário."
+msgstr "We are investigating and we hope it is temporary."
+
+#: main/templates/pages/errors/500.html:59
+#: main/templates/pages/errors/502.html:59
+msgid "Por favor tente novamente mais tarde."
+msgstr "Please try again later."
+
+#: main/templates/pages/errors/502.html:51
+msgid "Sistema com muita procura"
+msgstr "System too busy"
+
+#: main/templates/pages/tlscovid/search.html:305
+msgid "Número de páginas encontradas"
+msgstr "Number of pages found"
+
+#: main/templates/pages/tlscovid/search.html:364
+msgid "Experimente uma consulta menos específica."
+msgstr "Try a simpler query."
 
