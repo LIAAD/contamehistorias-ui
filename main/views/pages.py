@@ -10,3 +10,6 @@ def home():
         return redirect(url_for('pages_arquivopt.home'))
     elif session['dataset'] == 'tls-covid19':
         return redirect(url_for('pages_tlscovid.home'))
+    else:
+        return redirect(url_for('pages_arquivopt.home'))
+
