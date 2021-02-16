@@ -6,10 +6,13 @@ blueprint = Blueprint('pages', __name__)
 
 @blueprint.route('/')
 def home():
+    if 'lang_code' not in session:
+        session['lang_code'] = 'pt'
+
+    if 'dataset' not in session:
+        return redirect(url_for('pages_arquivopt.home'))
+
     if session['dataset'] == 'arquivopt':
         return redirect(url_for('pages_arquivopt.home'))
     elif session['dataset'] == 'tls-covid19':
         return redirect(url_for('pages_tlscovid.home'))
-    else:
-        return redirect(url_for('pages_arquivopt.home'))
-
