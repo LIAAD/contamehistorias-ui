@@ -204,10 +204,6 @@ def search():
     print('Last years:', int(flast_years))
     print('Lang code:', lang_code)
 
-    # Call API to get news domains
-    r = requests.get(API_ARQUIVOPT_ENDPOINT + 'get-domains')
-    news_domains = r.json()
-
     # Task already processed
     if 'id' in request.args:
 
