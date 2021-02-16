@@ -36,14 +36,15 @@
 
                 <a id="advanced_options_btn" style="color: white;text-decoration: underline">{{ _('opções avançadas')}}</a>
                 <div id="advanced_options_view" style="display: none" class="field">
-                    <div class="control mt-20 ">
-                        <div class="select">
-                            <select name="last_years">
-                                <option value="5">{{ _('Últimos 5 anos') }}</option>
-                                <option selected="selected" value="10">{{ _('Últimos 10 anos') }}</option>
-                                <option value="15">{{ _('Últimos 15 anos') }}</option>
-                                <option value="20">{{ _('Últimos 20 anos') }}</option>
-                            </select>
+                    <div class="control mt-20">
+                        <div class="field">
+                            <label class="form-label" style="color:white; vertical-align:middle">{{ _('lingua')}}</label>
+                            <div class="">
+                                <select name="form_index">
+                                    <option value="pt" {{ "selected='selected'" if index == "pt" else "" }}>pt</option>
+                                    <option value="en" {{ "selected='selected'" if index == "en" else "" }}>en</option>
+                                </select>
+                            </div>
                         </div>
                         <button type="submit" class="button btn-align info-btn raised">{{ _('aplicar') }}</button>
                     </div>

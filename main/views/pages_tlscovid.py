@@ -184,10 +184,13 @@ def search():
     # Form data
     form = SearchForm(request.form)
 
-    fquery = request.args.get('query', default="", type=str)
+    fquery = request.args.get('query', type=str)
     form.query.data = fquery
 
-    index = request.args.get('index', default="pt", type=str)
+    if 'form_index' in request.args:
+        index = request.args.get('form_index', type=str)
+    else:
+        index = request.args.get('index', default='pt', type=str)
 
     print('Query:', fquery)
     print('Index:', index)
@@ -297,7 +300,8 @@ def search():
                                    entity_terms=entity_terms,
                                    hasNarrative=hasNarrative,
                                    user_query=fquery,
-                                   lang_code=lang_code)
+                                   lang_code=lang_code,
+                                   index=index)
     
     else:
         # If request does not contain id
