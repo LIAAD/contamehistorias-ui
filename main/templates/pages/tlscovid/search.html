@@ -454,12 +454,12 @@
 
         $('select[name="form_headline"]').on('change', function() {
             if (this.value == 'content') {
-                $('.headline_content').css('display', 'inline');
-                $('.headline_title').css('display', 'none');
+                $('.headline_content').show();
+                $('.headline_title').hide();
             }
             else if (this.value == 'title') {
-                $('.headline_title').css('display', 'inline');
-                $('.headline_content').css('display', 'none');
+                $('.headline_title').show();
+                $('.headline_content').hide();
             }
         });
 
