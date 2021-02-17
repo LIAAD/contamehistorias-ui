@@ -37,6 +37,16 @@
                 <a id="advanced_options_btn" style="color: white;text-decoration: underline">{{ _('opções avançadas')}}</a>
                 <div id="advanced_options_view" style="display: none" class="field">
                     <div class="control mt-20">
+
+                        <label class="form-label" style="color:white; vertical-align:middle">{{ _('headline')}}</label>
+                            <div class="">
+                                <select name="form_headline">
+                                    <option value="content" selected="selected">{{ _('conteúdo')}}</option>
+                                    <option value="title">{{ _('título')}}</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="field">
                             <label class="form-label" style="color:white; vertical-align:middle">{{ _('lingua')}}</label>
                             <div class="">
@@ -46,6 +56,7 @@
                                 </select>
                             </div>
                         </div>
+                        
                         <button type="submit" class="button btn-align info-btn raised">{{ _('aplicar') }}</button>
                     </div>
                 </div>
@@ -197,19 +208,12 @@
                                                                                 data-title="{{kw.date.split()[0] }}"
                                                                                 data-original-title="">
 
-                                                                                {% if kw.is_km == "True" %}
-                                                                                <a style="font-size:16px;color:green"
+                                                                                <a {% if kw.is_km == "True" %} style="font-size:16px; color:green;" {% else %} style="font-size:16px; color:black;" {% endif %}
                                                                                     href="{{ kw.docs[0][1] }}" target="_blank"
                                                                                     title="{{kw.docs[0][0]}}">
-                                                                                    {{kw.kw }}.
+                                                                                        <span class="headline_content" style="display:inline;">{{kw.kw}}.</span>
+                                                                                        <span class="headline_title" style="display:none;">{{kw.title}}.</span>
                                                                                 </a>
-                                                                                {% else %}
-                                                                                <a style="font-size:16px;color:black"
-                                                                                    href="{{ kw.docs[0][1] }}" target="_blank"
-                                                                                    title="{{kw.docs[0][0]}}">
-                                                                                    {{kw.kw }}.
-                                                                                </a>
-                                                                                {% endif %}
 
                                                                             </span>
                                                                             <br/>
@@ -398,6 +402,17 @@
         // Advanced Options
         $("#advanced_options_btn").click(function () {
             $("#advanced_options_view").toggle();
+        });
+
+        $('select[name="form_headline"]').on('change', function() {
+            if (this.value == 'content') {
+                $('.headline_content').css('display', 'inline');
+                $('.headline_title').css('display', 'none');
+            }
+            else if (this.value == 'title') {
+                $('.headline_title').css('display', 'inline');
+                $('.headline_content').css('display', 'none');
+            }
         });
 
 
