@@ -437,13 +437,11 @@
                 var atLeastOneIsChecked = $(".checkbox_en").is(":checked");
             }
 
-            if (atLeastOneIsChecked) {
-                return true;
-            }
-            else {
+            if (!atLeastOneIsChecked) {
                 return false;
             }
 
+            return true;
         });
 
 
