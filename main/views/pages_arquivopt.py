@@ -202,9 +202,6 @@ def search():
     elif(last_years > 25):
         last_years = 25
 
-    print('REQUEST ARGSS')
-    print(request.args)
-
     print('Query:', fquery)
     print('Last years:', last_years)
     print('Lang code:', lang_code)
@@ -308,7 +305,6 @@ def search():
                                    result_header=result_header,
                                    related_terms=related_terms,
                                    domains=domains,
-                                   selected_provider=source_name,
                                    advanced_mode=True,
                                    sources_overall=sources_overall,
                                    overall_timeseries=overall_timeseries,
