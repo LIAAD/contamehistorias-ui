@@ -283,6 +283,12 @@ def search():
             sources_overall = get_timeseries_result['sources_overall']
             overall_timeseries = get_timeseries_result['overall_timeseries']
 
+            # Check if query is topic and has key moments
+            r = requests.get(API_TLSCOVID_ENDPOINT + 'get-examples')
+            topics = r.json()
+            index_topics = [topic for sublist in topics[index].values() for topic in sublist]
+            is_topic = fquery in index_topics
+
             return render_template('pages/tlscovid/search.html', form=form,
                                    result=result,
                                    events=res_events,
@@ -297,7 +303,8 @@ def search():
                                    has_narrative=has_narrative,
                                    user_query=fquery,
                                    lang_code=lang_code,
-                                   index=index)
+                                   index=index,
+                                   is_topic=is_topic)
     
     else:
         # If request does not contain id

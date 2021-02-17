@@ -133,6 +133,10 @@
 
                                 <h3 class="title is-4 dark-text">
                                     <strong> {{ _('Narrativa')}} </strong> {{ _('sobre')}} <strong> {{result_header["query"].title()}} </strong>
+                                    {% if is_topic %}
+                                        {{ _('com') }}
+                                        <span style="color:green;">{{ _('momentos chave') }}</span>
+                                    {% endif %}
                                 </h3>
 
                                 <div class="navigation-tabs simple-tabs">
