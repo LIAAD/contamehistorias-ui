@@ -166,7 +166,7 @@ def change(new_lang_code):
 def search():
 
     # Default parameters
-    hasNarrative = False
+    has_narrative = False
 
     # Lang Code
     lang_code = session.get("lang_code", "pt")
@@ -216,11 +216,11 @@ def search():
             result = task.info['result']
         except TypeError:
             print('Invalid task')
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, user_query=None, hasNarrative=hasNarrative)
+            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, user_query=None, has_narrative=has_narrative)
         
         if not result:
             print('Invalid result')
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, user_query=fquery, hasNarrative=hasNarrative)
+            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, user_query=fquery, has_narrative=has_narrative)
 
         else:
             print('Result ok')
@@ -246,10 +246,10 @@ def search():
             blacklist_ngrams = r.json()['blacklist_ngrams']
 
             if(result["status"] != "OK"):
-                return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, hasNarrative=hasNarrative)
+                return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, has_narrative=has_narrative)
 
             if(int(result["stats"]["n_unique_docs"]) == 0):
-                return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, hasNarrative=hasNarrative)
+                return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, has_narrative=has_narrative)
 
             # Call API to get events and end_intervals_dates
             r = requests.get(API_ARQUIVOPT_ENDPOINT +
@@ -271,7 +271,7 @@ def search():
             print("Number of intervals:", len(res_events))
 
             if(len(all_titles) > 0 and len(res_events) >= 2):
-                hasNarrative = True
+                has_narrative = True
 
             # Call API to get related entities and terms
             payload = {
@@ -309,7 +309,7 @@ def search():
                                    first_date=news_timeseries_rs["first_date"],
                                    last_date=news_timeseries_rs["last_date"],
                                    entity_terms=entity_terms,
-                                   hasNarrative=hasNarrative,
+                                   has_narrative=has_narrative,
                                    blacklist_ngrams=blacklist_ngrams,
                                    user_query=fquery,
                                    lang_code=lang_code,
@@ -324,5 +324,5 @@ def search():
 
         # If request doesn't contain neither id nor query, redirect to search page to perform new search
         else:
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, user_query=None, hasNarrative=hasNarrative)
+            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, user_query=None, has_narrative=has_narrative)
         
