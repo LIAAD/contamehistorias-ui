@@ -241,11 +241,13 @@
 
                                                                                             <!-- Bullet symbol -->
                                                                                             <span>&#8226;</span>
-                                                                                            
+
                                                                                             <a href="{{ kw.docs[0][1] }}"
-                                                                                                target="_blank">
-                                                                                                <span style="color:#363636">{{ kw.kw
-                                                                                                    }}</span>
+                                                                                                target="_blank"
+                                                                                                title="{{kw.docs[0][0]}}">
+                                                                                                <span style="color:black">
+                                                                                                    {{ kw.kw}}
+                                                                                                </span>
                                                                                             </a>
                                                                                             <br/>
                                                                                         {% endfor %}
