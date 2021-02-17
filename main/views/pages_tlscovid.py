@@ -59,8 +59,9 @@ def searching():
     
     query = request.args.get('query', type=str)
     index = request.args.get('index', default='pt', type=str)
+    selected_sources = request.args.getlist('selected_sources')
 
-    return render_template('pages/tlscovid/searching.html', query=query, index=index)
+    return render_template('pages/tlscovid/searching.html', query=query, index=index, selected_sources=selected_sources)
 
 
 @blueprint.route('/longtask', methods=['GET'])
@@ -68,9 +69,10 @@ def long_task():
 
     query = request.args.get('query', type=str)
     index = request.args.get('index', default='pt', type=str)
+    selected_sources = request.args.getlist('selected_sources')
 
     task_id = current_app.celery.send_task(
-        'celery_tasks.execute_engine_tlscovid', args=[query, index])
+        'celery_tasks.execute_engine_tlscovid', args=[query, index, selected_sources])
 
     return jsonify({}), 202, {'Location': url_for('pages_tlscovid.task_status',
                                                   task_id=task_id)}
@@ -98,7 +100,7 @@ def task_status(task_id):
             response['task_id'] = task_id
             response['result'] = task.info['result']
             response['url_for'] = url_for(
-                'pages_tlscovid.search', query=task.info['query'], index=task.info['index'])
+                'pages_tlscovid.search', query=task.info['query'], index=task.info['index'], selected_sources=task.info['selected_sources'])
     else:
         # something went wrong in the background job
         response = {
@@ -189,6 +191,11 @@ def search():
         index = request.args.get('form_index', type=str)
     else:
         index = request.args.get('index', default='pt', type=str)
+
+    if 'selected_sources' in request.args:
+        selected_sources = request.args.getlist('selected_sources')
+    else:
+        selected_sources = []
 
     print('Query:', query)
     print('Index:', index)
@@ -301,14 +308,15 @@ def search():
                                    query=query,
                                    lang_code=lang_code,
                                    index=index,
-                                   is_topic=is_topic)
+                                   is_topic=is_topic,
+                                   selected_sources=selected_sources)
     
     else:
         # If request does not contain id
 
         # If request contains query, redirect to searching and process for the first time
         if 'query' in request.args:
-            return redirect(url_for('pages_tlscovid.searching', query=query, index=index))
+            return redirect(url_for('pages_tlscovid.searching', query=query, index=index, selected_sources=selected_sources))
 
         # If request doesn't contain neither id nor query, redirect to search page to perform new search
         else:

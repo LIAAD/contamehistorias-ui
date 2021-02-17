@@ -58,25 +58,25 @@
                         <div class="field">
                             <label class="form-label" style="color:white; vertical-align:middle">{{ _('fontes')}}</label>
                             <div class="">
-
+                                
                                 <div class="sources_pt" {% if index == "pt" %} style="display:inline;" {% else %} style="display:none;" {% endif %}>
                                     <label class="checkbox">
-                                        <input type="checkbox" class="checkbox_pt" checked>
+                                        <input type="checkbox" class="checkbox_pt" name="selected_sources" value="publico" {{ 'checked' if 'publico' in selected_sources else "" }}>
                                         Publico
                                     </label>
                                     <label class="checkbox">
-                                        <input type="checkbox" class="checkbox_pt" checked>
+                                        <input type="checkbox" class="checkbox_pt" name="selected_sources" value="observador" {{ 'checked' if 'observador' in selected_sources else "" }}>
                                         Observador
                                     </label>
                                 </div>
 
                                 <div class="sources_en" {% if index == "en" %} style="display:inline;" {% else %} style="display:none;" {% endif %}>
                                     <label class="checkbox">
-                                        <input type="checkbox" class="checkbox_en" checked>
+                                        <input type="checkbox" class="checkbox_en" name="selected_sources" value="cnn" {{ 'checked' if 'cnn' in selected_sources else "" }}>
                                         CNN
                                     </label>
                                     <label class="checkbox">
-                                        <input type="checkbox" class="checkbox_en" checked>
+                                        <input type="checkbox" class="checkbox_en" name="selected_sources" value="guardian" {{ 'checked' if 'guardian' in selected_sources else "" }}>
                                         The Guardian
                                     </label>
                                 </div>
@@ -432,9 +432,11 @@
 
             if (language == 'pt') {
                 var atLeastOneIsChecked = $(".checkbox_pt").is(":checked");
+                $('.checkbox_en').prop('checked', false);
             }
             else {
                 var atLeastOneIsChecked = $(".checkbox_en").is(":checked");
+                $('.checkbox_pt').prop('checked', false);
             }
 
             if (!atLeastOneIsChecked) {
@@ -465,10 +467,12 @@
             if (this.value == 'pt') {
                 $('.sources_pt').css('display', 'inline');
                 $('.sources_en').css('display', 'none');
+                $('.checkbox_en').prop('checked', false);
             }
             else if (this.value == 'en') {
                 $('.sources_en').css('display', 'inline');
                 $('.sources_pt').css('display', 'none');
+                $('.checkbox_pt').prop('checked', false);
             }
         });
 
