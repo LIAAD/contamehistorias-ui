@@ -61,22 +61,22 @@
                                 
                                 <div class="sources_pt" {% if index == "pt" %} style="display:inline;" {% else %} style="display:none;" {% endif %}>
                                     <label class="checkbox">
-                                        <input type="checkbox" class="checkbox_pt" name="selected_sources" value="publico" {{ 'checked' if 'publico' in selected_sources else "" }}>
+                                        <input type="checkbox" class="checkbox_pt publico" name="selected_sources" value="publico" {{ 'checked' if 'publico' in selected_sources else "" }} {{ 'checked' if not selected_sources and index == "pt" else "" }}>
                                         Publico
                                     </label>
                                     <label class="checkbox">
-                                        <input type="checkbox" class="checkbox_pt" name="selected_sources" value="observador" {{ 'checked' if 'observador' in selected_sources else "" }}>
+                                        <input type="checkbox" class="checkbox_pt observador" name="selected_sources" value="observador" {{ 'checked' if 'observador' in selected_sources else "" }} {{ 'checked' if not selected_sources and index == "pt" else "" }}>
                                         Observador
                                     </label>
                                 </div>
 
                                 <div class="sources_en" {% if index == "en" %} style="display:inline;" {% else %} style="display:none;" {% endif %}>
                                     <label class="checkbox">
-                                        <input type="checkbox" class="checkbox_en" name="selected_sources" value="cnn" {{ 'checked' if 'cnn' in selected_sources else "" }}>
+                                        <input type="checkbox" class="checkbox_en cnn" name="selected_sources" value="cnn" {{ 'checked' if 'cnn' in selected_sources else "" }} {{ 'checked' if not selected_sources and index == "en" else "" }}>
                                         CNN
                                     </label>
                                     <label class="checkbox">
-                                        <input type="checkbox" class="checkbox_en" name="selected_sources" value="guardian" {{ 'checked' if 'guardian' in selected_sources else "" }}>
+                                        <input type="checkbox" class="checkbox_en guardian" name="selected_sources" value="guardian" {{ 'checked' if 'guardian' in selected_sources else "" }} {{ 'checked' if not selected_sources and index == "en" else "" }}>
                                         The Guardian
                                     </label>
                                 </div>
@@ -465,14 +465,12 @@
 
         $('select[name="form_index"]').on('change', function() {
             if (this.value == 'pt') {
-                $('.sources_pt').css('display', 'inline');
-                $('.sources_en').css('display', 'none');
-                $('.checkbox_en').prop('checked', false);
+                $('.sources_pt').show();
+                $('.sources_en').hide();
             }
             else if (this.value == 'en') {
-                $('.sources_en').css('display', 'inline');
-                $('.sources_pt').css('display', 'none');
-                $('.checkbox_pt').prop('checked', false);
+                $('.sources_en').show();
+                $('.sources_pt').hide();
             }
         });
 
