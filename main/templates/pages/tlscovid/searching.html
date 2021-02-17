@@ -47,7 +47,7 @@
         var query = '{{ query }}';
         var index = '{{ index }}';
         var selected_sources = {{ selected_sources|safe }};
-        
+
         // send ajax GET request to start background job
         $.ajax({
             type: 'GET',
@@ -72,8 +72,6 @@
 
                     // handle language code param
                     var route = data['url_for'];
-                    console.log('URLFOR1:', route);
-
 
                     const urlParams = new URLSearchParams(window.location.search);
                     
@@ -82,7 +80,6 @@
                         lang_code = urlParams.get('lang_code');
                     }
                     route = data['url_for'] + '&lang_code=' + lang_code + '&id=' + data['task_id'];
-                    console.log('URLFOR2:', route);
 
                     // redirect to show results
                     window.location.href = route;
