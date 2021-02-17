@@ -181,7 +181,7 @@ def search():
     except:
         print("No time locale")
 
-    # Form data
+    # Handle request parameters
     form = SearchForm(request.form)
 
     query = request.args.get('query', type=str)
@@ -192,10 +192,7 @@ def search():
     else:
         index = request.args.get('index', default='pt', type=str)
 
-    if 'selected_sources' in request.args:
-        selected_sources = request.args.getlist('selected_sources')
-    else:
-        selected_sources = []
+    selected_sources = request.args.getlist('selected_sources')
 
     print('Query:', query)
     print('Index:', index)
@@ -320,5 +317,5 @@ def search():
 
         # If request doesn't contain neither id nor query, redirect to search page to perform new search
         else:
-            return render_template('pages/tlscovid/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, query=None, has_narrative=has_narrative)
+            return render_template('pages/tlscovid/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, query=None, index=index, has_narrative=has_narrative)
         
