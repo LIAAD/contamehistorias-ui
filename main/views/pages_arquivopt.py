@@ -183,8 +183,8 @@ def search():
     # Form data
     form = SearchForm(request.form)
 
-    fquery = request.args.get('query', default="", type=str)
-    form.query.data = fquery
+    query = request.args.get('query', type=str)
+    form.query.data = query
 
     if 'form_lastyears' in request.args:
         last_years = request.args.get('form_lastyears', type=int)
@@ -201,7 +201,7 @@ def search():
     elif(last_years > 25):
         last_years = 25
 
-    print('Query:', fquery)
+    print('Query:', query)
     print('Last years:', last_years)
     print('Lang code:', lang_code)
 
@@ -216,11 +216,11 @@ def search():
             result = task.info['result']
         except TypeError:
             print('Invalid task')
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, user_query=None, has_narrative=has_narrative)
+            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, query=None, has_narrative=has_narrative)
         
         if not result:
             print('Invalid result')
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, user_query=fquery, has_narrative=has_narrative)
+            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, query=query, has_narrative=has_narrative)
 
         else:
             print('Result ok')
@@ -230,9 +230,7 @@ def search():
             result_header = {
                 "query": result["query"],
                 "status": result["status"],
-
                 "time_total": result["stats"]["time"],
-
                 "ndocs": result["stats"]["n_docs"],
                 "nunique_docs": result["stats"]["n_unique_docs"],
                 "ndomains": result["stats"]["n_domains"],
@@ -264,7 +262,6 @@ def search():
                              'get-titles', json=res_events)
             all_titles = r.json()
 
-            # verifica se tem mais do que um intervalo e se possui noticias
             print("---------------------------------------")
             print("Check if there is more than one interval and if there are news")
             print("Number of news to present:", len(all_titles))
@@ -311,7 +308,7 @@ def search():
                                    entity_terms=entity_terms,
                                    has_narrative=has_narrative,
                                    blacklist_ngrams=blacklist_ngrams,
-                                   user_query=fquery,
+                                   query=query,
                                    lang_code=lang_code,
                                    last_years=last_years)
     
@@ -320,9 +317,9 @@ def search():
 
         # If request contains query, redirect to searching and process for the first time
         if 'query' in request.args:
-            return redirect(url_for('pages_arquivopt.searching', query=fquery, last_years=last_years))
+            return redirect(url_for('pages_arquivopt.searching', query=query, last_years=last_years))
 
         # If request doesn't contain neither id nor query, redirect to search page to perform new search
         else:
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, user_query=None, has_narrative=has_narrative)
+            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, query=None, has_narrative=has_narrative)
         

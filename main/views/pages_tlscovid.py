@@ -182,15 +182,15 @@ def search():
     # Form data
     form = SearchForm(request.form)
 
-    fquery = request.args.get('query', type=str)
-    form.query.data = fquery
+    query = request.args.get('query', type=str)
+    form.query.data = query
 
     if 'form_index' in request.args:
         index = request.args.get('form_index', type=str)
     else:
         index = request.args.get('index', default='pt', type=str)
 
-    print('Query:', fquery)
+    print('Query:', query)
     print('Index:', index)
     print('Lang code:', lang_code)
 
@@ -205,11 +205,11 @@ def search():
             result = task.info['result']
         except TypeError:
             print('Invalid task')
-            return render_template('pages/tlscovid/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, user_query=None, has_narrative=has_narrative)
+            return render_template('pages/tlscovid/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, query=None, has_narrative=has_narrative)
         
         if not result:
             print('Invalid result')
-            return render_template('pages/tlscovid/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, user_query=fquery, has_narrative=has_narrative)
+            return render_template('pages/tlscovid/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, query=query, has_narrative=has_narrative)
 
         else:
             print('Result ok')
@@ -219,9 +219,7 @@ def search():
             result_header = {
                 "query": result["query"],
                 "status": result["status"],
-
                 "time_total": result["stats"]["time"],
-
                 "ndocs": result["stats"]["n_docs"],
                 "nunique_docs": result["stats"]["n_unique_docs"],
                 "ndomains": result["stats"]["n_domains"],
@@ -249,7 +247,6 @@ def search():
                              'get-titles', json=res_events)
             all_titles = r.json()
 
-            # verifica se tem mais do que um intervalo e se possui noticias
             print("---------------------------------------")
             print("Check if there is more than one interval and if there are news")
             print("Number of news to present:", len(all_titles))
@@ -287,7 +284,7 @@ def search():
             r = requests.get(API_TLSCOVID_ENDPOINT + 'get-examples')
             topics = r.json()
             index_topics = [topic for sublist in topics[index].values() for topic in sublist]
-            is_topic = fquery in index_topics
+            is_topic = query in index_topics
 
             return render_template('pages/tlscovid/search.html', form=form,
                                    result=result,
@@ -301,7 +298,7 @@ def search():
                                    last_date=news_timeseries_rs["last_date"],
                                    entity_terms=entity_terms,
                                    has_narrative=has_narrative,
-                                   user_query=fquery,
+                                   query=query,
                                    lang_code=lang_code,
                                    index=index,
                                    is_topic=is_topic)
@@ -311,9 +308,9 @@ def search():
 
         # If request contains query, redirect to searching and process for the first time
         if 'query' in request.args:
-            return redirect(url_for('pages_tlscovid.searching', query=fquery, index=index))
+            return redirect(url_for('pages_tlscovid.searching', query=query, index=index))
 
         # If request doesn't contain neither id nor query, redirect to search page to perform new search
         else:
-            return render_template('pages/tlscovid/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, user_query=None, has_narrative=has_narrative)
+            return render_template('pages/tlscovid/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, query=None, has_narrative=has_narrative)
         

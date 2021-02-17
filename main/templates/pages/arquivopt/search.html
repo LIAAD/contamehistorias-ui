@@ -340,7 +340,7 @@
 
 {% else %}
 
-{%if (has_narrative == False and (user_query != None and user_query != "")) %}
+{%if (has_narrative == False and (query != None and query != "")) %}
 <section class="section">
     <div class="container has-text-centered">
         
@@ -352,7 +352,7 @@
             {{ _('A sua consulta não retornou resultados suficientes para construir uma narrativa.') }}
             <br/><br/>
             {{ _('Experimente uma consulta menos específica ou tente esta consulta diretamente no ') }} <a
-                target="_blank" href="https://arquivo.pt/search.jsp?l=pt&query={{user_query}}">Arquivo.pt</a>.
+                target="_blank" href="https://arquivo.pt/search.jsp?l=pt&query={{query}}">Arquivo.pt</a>.
         </h3>
 
     </div>
