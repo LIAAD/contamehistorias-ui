@@ -252,6 +252,9 @@
                                                                                     {% for keywords in event['description']["all"] %}
                                                                                         {% for kw in keywords[:10] %}
                                                                                             
+                                                                                            <!-- Bullet symbol -->
+                                                                                            <span>&#8226;</span>
+                                                                                            
                                                                                             <a {% if kw.is_km == "True" %} style="font-size:16px; color:green;" {% else %} style="font-size:16px; color:black;" {% endif %}
                                                                                                 href="{{ kw.docs[0][1] }}" target="_blank"
                                                                                                 title="{{kw.docs[0][0]}}">

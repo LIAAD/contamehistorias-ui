@@ -238,6 +238,10 @@
                                                                                 <div>
                                                                                     {% for keywords in event['description']["all"] %}
                                                                                         {% for kw in keywords[:10] %}
+
+                                                                                            <!-- Bullet symbol -->
+                                                                                            <span>&#8226;</span>
+                                                                                            
                                                                                             <a href="{{ kw.docs[0][1] }}"
                                                                                                 target="_blank">
                                                                                                 <span style="color:#363636">{{ kw.kw
