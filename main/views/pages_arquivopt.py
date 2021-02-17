@@ -167,7 +167,6 @@ def search():
 
     # Default parameters
     hasNarrative = False
-    source_name = None
 
     # Lang Code
     lang_code = session.get("lang_code", "pt")
@@ -305,7 +304,6 @@ def search():
                                    result_header=result_header,
                                    related_terms=related_terms,
                                    domains=domains,
-                                   advanced_mode=True,
                                    sources_overall=sources_overall,
                                    overall_timeseries=overall_timeseries,
                                    first_date=news_timeseries_rs["first_date"],
