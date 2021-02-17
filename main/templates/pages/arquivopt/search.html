@@ -35,11 +35,11 @@
                 <div id="advanced_options_view" style="display: none" class="field">
                     <div class="control mt-20 ">
                         <div class="select">
-                            <select name="last_years">
-                                <option value="5">{{ _('Últimos 5 anos') }}</option>
-                                <option selected="selected" value="10">{{ _('Últimos 10 anos') }}</option>
-                                <option value="15">{{ _('Últimos 15 anos') }}</option>
-                                <option value="20">{{ _('Últimos 20 anos') }}</option>
+                            <select name="form_lastyears">
+                                <option value="5" {{ "selected='selected'" if last_years == 5 else "" }}>{{ _('Últimos 5 anos') }}</option>
+                                <option value="10" {{ "selected='selected'" if last_years == 10 else "" }}>{{ _('Últimos 10 anos') }}</option>
+                                <option value="15" {{ "selected='selected'" if last_years == 15 else "" }}>{{ _('Últimos 15 anos') }}</option>
+                                <option value="20" {{ "selected='selected'" if last_years == 20 else "" }}>{{ _('Últimos 20 anos') }}</option>
                             </select>
                         </div>
                         <button type="submit" class="button btn-align info-btn raised">{{ _('aplicar') }}</button>

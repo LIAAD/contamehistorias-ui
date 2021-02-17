@@ -167,7 +167,6 @@ def search():
 
     # Default parameters
     hasNarrative = False
-    flast_years = 10
     source_name = None
 
     # Lang Code
@@ -188,20 +187,26 @@ def search():
     fquery = request.args.get('query', default="", type=str)
     form.query.data = fquery
 
-    flast_years = request.args.get('last_years', default="10", type=int)
+    if 'form_lastyears' in request.args:
+        last_years = request.args.get('form_lastyears', type=int)
+    else:
+        last_years = request.args.get('last_years', default='10', type=int)
 
     try:
-        flast_years = int(flast_years)
+        last_years = int(last_years)
     except:
-        flast_years = 10
+        last_years = 10
 
-    if(flast_years < 5):
-        flast_years = 5
-    elif(flast_years > 25):
-        flast_years = 25
+    if(last_years < 5):
+        last_years = 5
+    elif(last_years > 25):
+        last_years = 25
+
+    print('REQUEST ARGSS')
+    print(request.args)
 
     print('Query:', fquery)
-    print('Last years:', int(flast_years))
+    print('Last years:', last_years)
     print('Lang code:', lang_code)
 
     # Task already processed
@@ -235,7 +240,7 @@ def search():
                 "ndocs": result["stats"]["n_docs"],
                 "nunique_docs": result["stats"]["n_unique_docs"],
                 "ndomains": result["stats"]["n_domains"],
-                "last_years": flast_years
+                "last_years": last_years
             }
 
             domains = result["domains"]
@@ -313,14 +318,15 @@ def search():
                                    hasNarrative=hasNarrative,
                                    blacklist_ngrams=blacklist_ngrams,
                                    user_query=fquery,
-                                   lang_code=lang_code)
+                                   lang_code=lang_code,
+                                   last_years=last_years)
     
     else:
         # If request does not contain id
 
         # If request contains query, redirect to searching and process for the first time
         if 'query' in request.args:
-            return redirect(url_for('pages_arquivopt.searching', query=fquery, last_years=flast_years))
+            return redirect(url_for('pages_arquivopt.searching', query=fquery, last_years=last_years))
 
         # If request doesn't contain neither id nor query, redirect to search page to perform new search
         else:
