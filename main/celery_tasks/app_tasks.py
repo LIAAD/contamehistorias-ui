@@ -19,7 +19,7 @@ def execute_engine_arquivopt(self, query, last_years):
 @shared_task(name='celery_tasks.execute_engine_tlscovid', bind=True)
 def execute_engine_tlscovid(self, query, index, selected_sources):
 
-    payload = {'query': query, 'index': index}
+    payload = {'query': query, 'index': index, 'sources': selected_sources}
 
     r = requests.get(API_TLSCOVID_ENDPOINT +
                      'execute-engine', json=payload)
