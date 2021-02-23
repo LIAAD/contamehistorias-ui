@@ -44,8 +44,12 @@
         // add task status elements
         $('#loading').show();
 
-        var query = '{{ query }}';
-        var last_years = '{{ last_years }}';
+        var query = '{{ query|tojson|safe }}';
+        query = JSON.parse(query);
+        // var last_years = '{{ last_years }}';
+        var last_years = '{{ last_years|tojson|safe }}';
+        last_years = JSON.parse(last_years);
+
         // send ajax GET request to start background job
         $.ajax({
             type: 'GET',

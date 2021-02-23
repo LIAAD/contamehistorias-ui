@@ -44,9 +44,15 @@
         // add task status elements
         $('#loading').show();
 
-        var query = '{{ query }}';
-        var index = '{{ index }}';
-        var selected_sources = {{ selected_sources|safe }};
+        // parameters
+        var query = '{{ query|tojson|safe }}';
+        query = JSON.parse(query);
+
+        var index = '{{ index|tojson|safe }}';
+        index = JSON.parse(index);
+        
+        var selected_sources = '{{ selected_sources|tojson|safe }}';
+        selected_sources = JSON.parse(selected_sources);
 
         // send ajax GET request to start background job
         $.ajax({
