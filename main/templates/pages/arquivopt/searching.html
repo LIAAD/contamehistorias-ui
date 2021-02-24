@@ -44,9 +44,10 @@
         // add task status elements
         $('#loading').show();
 
+        // parameters
         var query = '{{ query|tojson|safe }}';
         query = JSON.parse(query);
-        // var last_years = '{{ last_years }}';
+
         var last_years = '{{ last_years|tojson|safe }}';
         last_years = JSON.parse(last_years);
 
