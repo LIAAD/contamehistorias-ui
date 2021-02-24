@@ -62,22 +62,22 @@
                                 <div class="sources_pt" {% if index == "pt" %} style="display:inline;" {% else %} style="display:none;" {% endif %}>
                                     <label class="checkbox">
                                         <input type="checkbox" class="checkbox_pt publico" name="selected_sources" value="publico" {{ 'checked' if 'publico' in selected_sources else "" }} {{ 'checked' if not selected_sources and index == "pt" else "" }}>
-                                        Publico
+                                        <span style="color: white;">Publico</span>
                                     </label>
                                     <label class="checkbox">
                                         <input type="checkbox" class="checkbox_pt observador" name="selected_sources" value="observador" {{ 'checked' if 'observador' in selected_sources else "" }} {{ 'checked' if not selected_sources and index == "pt" else "" }}>
-                                        Observador
+                                        <span style="color: white;">Observador</span>
                                     </label>
                                 </div>
 
                                 <div class="sources_en" {% if index == "en" %} style="display:inline;" {% else %} style="display:none;" {% endif %}>
                                     <label class="checkbox">
                                         <input type="checkbox" class="checkbox_en cnn" name="selected_sources" value="cnn" {{ 'checked' if 'cnn' in selected_sources else "" }} {{ 'checked' if not selected_sources and index == "en" else "" }}>
-                                        CNN
+                                        <span style="color: white;">CNN</span>
                                     </label>
                                     <label class="checkbox">
                                         <input type="checkbox" class="checkbox_en guardian" name="selected_sources" value="guardian" {{ 'checked' if 'guardian' in selected_sources else "" }} {{ 'checked' if not selected_sources and index == "en" else "" }}>
-                                        The Guardian
+                                        <span style="color: white;">The Guardian</span>
                                     </label>
                                 </div>
 
