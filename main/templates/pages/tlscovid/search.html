@@ -21,7 +21,7 @@
                     <span class="" data-toggle="popover" data-placement="bottom" data-trigger="hover"
                         data-content="A pesquisa é realizada no dataset TLS-Covid19, no ano de 2019"
                         data-original-title="">
-                        {{ _('Crie uma linha do tempo sobre qualquer assunto') }}
+                        {{ _('Crie uma narrativa de notícias sobre qualquer assunto') }}
                     </span>
                 </h1>
             </div>
@@ -118,7 +118,7 @@
                                 style="padding: 20px 20px 20px 20px; margin-top: 0px;">
 
                                 <h3 class="title is-4 dark-text">
-                                    <strong> {{ _('Termos relacionados') }} </strong> {{ _('sobre') }} <strong> {{result_header["query"].title()}} </strong>
+                                    {{ _('Termos relacionados com') }} <strong> {{result_header["query"].title()}} </strong>
                                 </h3>
 
                                 <div class="navigation-tabs simple-tabs">
@@ -162,7 +162,7 @@
                                 style="padding: 25px;margin-top: 0;">
 
                                 <h3 class="title is-4 dark-text">
-                                    <strong> {{ _('Narrativa')}} </strong> {{ _('sobre')}} <strong> {{result_header["query"].title()}} </strong>
+                                    {{ _('Narrativa sobre')}} <strong> {{result_header["query"].title()}} </strong>
                                     {% if is_topic %}
                                         {{ _('com') }}
                                         <span style="color:green;">{{ _('momentos chave') }}</span>
@@ -398,9 +398,7 @@
         </div>
 
         <h3 class="subtitle is-3 dark-text">
-            {{ _('A sua consulta não retornou resultados suficientes para construir uma narrativa.') }}
-            <br/><br/>
-            {{ _('Experimente uma consulta menos específica.') }}
+            {{ _('Não foram identificadas notícias suficientes sobre') }} <b>{{ query }}</b> {{ _('que permitam construir uma narrativa.') }}
         </h3>
 
     </div>

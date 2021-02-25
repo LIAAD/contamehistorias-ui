@@ -12,7 +12,7 @@
                 </h1>
 
                 <h1 class="subtitle is-4 light-text">
-                    {{ _('Crie uma linha do tempo sobre qualquer assunto') }}
+                    {{ _('Crie uma narrativa de notícias sobre qualquer assunto') }}
                 </h1>
 
             </div>
@@ -23,12 +23,12 @@
 <section class="section is-medium">
     <div class="container">
 
-        <h1 class="subtitle is-4 dark-text" style="text-align:center">{{ _('A analisar milhares de resultados sobre') }}
-            <b>{{ query }}</b> {{ _('nos últimos') }} <b>{{ last_years }} {{ _('anos') }}</b>
+        <h1 class="subtitle is-4 dark-text" style="text-align:center">{{ _('A pesquisar milhares de notícias sobre') }}
+            <b>{{ query }}</b> {{ _('durante os últimos') }} <b>{{ last_years }} {{ _('anos') }}</b>
         </h1>
         <br>
         <h1 class="subtitle is-4 dark-text" style="text-align:center">
-            {{ _('Aguarde um momento, por favor') }}
+            {{ _('Pode demorar algum tempo...') }}
         </h1>
         <br>
         <div id="loading" style="text-align: center"><img src="{{ url_for('static', filename='img/loading.gif') }}" alt=""/></div>
