@@ -1,7 +1,7 @@
 {% if session.get('dataset') == "arquivopt" %}
-  {% extends 'layouts/arquivopt/main.html' %}
+{% extends 'layouts/arquivopt/main.html' %}
 {% elif session.get('dataset') == "tls-covid19" %}
-  {% extends 'layouts/tlscovid/main.html' %}
+{% extends 'layouts/tlscovid/main.html' %}
 {% endif %}
 
 {% block title %} {{ _('Sobre') }} {% endblock %}
@@ -21,17 +21,17 @@
           <div class="card-body" style="font-size: 20px;">
 
             <p>
-              <br/>
+              <br />
               <strong>{{ _('O que é o Conta-me Histórias?') }}</strong>
-              <br/>
+              <br />
 
               {{ _('O Conta-me Histórias é um projeto científico, criado no âmbito dos Prémios Arquivo.pt 2018, que
               permite aos utilizadores a possibilidade de criarem automaticamente uma narrativa de notícias
               preservadas pelo') }}
               {% if session.get('lang_code') == "pt" %}
-                <a style="display: inline" target="_blank" href="https://arquivo.pt/">Arquivo.pt</a>.
+              <a style="display: inline" target="_blank" href="https://arquivo.pt/">Arquivo.pt</a>.
               {% else %}
-                <a style="display: inline" target="_blank" href="https://arquivo.pt/?l=en">Portuguese Web Archive</a>.
+              <a style="display: inline" target="_blank" href="https://arquivo.pt/?l=en">Portuguese Web Archive</a>.
               {% endif %}
               {{ _('Numa era marcada pela pós-verdade e pelas fake news, o
               Conta-me Histórias é um importante contributo para uma democracia mais transparente. Esta aplicação
@@ -46,19 +46,19 @@
               <div class="is-centered is-gapless is-vcentered is-multiline">
                 <div style="is-vcentered is-centered column is-6;">
                   <figure class="image is-16by9">
-                    <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/DrX1PjpyNHw" frameborder="0"
-                      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/DrX1PjpyNHw"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                   </figure>
                 </div>
               </div>
             </div>
 
-            <br/>
+            <br />
 
             <p>
-              <br/>
+              <br />
               <strong>{{ _('Como funciona?') }}</strong>
-              <br/>
+              <br />
 
             <p>
 
@@ -78,8 +78,8 @@
               (<a style="display: inline" target="_blank" href="https://www.ecir2018.org/">ECIR'18</a>).
             </p>
 
-            <br/>
-            <br/>
+            <br />
+            <br />
 
             <strong>{{ _('Contribuições') }}</strong>
             <p>
@@ -90,9 +90,9 @@
               de diversas fontes jornalísticas).') }}
             </p>
 
-            <br/>
+            <br />
 
-            <br/>
+            <br />
             <strong>{{ _('Origem do nome') }}</strong>
             <p>
               {{ _('O nome ‘Conta-me Histórias’ é uma homenagem à música dos Xutos & Pontapés de mesmo nome, com o
@@ -104,26 +104,26 @@
               <div class="is-centered is-gapless is-vcentered is-multiline">
                 <div style="is-vcentered is-centered column is-6;">
                   <figure class="image is-16by9">
-                    <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/b4_ZBr2ijVw" frameborder="0"
-                      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/b4_ZBr2ijVw"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                   </figure>
                 </div>
               </div>
               <small>{{ _('Design da apresentação e edição') }}: Livia Stroschoen Pinent </small>
             </div>
 
-            <br/>
-            <br/>
+            <br />
+            <br />
             <div style="is-vcentered is-centered column is-6 has-text-centered box">
               <strong>{{ _('Portais de Notícias') }}</strong>
-              <br/>
-              <br/>
+              <br />
+              <br />
               <a style="display: inline" href="https://www.aeiou.pt/" target="_blank"><img
                   src="{{ url_for('static', filename='img/news_sources/aeiou.png') }}" title="aeiou"
                   style="max-height: 80px; max-width: 100px;"></a>
               <a style="display: inline" href="https://www.cmjornal.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/correio_da_manha.png') }}" title="Correio da Manhã"
-                  style="max-height: 80px; max-width: 100px;"></a>
+                  src="{{ url_for('static', filename='img/news_sources/correio_da_manha.png') }}"
+                  title="Correio da Manhã" style="max-height: 80px; max-width: 100px;"></a>
               <a style="display: inline" href="https://www.dn.pt/" target="_blank"><img
                   src="{{ url_for('static', filename='img/news_sources/dn.png') }}" title="Diário de Notícias"
                   style="max-height: 80px; max-width: 100px;"></a>
@@ -140,8 +140,8 @@
                   src="{{ url_for('static', filename='img/news_sources/jornal_i.png') }}" title="Jornal I"
                   style="max-height: 80px; max-width: 100px;"></a>
               <a style="display: inline" href="https://jornaleconomico.sapo.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/jornal_economico.png') }}" title="Jornal Económico"
-                  style="max-height: 80px; max-width: 100px;"></a>
+                  src="{{ url_for('static', filename='img/news_sources/jornal_economico.png') }}"
+                  title="Jornal Económico" style="max-height: 80px; max-width: 100px;"></a>
               <a style="display: inline" href="https://www.lux.iol.pt/" target="_blank"><img
                   src="{{ url_for('static', filename='img/news_sources/lux.png') }}" title="Lux"
                   style="max-height: 80px; max-width: 100px;"></a>
@@ -167,14 +167,14 @@
                   src="{{ url_for('static', filename='img/news_sources/iol.png') }}" title="IOL"
                   style="max-height: 80px; max-width: 100px;"></a>
               <a style="display: inline" href="https://www.jornaldenegocios.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/jornal_negocios.png') }}" title="Jornal de Negócios"
-                  style="max-height: 80px; max-width: 100px;"></a>
+                  src="{{ url_for('static', filename='img/news_sources/jornal_negocios.png') }}"
+                  title="Jornal de Negócios" style="max-height: 80px; max-width: 100px;"></a>
               <a style="display: inline" href="https://www.publico.pt/" target="_blank"><img
                   src="{{ url_for('static', filename='img/news_sources/publico.png') }}" title="Público"
                   style="max-height: 80px; max-width: 100px;"></a>
               <a style="display: inline" href="https://www.meiosepublicidade.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/meios_publicidade.jpg') }}" title="Meios & Publicidade"
-                  style="max-height: 80px; max-width: 100px;"></a>
+                  src="{{ url_for('static', filename='img/news_sources/meios_publicidade.jpg') }}"
+                  title="Meios & Publicidade" style="max-height: 80px; max-width: 100px;"></a>
               <a style="display: inline" href="https://www.sapo.pt/" target="_blank"><img
                   src="{{ url_for('static', filename='img/news_sources/sapo.png') }}" title="Sapo"
                   style="max-height: 80px; max-width: 100px;"></a>
@@ -188,29 +188,30 @@
                   src="{{ url_for('static', filename='img/news_sources/rtp.jpg') }}" title="RTP"
                   style="max-height: 80px; max-width: 100px;"></a>
             </div>
-            
-            <br/>
-            <br/>
+
+            <br />
+            <br />
 
             <strong>{{ _('Referências académicas') }}</strong>
             <div style="font-size: 16px;">
-              <br/>
+              <br />
 
               <em>Campos, R., Pasquali, A., Jatowt, A., Mangaravite, V., Jorge, A. (2021).
-                Automatic Generation of Timelines for Past-Web Events. In Gomes, D., Demidova, E., Winters, J., Risse, T. (Eds.),
-                 The Past Web. Exploring Web Archives (pp. 225-242).</em>
+                Automatic Generation of Timelines for Past-Web Events. In Gomes, D., Demidova, E., Winters, J., Risse,
+                T. (Eds.),
+                The Past Web. Exploring Web Archives (pp. 225-242).</em>
 
-              <br/>
-              <br/>
+              <br />
+              <br />
 
               <em>Pasquali, A., Mangaravite, V., Campos, R., Jorge, A. M., & Jatowt, A. (2019). Interactive system for
                 automatically generating temporal narratives. In Proceedings of the 41st European Conference on
                 Information Retrieval (ECIR'19). Cologne, Germany, April 14-17, pp. 251-255. <strong>(Best Demo
                   Paper)</strong></em>
 
-              <br/>
-              <br/>
-              
+              <br />
+              <br />
+
               <em>
                 Campos, R., Mangaravite, V., Pasquali, A., Jorge, A., Nunes, C., Jatowt, A. (2018). A Text Feature Based
                 Automatic Keyword Extraction Method for Single Documents. In Proceedings of the 40th European Conference
@@ -218,9 +219,9 @@
                   Paper)</strong>
               </em>
 
-              <br/>
-              <br/>
-              
+              <br />
+              <br />
+
               <em>
                 Campos, R., Mangaravite, V., Pasquali, A., Jorge, A., Nunes, C., Jatowt, A. (2018). YAKE!
                 Collection-independent Automatic Keyword Extractor. In Proceedings of the 40th European Conference on
@@ -228,8 +229,8 @@
               </em>
 
               <a target="_blank" href="http://yake.inesctec.pt">[Online Demo]</a>
-              
-              <br/>
+
+              <br />
 
               <em>
                 Gomes D. and Cruz D. and Miranda J. and Costa M. and Fontes S.: Acquiring
@@ -238,90 +239,131 @@
               </em>
             </div>
 
-            <br/>
-            <br/>
+            <br />
+            <br />
 
-            <strong>{{ _('Instituições')}}</strong>
+            <strong>{{ _('Agradecimentos')}}</strong>
 
-          </div>
-
-          <div class="columns is-centered is-vcentered">
-
-            <div class="column">
+            <div style="font-size: 16px;">
+              <br />
               <p>
+                This project is financed by the ERDF – European Regional Development Fund through the North Portugal
+                Regional Operational Programme (NORTE 2020), under the PORTUGAL 2020 and by National Funds through the
+                Portuguese funding agency, FCT - Fundação para a Ciência e a Tecnologia within project
+                PTDC/CCI-COM/31857/2017 (NORTE-01-0145-FEDER-03185). This funding fits under the research line of the Text2Story project.
+              </p>
+            </div>
+
+            <br />
+
+            <div class="columns">
+
+              <div class="column">
                 {% if session.get('lang_code') == "pt" %}
-                  <a href="https://www.inesctec.pt/pt/centros/liaad" target="_blank">
-                {% else %}
+                <a href="https://www.inesctec.pt/pt/centros/liaad" target="_blank">
+                  {% else %}
                   <a href="https://www.inesctec.pt/en/centres/liaad" target="_blank">
-                {% endif %}
-                  <img src="{{ url_for('static', filename='img/institutions/logo_liaad.png') }}"
-                    alt=""
-                    style="max-width: 100%; height: auto; margin-left: 30px;"
-                    height="180">
+                    {% endif %}
+                    <img src="{{ url_for('static', filename='img/institutions/logo_liaad.png') }}"
+                      style="max-width: 80%; margin-left: 30px;">
                   </a>
-                </p>
-            </div>
+              </div>
 
-            <div class="column">
-              <p>
+              <div class="column">
                 {% if session.get('lang_code') == "pt" %}
-                  <a href="http://www.ci2.ipt.pt/" target="_blank">
-                {% else %}
+                <a href="http://www.ci2.ipt.pt/" target="_blank">
+                  {% else %}
                   <a href="http://www.ci2.ipt.pt/en/" target="_blank">
-                {% endif %}
-                  <img src="{{ url_for('static', filename='img/institutions/logo_ci2.png') }}"
-                    alt=""
-                    style="max-width: 100%; height: auto;"
-                    height="180">
-                </a>
-              </p>
-            </div>
+                    {% endif %}
+                    <img src="{{ url_for('static', filename='img/institutions/logo_ci2.png') }}"
+                      style="max-width: 80%;">
+                  </a>
+              </div>
 
-            <div class="column">
-              <p>
+              <div class="column">
                 {% if session.get('lang_code') == "pt" %}
-                  <a href="http://www.ipt.pt/" target="_blank">
-                {% else %}
+                <a href="http://www.ipt.pt/" target="_blank">
+                  {% else %}
                   <a href="http://www.ipt.pt/?lng=en" target="_blank">
-                {% endif %}
-                  <img src="{{ url_for('static', filename='img/institutions/logo_ipt.png') }}"
-                    alt=""
-                    style="max-width: 100%; height: auto;"
-                    height="180">
-                </a>
-              </p>
-            </div>
+                    {% endif %}
+                    <img src="{{ url_for('static', filename='img/institutions/logo_ipt.png') }}"
+                      style="max-width: 80%;">
+                  </a>
+              </div>
 
-            <div class="column">
-              <p>
+              <div class="column">
                 {% if session.get('lang_code') == "pt" %}
-                  <a href="https://sigarra.up.pt/up/" target="_blank">
-                {% else %}
+                <a href="https://sigarra.up.pt/up/" target="_blank">
+                  {% else %}
                   <a href="https://sigarra.up.pt/up/en/" target="_blank">
-                {% endif %}
-                  <img src="{{ url_for('static', filename='img/institutions/logo_up_fcup.png') }}"
-                    alt=""
-                    style="max-width: 100%; height: auto;"
-                    height="180">
-                </a>
-              </p>
-            </div>
+                    {% endif %}
+                    <img src="{{ url_for('static', filename='img/institutions/logo_up_fcup.png') }}"
+                      style="max-width: 80%;">
+                  </a>
+              </div>
 
-            <div class="column">
-              <p>
+              <div class="column">
                 <a href="https://www.uibk.ac.at/" target="_blank">
                   <img src="{{ url_for('static', filename='img/institutions/logo_universitaet_innsbruck.png') }}"
-                    alt=""
-                    style="max-width: 100%; height: auto;"
-                    height="180">
+                    style="max-width: 80%;">
                 </a>
-              </p>
+              </div>
+
+            </div>
+
+            <div class="columns">
+
+              <div class="column">
+                <a href="https://www.compete2020.gov.pt/" target="_blank">
+                  <img src="{{ url_for('static', filename='img/institutions/logo_compete2020.png') }}"
+                    style="max-width: 80%;">
+                </a>
+              </div>
+
+              <div class="column">
+                <a href="https://www.portugal2020.pt/" target="_blank">
+                  <img src="{{ url_for('static', filename='img/institutions/logo_portugal2020.png') }}"
+                    style="max-width: 80%;">
+                </a>
+              </div>
+
+              <div class="column">
+                {% if session.get('lang_code') == "pt" %}
+                <a href="https://www.fct.pt/" target="_blank">
+                  {% else %}
+                  <a href="https://www.fct.pt/index.phtml.en" target="_blank">
+                    {% endif %}
+                    <img src="{{ url_for('static', filename='img/institutions/logo_fct.png') }}"
+                      style="max-width: 80%;">
+                  </a>
+              </div>
+
+              <div class="column">
+                {% if session.get('lang_code') == "pt" %}
+                <a href="https://ec.europa.eu/regional_policy/pt/funding/erdf/" target="_blank">
+                  {% else %}
+                  <a href="https://ec.europa.eu/regional_policy/en/funding/erdf/" target="_blank">
+                    {% endif %}
+                    <img src="{{ url_for('static', filename='img/institutions/logo_uniaoeuropeia.png') }}"
+                      style="max-width: 80%;">
+                  </a>
+              </div>
+
+              <div class="column">
+                <a href="https://www.humane-ai.eu/" target="_blank">
+                  <img src="{{ url_for('static', filename='img/institutions/logo_humane-ai.svg') }}"
+                    style="max-width: 80%;">
+                </a>
+              </div>
+
             </div>
 
           </div>
+
         </div>
       </div>
     </div>
+  </div>
   </div>
 
 </section>
