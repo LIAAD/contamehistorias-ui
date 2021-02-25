@@ -2,7 +2,7 @@
 {% block title %} {{ _('conta-me histórias') }} {% endblock %}
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='horizontal-timeline/css/timeline.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/js/horizontal-timeline/css/timeline.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/dashboard.css') }}">
 
 <div class="pageloader" style="background: #033F72 !important;"></div>
@@ -408,13 +408,12 @@
 {% endif %}
 
 
-<script src="{{ url_for('static', filename='horizontal-timeline/js/jquery-2.1.4.js')}}"></script>
-<script src="{{ url_for('static', filename='horizontal-timeline/js/jquery.mobile.custom.min.js')}}"></script>
-<script src="{{ url_for('static', filename='js/moment.js')}}"></script>
-<script src="{{ url_for('static', filename='horizontal-timeline/js/timeline.js')}}"></script>
-<script src="{{ url_for('static', filename='wordcloud/js/d3.js')}}"></script>
-<script src="{{ url_for('static', filename='wordcloud/js/d3.layout.cloud.js')}}"></script>
-<script src="{{ url_for('static', filename='js/jquery.loading.js')}}"></script>
+<script src="{{ url_for('static', filename='assets/js/horizontal-timeline/js/jquery-2.1.4.js')}}"></script>
+<script src="{{ url_for('static', filename='assets/js/horizontal-timeline/js/jquery.mobile.custom.min.js')}}"></script>
+<script src="{{ url_for('static', filename='assets/js/moment.js')}}"></script>
+<script src="{{ url_for('static', filename='assets/js/horizontal-timeline/js/timeline.js')}}"></script>
+<script src="{{ url_for('static', filename='assets/js/wordcloud/d3.js')}}"></script>
+<script src="{{ url_for('static', filename='assets/js/wordcloud/d3.layout.cloud.js')}}"></script>
 
 <script>
 

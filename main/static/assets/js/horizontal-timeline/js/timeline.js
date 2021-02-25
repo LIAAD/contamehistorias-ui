@@ -148,7 +148,7 @@ jQuery(document).ready(function($){
 			
 			totalWidth = timeSpanNorm*width;
 
-			console.log("totalWidth : " + totalWidth);
+			// console.log("totalWidth : " + totalWidth);
 			
 		timelineComponents['eventsWrapper'].css('width', totalWidth+'px');
 		// timelineComponents['eventsWrapper'].css('width', '100%');
