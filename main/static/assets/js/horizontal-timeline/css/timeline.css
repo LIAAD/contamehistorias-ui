@@ -192,7 +192,7 @@ Main Components
   }
 }
 
-  /* these are the left/right arrows to navigate the timeline */
+/* these are the left/right arrows to navigate the timeline */
 /* replace text with an icon */
 /* .cd-timeline-navigation a {
   position: absolute;
@@ -264,6 +264,126 @@ Main Components
 .no-touch .cd-timeline-navigation a.inactive:hover {
   border-color: #dfdfdf;
 } */
+
+
+/*  Begin custom */
+
+.tooltip-inner {
+  background-color: white !important;
+}
+
+.cd-timeline-navigation a {
+  position: absolute;
+  z-index: 1;
+  top: 80%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 34px;
+  width: 34px;
+  border-radius: 53%;
+  border: 7px solid #dfdfdf;
+  border-color: #dfdfdf;
+
+  overflow: hidden;
+  /* color: transparent; */
+  color: white;
+  text-indent: 100%;
+  white-space: nowrap;
+  -webkit-transition: border-color 0.3s;
+  -moz-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+
+.text--replace {
+  overflow: hidden;
+  color: transparent;
+  text-indent: 100%;
+  white-space: nowrap
+}
+
+/* arrow icon */
+.cd-timeline-navigation a::after {
+  content: '';
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: url('../img/cd-arrow.svg') no-repeat 0 0;
+}
+
+.cd-timeline-navigation a.prev {
+  left: -30px;
+  -webkit-transform: translateY(-50%) rotate(180deg);
+  -moz-transform: translateY(-50%) rotate(180deg);
+  -ms-transform: translateY(-50%) rotate(180deg);
+  -o-transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.cd-timeline-navigation a.next {
+  right: -30px;
+}
+
+.no-touch .cd-timeline-navigation a:hover {
+  border-color: #7b9d6f;
+}
+
+.cd-timeline-navigation a.inactive {
+  cursor: not-allowed;
+}
+
+.cd-timeline-navigation a.inactive::after {
+  background-position: 0 -16px;
+}
+
+.no-touch .cd-timeline-navigation a.inactive:hover {
+  border-color: #dfdfdf;
+}
+
+.timeline:before {
+  content: "";
+  width: 22px;
+  height: 100%;
+  background: #ededed;
+  left: 51%;
+  top: 0;
+  position: absolute;
+}
+
+.timeline.doted .timeline-icon {
+  background: white;
+  border: 2px solid #ededed;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 22%;
+  overflow: hidden;
+  margin: -5px;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 5px 43px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 0px 5px 43px rgba(0, 0, 0, 0.18);
+  -ms-box-shadow: 0px 5px 43px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 5px 43px rgba(0, 0, 0, 0.18);
+}
+
+/* End custom */
+
 
 .cd-horizontal-timeline .events-content {
   position: relative;
