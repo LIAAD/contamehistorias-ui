@@ -77,11 +77,11 @@
 
                     const urlParams = new URLSearchParams(window.location.search);
                     
-                    let lang_code = 'pt'
-                    if (urlParams.has('lang_code')) {
-                        lang_code = urlParams.get('lang_code');
+                    let lang = 'pt'
+                    if (urlParams.has('lang')) {
+                        lang = urlParams.get('lang');
                     }
-                    route = data['url_for'] + '&lang_code=' + lang_code + '&id=' + data['task_id'];
+                    route = data['url_for'] + '&lang=' + lang + '&id=' + data['task_id'];
 
                     // redirect to show results
                     window.location.href = route;

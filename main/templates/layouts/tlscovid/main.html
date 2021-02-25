@@ -208,7 +208,7 @@
                     </div>
                   </div>
 
-                  {% if session.get('lang_code') == "en" %}
+                  {% if session.get('lang') == "en" %}
                     <a href="{{ url_for('pages_tlscovid.change', new_lang_code='pt') }}"
                       class="nav-item is-tab nav-inner is-not-mobile">
                       {{ _('Português') }}
@@ -272,7 +272,7 @@
                     </div>
                   </div>
 
-                  {% if session.get('lang_code') == "en" %}
+                  {% if session.get('lang') == "en" %}
                     <a href="{{ url_for('pages_tlscovid.change', new_lang_code='pt') }}"
                       class="nav-item is-tab nav-inner is-menu-mobile">
                       {{ _('Português') }}
@@ -307,7 +307,7 @@
                 
                 <span class="moto">{{ _('Desenvolvido por') }} 
                   <a style="color: #A9ABAC; text-decoration:underline" href="{{ url_for('pages_tlscovid.team') }}"> {{ _('investigadores') }} </a> {{ _('do') }}
-                  {% if session.get('lang_code') == "pt" %}
+                  {% if session.get('lang') == "pt" %}
                     <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://www.inesctec.pt/pt/centros/liaad">Laboratório de Inteligência Artificial e Apoio a Decisão (LIAAD</a> -
                     <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://www.inesctec.pt">INESCTEC</a>), 
                   {% else %}
@@ -318,7 +318,7 @@
 
                 <span class="moto">
                   {{ _('e afiliados às instituições') }}
-                  {% if session.get('lang_code') == "pt" %}
+                  {% if session.get('lang') == "pt" %}
                     <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://www.ipt.pt/">Instituto Politécnico de Tomar</a> - 
                     <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://www.ci2.ipt.pt/">Centro de Investigação em Cidades Inteligentes (CI2)</a>;
                     <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://sigarra.up.pt/up/">Universidade do Porto</a>;
@@ -349,7 +349,7 @@
 
                     <li class="column-item">______</li>
 
-                    {% if session.get('lang_code') == "en" %}
+                    {% if session.get('lang') == "en" %}
                       <li class="column-item"><a href="{{ url_for('pages_tlscovid.change', new_lang_code='pt') }}">{{ _('Português')}}</a></li>
                     {% else %}
                       <li class="column-item"><a href="{{ url_for('pages_tlscovid.change', new_lang_code='en') }}">{{ _('English')}}</a></li>

@@ -10,4 +10,4 @@ class SearchForm(FlaskForm):
     date_to = TextField('to', [])
     last_years = TextField('last_years', [])
     news_sources = TextField('news_sources', [])
-    lang_code = HiddenField('lang_code',[],default="pt")
+    lang = HiddenField('lang',[],default="pt")

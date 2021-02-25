@@ -28,7 +28,7 @@
               {{ _('O Conta-me Histórias é um projeto científico, criado no âmbito dos Prémios Arquivo.pt 2018, que
               permite aos utilizadores criarem automaticamente narrativas de notícias
               preservadas pelo') }}
-              {% if session.get('lang_code') == "pt" %}
+              {% if session.get('lang') == "pt" %}
               <a style="display: inline" target="_blank" href="https://arquivo.pt/">Arquivo.pt</a>.
               {% else %}
               <a style="display: inline" target="_blank" href="https://arquivo.pt/?l=en">Portuguese Web Archive</a>.
@@ -262,7 +262,7 @@
             <div class="columns">
 
               <div class="column">
-                {% if session.get('lang_code') == "pt" %}
+                {% if session.get('lang') == "pt" %}
                 <a href="https://www.inesctec.pt/pt/centros/liaad" target="_blank">
                   {% else %}
                   <a href="https://www.inesctec.pt/en/centres/liaad" target="_blank">
@@ -273,7 +273,7 @@
               </div>
 
               <div class="column">
-                {% if session.get('lang_code') == "pt" %}
+                {% if session.get('lang') == "pt" %}
                 <a href="http://www.ci2.ipt.pt/" target="_blank">
                   {% else %}
                   <a href="http://www.ci2.ipt.pt/en/" target="_blank">
@@ -284,7 +284,7 @@
               </div>
 
               <div class="column">
-                {% if session.get('lang_code') == "pt" %}
+                {% if session.get('lang') == "pt" %}
                 <a href="http://www.ipt.pt/" target="_blank">
                   {% else %}
                   <a href="http://www.ipt.pt/?lng=en" target="_blank">
@@ -295,7 +295,7 @@
               </div>
 
               <div class="column">
-                {% if session.get('lang_code') == "pt" %}
+                {% if session.get('lang') == "pt" %}
                 <a href="https://sigarra.up.pt/up/" target="_blank">
                   {% else %}
                   <a href="https://sigarra.up.pt/up/en/" target="_blank">
@@ -331,7 +331,7 @@
               </div>
 
               <div class="column">
-                {% if session.get('lang_code') == "pt" %}
+                {% if session.get('lang') == "pt" %}
                 <a href="https://www.fct.pt/" target="_blank">
                   {% else %}
                   <a href="https://www.fct.pt/index.phtml.en" target="_blank">
@@ -342,7 +342,7 @@
               </div>
 
               <div class="column">
-                {% if session.get('lang_code') == "pt" %}
+                {% if session.get('lang') == "pt" %}
                 <a href="https://ec.europa.eu/regional_policy/pt/funding/erdf/" target="_blank">
                   {% else %}
                   <a href="https://ec.europa.eu/regional_policy/en/funding/erdf/" target="_blank">

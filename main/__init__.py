@@ -58,18 +58,18 @@ def create_app(config_filename):
         print("session", session)
         print("session.keys()", session.keys())
 
-        if(not 'lang_code' in session.keys() or session['lang_code'] == None or session['lang_code'] == "None"):
+        if(not 'lang' in session.keys() or session['lang'] == None or session['lang'] == "None"):
             return dict(sess_lang="pt")
 
-        if not("lang_code" in session.keys()):
+        if not("lang" in session.keys()):
             return dict(sess_lang="pt")
         else:
-            return dict(sess_lang=session['lang_code'])
+            return dict(sess_lang=session['lang'])
 
     @babel.localeselector
     def get_locale():
-        g.lang_code = session['lang_code']
-        return g.get('lang_code', 'pt')
+        g.lang = session['lang']
+        return g.get('lang', 'pt')
 
     return app
 

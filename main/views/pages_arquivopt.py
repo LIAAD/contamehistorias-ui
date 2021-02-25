@@ -29,21 +29,21 @@ def before_request():
 
 @blueprint.url_defaults
 def add_language_code(endpoint, values):
-    if current_app.url_map.is_endpoint_expecting(endpoint, 'lang_code'):
-        values['lang_code'] = session.get('lang_code', "pt")
-        g.lang_code = session.get('lang_code', "pt")
+    if current_app.url_map.is_endpoint_expecting(endpoint, 'lang'):
+        values['lang'] = session.get('lang', "pt")
+        g.lang = session.get('lang', "pt")
 
     try:
-        values.setdefault('lang_code', g.lang_code)
+        values.setdefault('lang', g.lang)
     except:
-        values.setdefault('lang_code', session.get('lang_code', "pt"))
+        values.setdefault('lang', session.get('lang', "pt"))
 
 
 @blueprint.url_value_preprocessor
 def pull_lang_code(endpoint, values):
-    lang_code = request.args.get('lang_code')
-    session['lang_code'] = lang_code
-    g.lang_code = session.get('lang_code', "pt")
+    lang = request.args.get('lang')
+    session['lang'] = lang
+    g.lang = session.get('lang', "pt")
 
 
 ################
@@ -115,10 +115,10 @@ def home():
 
     form = SearchForm(request.form)
 
-    lang_code = session.get("lang_code", "pt")
+    lang = session.get("lang", "pt")
 
-    if(lang_code == None):
-        lang_code = "pt"
+    if(lang == None):
+        lang = "pt"
 
     r = requests.get(API_ARQUIVOPT_ENDPOINT + 'get-examples')
     examples = r.json()
@@ -129,7 +129,7 @@ def home():
         "personas": examples['stories_culture'] + examples['stories_sports']
     }
 
-    return render_template('pages/arquivopt/home.html', stories_examples=stories_examples, form=form, lang_code=lang_code)
+    return render_template('pages/arquivopt/home.html', stories_examples=stories_examples, form=form, lang=lang)
 
 
 @blueprint.route('/team')
@@ -153,11 +153,11 @@ def change(new_lang_code):
     if not(new_lang_code in LANGUAGES):
         new_lang_code = "pt"
 
-    session['lang_code'] = new_lang_code
+    session['lang'] = new_lang_code
 
-    # Redirect to same page with changed lang_code
+    # Redirect to same page with changed lang
     redirect_url = furl(request.referrer)
-    redirect_url.args['lang_code'] = new_lang_code
+    redirect_url.args['lang'] = new_lang_code
 
     return redirect(redirect_url)
 
@@ -169,11 +169,11 @@ def search():
     has_narrative = False
 
     # Lang Code
-    lang_code = session.get("lang_code", "pt")
-    if(lang_code == None):
-        lang_code = "pt"
+    lang = session.get("lang", "pt")
+    if(lang == None):
+        lang = "pt"
     try:
-        if(lang_code == "pt"):
+        if(lang == "pt"):
             locale.setlocale(locale.LC_TIME, 'pt_PT.utf8')
         else:
             locale.setlocale(locale.LC_TIME, 'en_US.utf8')
@@ -203,7 +203,7 @@ def search():
 
     print('Query:', query)
     print('Last years:', last_years)
-    print('Lang code:', lang_code)
+    print('Lang code:', lang)
 
     # Task already processed
     if 'id' in request.args:
@@ -216,11 +216,11 @@ def search():
             result = task.info['result']
         except TypeError:
             print('Invalid task')
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, query=None, has_narrative=has_narrative)
+            return render_template('pages/arquivopt/search.html', lang=lang, form=SearchForm(), related_terms=[], result=None, query=None, has_narrative=has_narrative)
         
         if not result:
             print('Invalid result')
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, query=query, has_narrative=has_narrative)
+            return render_template('pages/arquivopt/search.html', lang=lang, form=form, related_terms=[], result=None, query=query, has_narrative=has_narrative)
 
         else:
             print('Result ok')
@@ -244,10 +244,10 @@ def search():
             blacklist_ngrams = r.json()['blacklist_ngrams']
 
             if(result["status"] != "OK"):
-                return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, has_narrative=has_narrative)
+                return render_template('pages/arquivopt/search.html', lang=lang, form=form, related_terms=[], result=None, result_header=result_header, has_narrative=has_narrative)
 
             if(int(result["stats"]["n_unique_docs"]) == 0):
-                return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=form, related_terms=[], result=None, result_header=result_header, has_narrative=has_narrative)
+                return render_template('pages/arquivopt/search.html', lang=lang, form=form, related_terms=[], result=None, result_header=result_header, has_narrative=has_narrative)
 
             # Call API to get events and end_intervals_dates
             r = requests.get(API_ARQUIVOPT_ENDPOINT +
@@ -309,7 +309,7 @@ def search():
                                    has_narrative=has_narrative,
                                    blacklist_ngrams=blacklist_ngrams,
                                    query=query,
-                                   lang_code=lang_code,
+                                   lang=lang,
                                    last_years=last_years)
     
     else:
@@ -321,5 +321,5 @@ def search():
 
         # If request doesn't contain neither id nor query, redirect to search page to perform new search
         else:
-            return render_template('pages/arquivopt/search.html', lang_code=lang_code, form=SearchForm(), related_terms=[], result=None, query=None, has_narrative=has_narrative)
+            return render_template('pages/arquivopt/search.html', lang=lang, form=SearchForm(), related_terms=[], result=None, query=None, has_narrative=has_narrative)
         
