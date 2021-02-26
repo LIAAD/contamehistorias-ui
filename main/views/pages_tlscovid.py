@@ -211,6 +211,10 @@ def search():
     for d in domains:
         available_domains[d['lang']].append(d['name'])
 
+    # Insert sources if not in query string
+    if not selected_sources:
+        selected_sources = available_domains[index]
+
     # Task already processed
     if 'id' in request.args:
 
