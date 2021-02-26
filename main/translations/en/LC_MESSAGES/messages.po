@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-25 17:45+0000\n"
+"POT-Creation-Date: 2021-02-26 23:52+0000\n"
 "PO-Revision-Date: 2018-11-09 20:56+0000\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -18,94 +18,94 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: main/templates/layouts/arquivopt/main.html:153
-#: main/templates/layouts/arquivopt/main.html:226
-#: main/templates/layouts/tlscovid/main.html:153
-#: main/templates/layouts/tlscovid/main.html:226
+#: main/templates/layouts/arquivopt/main.html:37
+#: main/templates/layouts/arquivopt/main.html:110
+#: main/templates/layouts/tlscovid/main.html:37
+#: main/templates/layouts/tlscovid/main.html:110
 msgid "Início"
 msgstr "Home"
 
-#: main/templates/layouts/arquivopt/main.html:156
-#: main/templates/layouts/arquivopt/main.html:230
-#: main/templates/layouts/tlscovid/main.html:156
-#: main/templates/layouts/tlscovid/main.html:230
+#: main/templates/layouts/arquivopt/main.html:40
+#: main/templates/layouts/arquivopt/main.html:114
+#: main/templates/layouts/tlscovid/main.html:40
+#: main/templates/layouts/tlscovid/main.html:114
 msgid "Pesquisar"
 msgstr "Search"
 
-#: main/templates/layouts/arquivopt/main.html:170
-#: main/templates/layouts/arquivopt/main.html:234
-#: main/templates/layouts/arquivopt/main.html:343
-#: main/templates/layouts/tlscovid/main.html:170
-#: main/templates/layouts/tlscovid/main.html:234
-#: main/templates/layouts/tlscovid/main.html:343
+#: main/templates/layouts/arquivopt/main.html:54
+#: main/templates/layouts/arquivopt/main.html:118
+#: main/templates/layouts/arquivopt/main.html:227
+#: main/templates/layouts/tlscovid/main.html:54
+#: main/templates/layouts/tlscovid/main.html:118
+#: main/templates/layouts/tlscovid/main.html:227
 #: main/templates/pages/common/about.html:7
 msgid "Sobre"
 msgstr "About"
 
-#: main/templates/layouts/arquivopt/main.html:174
-#: main/templates/layouts/arquivopt/main.html:238
-#: main/templates/layouts/arquivopt/main.html:344
-#: main/templates/layouts/tlscovid/main.html:174
-#: main/templates/layouts/tlscovid/main.html:238
-#: main/templates/layouts/tlscovid/main.html:344
+#: main/templates/layouts/arquivopt/main.html:58
+#: main/templates/layouts/arquivopt/main.html:122
+#: main/templates/layouts/arquivopt/main.html:228
+#: main/templates/layouts/tlscovid/main.html:58
+#: main/templates/layouts/tlscovid/main.html:122
+#: main/templates/layouts/tlscovid/main.html:228
 #: main/templates/pages/common/team.html:7
 msgid "Equipa"
 msgstr "Team"
 
-#: main/templates/layouts/arquivopt/main.html:178
-#: main/templates/layouts/arquivopt/main.html:242
-#: main/templates/layouts/arquivopt/main.html:345
-#: main/templates/layouts/tlscovid/main.html:178
-#: main/templates/layouts/tlscovid/main.html:242
-#: main/templates/layouts/tlscovid/main.html:345
+#: main/templates/layouts/arquivopt/main.html:62
+#: main/templates/layouts/arquivopt/main.html:126
+#: main/templates/layouts/arquivopt/main.html:229
+#: main/templates/layouts/tlscovid/main.html:62
+#: main/templates/layouts/tlscovid/main.html:126
+#: main/templates/layouts/tlscovid/main.html:229
 #: main/templates/pages/common/press.html:7
 msgid "Media"
 msgstr "Press"
 
-#: main/templates/layouts/arquivopt/main.html:183
-#: main/templates/layouts/arquivopt/main.html:247
-#: main/templates/layouts/arquivopt/main.html:346
-#: main/templates/layouts/tlscovid/main.html:183
-#: main/templates/layouts/tlscovid/main.html:247
-#: main/templates/layouts/tlscovid/main.html:346
+#: main/templates/layouts/arquivopt/main.html:67
+#: main/templates/layouts/arquivopt/main.html:131
+#: main/templates/layouts/arquivopt/main.html:230
+#: main/templates/layouts/tlscovid/main.html:67
+#: main/templates/layouts/tlscovid/main.html:131
+#: main/templates/layouts/tlscovid/main.html:230
 msgid "Open Source"
 msgstr "Open Source"
 
-#: main/templates/layouts/arquivopt/main.html:188
-#: main/templates/layouts/arquivopt/main.html:252
-#: main/templates/layouts/arquivopt/main.html:347
-#: main/templates/layouts/tlscovid/main.html:188
-#: main/templates/layouts/tlscovid/main.html:252
-#: main/templates/layouts/tlscovid/main.html:347
+#: main/templates/layouts/arquivopt/main.html:72
+#: main/templates/layouts/arquivopt/main.html:136
+#: main/templates/layouts/arquivopt/main.html:231
+#: main/templates/layouts/tlscovid/main.html:72
+#: main/templates/layouts/tlscovid/main.html:136
+#: main/templates/layouts/tlscovid/main.html:231
 msgid "Aplicação Móvel"
 msgstr "Mobile Application"
 
-#: main/templates/layouts/arquivopt/main.html:195
-#: main/templates/layouts/arquivopt/main.html:259
-#: main/templates/layouts/tlscovid/main.html:195
-#: main/templates/layouts/tlscovid/main.html:259
+#: main/templates/layouts/arquivopt/main.html:79
+#: main/templates/layouts/arquivopt/main.html:143
+#: main/templates/layouts/tlscovid/main.html:79
+#: main/templates/layouts/tlscovid/main.html:143
 msgid "Projetos Relacionados"
 msgstr "Related Projects"
 
-#: main/templates/layouts/arquivopt/main.html:214
-#: main/templates/layouts/arquivopt/main.html:278
-#: main/templates/layouts/arquivopt/main.html:353
-#: main/templates/layouts/tlscovid/main.html:214
-#: main/templates/layouts/tlscovid/main.html:278
-#: main/templates/layouts/tlscovid/main.html:353
+#: main/templates/layouts/arquivopt/main.html:98
+#: main/templates/layouts/arquivopt/main.html:162
+#: main/templates/layouts/arquivopt/main.html:237
+#: main/templates/layouts/tlscovid/main.html:98
+#: main/templates/layouts/tlscovid/main.html:162
+#: main/templates/layouts/tlscovid/main.html:237
 msgid "Português"
 msgstr "Português"
 
-#: main/templates/layouts/arquivopt/main.html:219
-#: main/templates/layouts/arquivopt/main.html:283
-#: main/templates/layouts/arquivopt/main.html:355
-#: main/templates/layouts/tlscovid/main.html:219
-#: main/templates/layouts/tlscovid/main.html:283
-#: main/templates/layouts/tlscovid/main.html:355
+#: main/templates/layouts/arquivopt/main.html:103
+#: main/templates/layouts/arquivopt/main.html:167
+#: main/templates/layouts/arquivopt/main.html:239
+#: main/templates/layouts/tlscovid/main.html:103
+#: main/templates/layouts/tlscovid/main.html:167
+#: main/templates/layouts/tlscovid/main.html:239
 msgid "English"
 msgstr "English"
 
-#: main/templates/layouts/arquivopt/main.html:303
+#: main/templates/layouts/arquivopt/main.html:187
 msgid ""
 "O Conta-me Histórias é um projeto científico que permite aos utilizadores"
 " criarem automaticamente narrativas de notícias preservadas pelo "
@@ -115,47 +115,47 @@ msgstr ""
 "build news narratives based on news preserved by the Portuguese Web "
 "Archive."
 
-#: main/templates/layouts/arquivopt/main.html:308
-#: main/templates/layouts/tlscovid/main.html:308
+#: main/templates/layouts/arquivopt/main.html:192
+#: main/templates/layouts/tlscovid/main.html:192
 msgid "Desenvolvido por"
 msgstr "Developed by"
 
-#: main/templates/layouts/arquivopt/main.html:309
-#: main/templates/layouts/tlscovid/main.html:309
+#: main/templates/layouts/arquivopt/main.html:193
+#: main/templates/layouts/tlscovid/main.html:193
 msgid "investigadores"
 msgstr "researchers"
 
-#: main/templates/layouts/arquivopt/main.html:309
-#: main/templates/layouts/tlscovid/main.html:309
+#: main/templates/layouts/arquivopt/main.html:193
+#: main/templates/layouts/tlscovid/main.html:193
 msgid "do"
 msgstr "at"
 
-#: main/templates/layouts/arquivopt/main.html:320
-#: main/templates/layouts/tlscovid/main.html:320
+#: main/templates/layouts/arquivopt/main.html:204
+#: main/templates/layouts/tlscovid/main.html:204
 msgid "e afiliados às instituições"
 msgstr "and affiliated to"
 
-#: main/templates/layouts/arquivopt/main.html:330
-#: main/templates/layouts/tlscovid/main.html:330
+#: main/templates/layouts/arquivopt/main.html:214
+#: main/templates/layouts/tlscovid/main.html:214
 msgid "Universidade de Innsbruck"
 msgstr "University of Innsbruck"
 
-#: main/templates/layouts/arquivopt/main.html:341
-#: main/templates/layouts/tlscovid/main.html:341
+#: main/templates/layouts/arquivopt/main.html:225
+#: main/templates/layouts/tlscovid/main.html:225
 msgid "Conta-me Histórias"
 msgstr "Tell me stories"
 
-#: main/templates/layouts/arquivopt/main.html:348
-#: main/templates/layouts/tlscovid/main.html:348
+#: main/templates/layouts/arquivopt/main.html:232
+#: main/templates/layouts/tlscovid/main.html:232
 msgid "Fale Connosco"
 msgstr "Contact Us"
 
-#: main/templates/layouts/arquivopt/main.html:362
-#: main/templates/layouts/tlscovid/main.html:362
+#: main/templates/layouts/arquivopt/main.html:246
+#: main/templates/layouts/tlscovid/main.html:246
 msgid "O conteúdo deste site é licenciado sob"
 msgstr "The content presented here is licensed under"
 
-#: main/templates/layouts/tlscovid/main.html:303
+#: main/templates/layouts/tlscovid/main.html:187
 msgid ""
 "O Conta-me Histórias é um projeto científico que permite aos utilizadores"
 " criarem automaticamente narrativas de notícias."
@@ -224,22 +224,22 @@ msgid "Últimos 20 anos"
 msgstr "Last 20 years"
 
 #: main/templates/pages/arquivopt/search.html:45
-#: main/templates/pages/tlscovid/search.html:87
+#: main/templates/pages/tlscovid/search.html:84
 msgid "aplicar"
 msgstr "confirm"
 
 #: main/templates/pages/arquivopt/search.html:70
-#: main/templates/pages/tlscovid/search.html:112
+#: main/templates/pages/tlscovid/search.html:109
 msgid "Narrativa"
 msgstr "Narrative"
 
 #: main/templates/pages/arquivopt/search.html:71
-#: main/templates/pages/tlscovid/search.html:113
+#: main/templates/pages/tlscovid/search.html:110
 msgid "Termos relacionados"
 msgstr "Related terms"
 
 #: main/templates/pages/arquivopt/search.html:79
-#: main/templates/pages/tlscovid/search.html:121
+#: main/templates/pages/tlscovid/search.html:118
 msgid "Termos relacionados com"
 msgstr "Terms related with"
 
@@ -256,35 +256,35 @@ msgid "anos"
 msgstr "years"
 
 #: main/templates/pages/arquivopt/search.html:93
-#: main/templates/pages/tlscovid/search.html:135
+#: main/templates/pages/tlscovid/search.html:132
 msgid "Entidades"
 msgstr "Entities"
 
 #: main/templates/pages/arquivopt/search.html:94
-#: main/templates/pages/tlscovid/search.html:136
+#: main/templates/pages/tlscovid/search.html:133
 msgid "Termos"
 msgstr "Terms"
 
 #: main/templates/pages/arquivopt/search.html:100
 #: main/templates/pages/arquivopt/search.html:272
-#: main/templates/pages/common/about.html:118
-#: main/templates/pages/tlscovid/search.html:142
-#: main/templates/pages/tlscovid/search.html:319
+#: main/templates/pages/common/about.html:126
+#: main/templates/pages/tlscovid/search.html:139
+#: main/templates/pages/tlscovid/search.html:316
 msgid "Portais de Notícias"
 msgstr "News sources"
 
 #: main/templates/pages/arquivopt/search.html:121
-#: main/templates/pages/tlscovid/search.html:165
+#: main/templates/pages/tlscovid/search.html:162
 msgid "Narrativa sobre"
 msgstr "Narrative about"
 
 #: main/templates/pages/arquivopt/search.html:174
-#: main/templates/pages/tlscovid/search.html:222
+#: main/templates/pages/tlscovid/search.html:219
 msgid "Notícias relevantes entre"
 msgstr "Relevant news between"
 
 #: main/templates/pages/arquivopt/search.html:175
-#: main/templates/pages/tlscovid/search.html:223
+#: main/templates/pages/tlscovid/search.html:220
 msgid "e"
 msgstr "and"
 
@@ -293,47 +293,47 @@ msgid "Número de páginas encontradas em Arquivo.pt"
 msgstr "Number of pages found in Arquivo.pt"
 
 #: main/templates/pages/arquivopt/search.html:297
-#: main/templates/pages/tlscovid/search.html:346
+#: main/templates/pages/tlscovid/search.html:343
 msgid "Páginas encontradas"
 msgstr "Pages found"
 
 #: main/templates/pages/arquivopt/search.html:304
-#: main/templates/pages/tlscovid/search.html:353
+#: main/templates/pages/tlscovid/search.html:350
 msgid "Número de notícias consideradas para construir a narrativa"
 msgstr "Number of news articles considered to build narrative"
 
 #: main/templates/pages/arquivopt/search.html:307
-#: main/templates/pages/tlscovid/search.html:356
+#: main/templates/pages/tlscovid/search.html:353
 msgid "Notícias consideradas"
 msgstr "Considered news articles"
 
 #: main/templates/pages/arquivopt/search.html:314
-#: main/templates/pages/tlscovid/search.html:363
+#: main/templates/pages/tlscovid/search.html:360
 msgid "Número de portais de notícias considerados para construir a narrativa"
 msgstr "Number of news sources considered to build narrative"
 
 #: main/templates/pages/arquivopt/search.html:316
-#: main/templates/pages/tlscovid/search.html:365
+#: main/templates/pages/tlscovid/search.html:362
 msgid "Portais de notícia"
 msgstr "News sources"
 
 #: main/templates/pages/arquivopt/search.html:328
-#: main/templates/pages/tlscovid/search.html:377
+#: main/templates/pages/tlscovid/search.html:374
 msgid "Narrativa construída em"
 msgstr "Narrative built in"
 
 #: main/templates/pages/arquivopt/search.html:329
-#: main/templates/pages/tlscovid/search.html:378
+#: main/templates/pages/tlscovid/search.html:375
 msgid "segundos"
 msgstr "seconds"
 
 #: main/templates/pages/arquivopt/search.html:352
-#: main/templates/pages/tlscovid/search.html:401
+#: main/templates/pages/tlscovid/search.html:398
 msgid "Não foram identificadas notícias suficientes sobre"
 msgstr "There are not enough news articles about"
 
 #: main/templates/pages/arquivopt/search.html:352
-#: main/templates/pages/tlscovid/search.html:401
+#: main/templates/pages/tlscovid/search.html:398
 msgid "que permitam construir uma narrativa."
 msgstr "to build a narrative."
 
@@ -347,15 +347,15 @@ msgstr "Searching thousands of news about"
 msgid "Pode demorar algum tempo..."
 msgstr "It may take a while..."
 
-#: main/templates/pages/common/about.html:12
+#: main/templates/pages/common/about.html:20
 msgid "sobre"
 msgstr "about"
 
-#: main/templates/pages/common/about.html:25
+#: main/templates/pages/common/about.html:33
 msgid "O que é o Conta-me Histórias?"
 msgstr "What is Tell me stories?"
 
-#: main/templates/pages/common/about.html:28
+#: main/templates/pages/common/about.html:36
 msgid ""
 "O Conta-me Histórias é um projeto científico, criado no âmbito dos "
 "Prémios Arquivo.pt 2018, que\n"
@@ -363,8 +363,11 @@ msgid ""
 " de notícias\n"
 "              preservadas pelo"
 msgstr ""
+"Tell me stories is a research project\n"
+"              that allows users to automatically build news narratives "
+"based on news preserved by the "
 
-#: main/templates/pages/common/about.html:36
+#: main/templates/pages/common/about.html:44
 msgid ""
 "Numa era marcada pela pós-verdade e pelas fake news, o\n"
 "              Conta-me Histórias é um importante contributo para uma "
@@ -391,11 +394,11 @@ msgstr ""
 "journalists and researchers to explore our solution in this beta "
 "application."
 
-#: main/templates/pages/common/about.html:60
+#: main/templates/pages/common/about.html:68
 msgid "Como funciona?"
 msgstr "How does it work?"
 
-#: main/templates/pages/common/about.html:65
+#: main/templates/pages/common/about.html:73
 msgid ""
 "O Arquivo.pt preserva milhões de ficheiros recolhidos da web desde 1996 e"
 " disponibiliza um serviço\n"
@@ -410,7 +413,7 @@ msgstr ""
 "searchable and finally providing a full-text search service that enables "
 "the retrieval of the past versions of the site."
 
-#: main/templates/pages/common/about.html:72
+#: main/templates/pages/common/about.html:80
 msgid ""
 "Para mostrar os dados do Arquivo.pt, mostramos ao utilizador os excertos "
 "mais importantes\n"
@@ -422,7 +425,7 @@ msgstr ""
 "user the most important excerpts (namely text titles) of a topic over "
 "time. For the selection of the best news titles we resort to "
 
-#: main/templates/pages/common/about.html:75
+#: main/templates/pages/common/about.html:83
 msgid ""
 "um extrator de\n"
 "              palavras-chave desenvolvido pela nossa equipa, e que "
@@ -432,11 +435,11 @@ msgstr ""
 "a keyword extractor designed by our team, and recently awarded as Best "
 "Short Paper at the 40th European Conference for Information Retrieval "
 
-#: main/templates/pages/common/about.html:84
+#: main/templates/pages/common/about.html:92
 msgid "Contribuições"
 msgstr "Contributions"
 
-#: main/templates/pages/common/about.html:86
+#: main/templates/pages/common/about.html:94
 msgid ""
 "Acreditamos que o Conta-me Histórias é, neste contexto, um importante "
 "contributo para uma democracia\n"
@@ -456,11 +459,11 @@ msgstr ""
 "context, our project may be considered an additional solution that allows"
 " users to better explore this kind of data."
 
-#: main/templates/pages/common/about.html:96
+#: main/templates/pages/common/about.html:104
 msgid "Origem do nome"
 msgstr "Origins of the project name"
 
-#: main/templates/pages/common/about.html:98
+#: main/templates/pages/common/about.html:106
 msgid ""
 "O nome ‘Conta-me Histórias’ é uma homenagem à música dos Xutos & Pontapés"
 " de mesmo nome, com o\n"
@@ -472,17 +475,38 @@ msgstr ""
 "The name  ‘Conta-me Histórias’ is a reference to a popular song from one "
 "of the most important Portuguese rock musicians group  Xutos & Pontapés."
 
-#: main/templates/pages/common/about.html:112
+#: main/templates/pages/common/about.html:120
 msgid "Design da apresentação e edição"
 msgstr "Design, video and presentation"
 
-#: main/templates/pages/common/about.html:198
+#: main/templates/pages/common/about.html:280
 msgid "Referências académicas"
 msgstr "Academic references"
 
-#: main/templates/pages/common/about.html:248
+#: main/templates/pages/common/about.html:340
 msgid "Agradecimentos"
 msgstr "Acknowledgements"
+
+#: main/templates/pages/common/about.html:345
+msgid ""
+"Este projeto é financiado pelo FEDER - Fundo Europeu de Desenvolvimento\n"
+"                Regional através do Programa Operacional Regional do "
+"Norte (NORTE 2020), sob o\n"
+"                Programa PORTUGAL 2020 e por fundos nacionais através da "
+"agência de financiamento\n"
+"                portuguesa, FCT - Fundação para a Ciência e a Tecnologia "
+"dentro do projeto\n"
+"                PTDC/CCI-COM/31857/2017 (NORTE-01-0145-FEDER-03185). Este"
+" financiamento\n"
+"                enquadra-se na linha de investigação do projeto "
+"Text2Story."
+msgstr ""
+"This project is financed by the ERDF – European Regional Development Fund"
+" through the North Portugal Regional Operational Programme (NORTE 2020), "
+"under the PORTUGAL 2020 and by National Funds through thePortuguese "
+"funding agency, FCT - Fundação para a Ciência e a Tecnologia within "
+"project PTDC/CCI-COM/31857/2017 (NORTE-01-0145-FEDER-03185). This funding"
+" fits under the research line of the Text2Story project."
 
 #: main/templates/pages/common/press.html:12
 msgid "nos media"
@@ -561,19 +585,19 @@ msgstr "title"
 msgid "lingua"
 msgstr "language"
 
-#: main/templates/pages/tlscovid/search.html:59
+#: main/templates/pages/tlscovid/search.html:60
 msgid "fontes"
 msgstr "news sources"
 
-#: main/templates/pages/tlscovid/search.html:167
+#: main/templates/pages/tlscovid/search.html:164
 msgid "com"
 msgstr "with"
 
-#: main/templates/pages/tlscovid/search.html:168
+#: main/templates/pages/tlscovid/search.html:165
 msgid "momentos chave"
 msgstr "key moments"
 
-#: main/templates/pages/tlscovid/search.html:344
+#: main/templates/pages/tlscovid/search.html:341
 msgid "Número de páginas encontradas"
 msgstr "Number of pages found"
 

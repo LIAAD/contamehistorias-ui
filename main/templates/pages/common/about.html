@@ -7,6 +7,14 @@
 {% block title %} {{ _('Sobre') }} {% endblock %}
 {% block content %}
 
+<style>
+  .column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
 <div id="main-hero" class="hero-body">
   <div class="container">
     <h1 class="title is-1">{{ _('sobre') }}</h1>
@@ -114,82 +122,156 @@
 
             <br />
             <br />
-            <div style="is-vcentered is-centered column is-6 has-text-centered box">
+            <div>
               <strong>{{ _('Portais de Notícias') }}</strong>
               <br />
               <br />
-              <a style="display: inline" href="https://www.aeiou.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/aeiou.png') }}" title="aeiou"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.cmjornal.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/correio_da_manha.png') }}"
-                  title="Correio da Manhã" style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.dn.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/dn.png') }}" title="Diário de Notícias"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.dnoticias.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/dnoticias.png') }}" title="DNoticias"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.dinheirovivo.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/dinheiro_vivo.jpg') }}" title="Dinheiro Vivo"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://expresso.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/expresso.jpg') }}" title="Expresso"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://ionline.sapo.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/jornal_i.png') }}" title="Jornal I"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://jornaleconomico.sapo.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/jornal_economico.png') }}"
-                  title="Jornal Económico" style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.lux.iol.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/lux.png') }}" title="Lux"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.jn.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/jn.jpg') }}" title="Jornal de Notícias"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.sabado.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/sabado.png') }}" title="Sábado"
-                  style="max-height: 80px; max-width: 100px;"></a>
 
-              <br>
+              <div class="columns">
 
-              <a style="display: inline" href="https://sicnoticias.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/sic_noticias.svg') }}" title="Sic Notícias"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.tsf.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/tsf.svg') }}" title="TSF"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://tvi24.iol.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/tvi24.png') }}" title="TVI24"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://news.google.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/google_news.png') }}" title="Google News"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.iol.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/iol.png') }}" title="IOL"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.jornaldenegocios.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/jornal_negocios.png') }}"
-                  title="Jornal de Negócios" style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.publico.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/publico.png') }}" title="Público"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.meiosepublicidade.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/meios_publicidade.jpg') }}"
-                  title="Meios & Publicidade" style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.sapo.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/sapo.png') }}" title="Sapo"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://sol.sapo.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/sol.png') }}" title="Sol"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://abola.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/abola.png') }}" title="A Bola"
-                  style="max-height: 80px; max-width: 100px;"></a>
-              <a style="display: inline" href="https://www.rtp.pt/" target="_blank"><img
-                  src="{{ url_for('static', filename='img/news_sources/rtp.jpg') }}" title="RTP"
-                  style="max-height: 80px; max-width: 100px;"></a>
+                <div class="column">
+                  <a href="https://www.aeiou.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/aeiou.png') }}" title="aeiou"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://www.cmjornal.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/correio_da_manha.png') }}"
+                      title="Correio da Manhã" style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://www.dn.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/dn.png') }}" title="Diário de Notícias"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://www.dnoticias.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/dnoticias.png') }}" title="DNoticias"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://www.dinheirovivo.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/dinheiro_vivo.jpg') }}" title="Dinheiro Vivo"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://expresso.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/expresso.jpg') }}" title="Expresso"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://ionline.sapo.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/jornal_i.png') }}" title="Jornal I"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://jornaleconomico.sapo.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/jornal_economico.png') }}"
+                      title="Jornal Económico" style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://www.lux.iol.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/lux.png') }}" title="Lux"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://www.jn.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/jn.jpg') }}" title="Jornal de Notícias"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+                <div class="column">
+                  <a href="https://www.sabado.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/sabado.png') }}" title="Sábado"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+              </div>
+
+              <div class="columns">
+
+                <div class="column">
+                  <a href="https://sicnoticias.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/sic_noticias.svg') }}" title="Sic Notícias"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://www.tsf.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/tsf.svg') }}" title="TSF"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://tvi24.iol.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/tvi24.png') }}" title="TVI24"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://news.google.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/google_news.png') }}" title="Google News"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://www.iol.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/iol.png') }}" title="IOL"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://www.jornaldenegocios.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/jornal_negocios.png') }}"
+                      title="Jornal de Negócios" style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://www.publico.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/publico.png') }}" title="Público"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://www.meiosepublicidade.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/meios_publicidade.jpg') }}"
+                      title="Meios & Publicidade" style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://www.sapo.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/sapo.png') }}" title="Sapo"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://sol.sapo.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/sol.png') }}" title="Sol"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://abola.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/abola.png') }}" title="A Bola"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+                <div class="column">
+                  <a href="https://www.rtp.pt/" target="_blank"><img
+                      src="{{ url_for('static', filename='img/news_sources/rtp.jpg') }}" title="RTP"
+                      style="max-height: 80px; max-width: 100px;"></a>
+                </div>
+
+              </div>
+
             </div>
 
             <br />
@@ -200,25 +282,32 @@
               <br />
 
               <em>Campos, R., Pasquali, A., Jatowt, A., Mangaravite, V., Jorge, A. (2021).
-                Automatic Generation of Timelines for Past-Web Events. In Gomes, D., Demidova, E., Winters, J., Risse,
+                Automatic Generation of Timelines for Past-Web Events. In Gomes, D., Demidova, E.,
+                Winters, J., Risse,
                 T. (Eds.),
                 The Past Web. Exploring Web Archives (pp. 225-242).</em>
 
               <br />
               <br />
 
-              <em>Pasquali, A., Mangaravite, V., Campos, R., Jorge, A. M., & Jatowt, A. (2019). Interactive system for
-                automatically generating temporal narratives. In Proceedings of the 41st European Conference on
-                Information Retrieval (ECIR'19). Cologne, Germany, April 14-17, pp. 251-255. <strong>(Best Demo
+              <em>Pasquali, A., Mangaravite, V., Campos, R., Jorge, A. M., & Jatowt, A. (2019).
+                Interactive system for
+                automatically generating temporal narratives. In Proceedings of the 41st European
+                Conference on
+                Information Retrieval (ECIR'19). Cologne, Germany, April 14-17, pp. 251-255.
+                <strong>(Best Demo
                   Paper)</strong></em>
 
               <br />
               <br />
 
               <em>
-                Campos, R., Mangaravite, V., Pasquali, A., Jorge, A., Nunes, C., Jatowt, A. (2018). A Text Feature Based
-                Automatic Keyword Extraction Method for Single Documents. In Proceedings of the 40th European Conference
-                on Information Retrieval (ECIR'18). Grenoble, France, March 26- 29, pp. 684 - 691. <strong>(Best Short
+                Campos, R., Mangaravite, V., Pasquali, A., Jorge, A., Nunes, C., Jatowt, A.
+                (2018). A Text Feature Based
+                Automatic Keyword Extraction Method for Single Documents. In Proceedings of the
+                40th European Conference
+                on Information Retrieval (ECIR'18). Grenoble, France, March 26- 29, pp. 684 - 691.
+                <strong>(Best Short
                   Paper)</strong>
               </em>
 
@@ -226,8 +315,10 @@
               <br />
 
               <em>
-                Campos, R., Mangaravite, V., Pasquali, A., Jorge, A., Nunes, C., Jatowt, A. (2018). YAKE!
-                Collection-independent Automatic Keyword Extractor. In Proceedings of the 40th European Conference on
+                Campos, R., Mangaravite, V., Pasquali, A., Jorge, A., Nunes, C., Jatowt, A.
+                (2018). YAKE!
+                Collection-independent Automatic Keyword Extractor. In Proceedings of the 40th
+                European Conference on
                 Information Retrieval (ECIR'18). Grenoble, France, March 22 - 29, pp. 806 - 810.
               </em>
 
@@ -237,7 +328,8 @@
 
               <em>
                 Gomes D. and Cruz D. and Miranda J. and Costa M. and Fontes S.: Acquiring
-                and providing access to historical web collections, 10th International Conference on
+                and providing access to historical web collections, 10th International Conference
+                on
                 Preservation of Digital Objects, (2013)
               </em>
             </div>
@@ -250,10 +342,12 @@
             <div style="font-size: 16px;">
               <br />
               <p>
-                This project is financed by the ERDF – European Regional Development Fund through the North Portugal
-                Regional Operational Programme (NORTE 2020), under the PORTUGAL 2020 and by National Funds through the
-                Portuguese funding agency, FCT - Fundação para a Ciência e a Tecnologia within project
-                PTDC/CCI-COM/31857/2017 (NORTE-01-0145-FEDER-03185). This funding fits under the research line of the Text2Story project.
+                {{ _('Este projeto é financiado pelo FEDER - Fundo Europeu de Desenvolvimento
+                Regional através do Programa Operacional Regional do Norte (NORTE 2020), sob o
+                Programa PORTUGAL 2020 e por fundos nacionais através da agência de financiamento
+                portuguesa, FCT - Fundação para a Ciência e a Tecnologia dentro do projeto
+                PTDC/CCI-COM/31857/2017 (NORTE-01-0145-FEDER-03185). Este financiamento
+                enquadra-se na linha de investigação do projeto Text2Story.') }}
               </p>
             </div>
 
@@ -268,7 +362,7 @@
                   <a href="https://www.inesctec.pt/en/centres/liaad" target="_blank">
                     {% endif %}
                     <img src="{{ url_for('static', filename='img/institutions/logo_liaad.png') }}"
-                      style="max-width: 80%; margin-left: 30px;">
+                      style="max-height: 120px; max-width: 160px;">
                   </a>
               </div>
 
@@ -279,7 +373,7 @@
                   <a href="http://www.ci2.ipt.pt/en/" target="_blank">
                     {% endif %}
                     <img src="{{ url_for('static', filename='img/institutions/logo_ci2.png') }}"
-                      style="max-width: 80%;">
+                      style="max-height: 120px; max-width: 160px;">
                   </a>
               </div>
 
@@ -290,7 +384,7 @@
                   <a href="http://www.ipt.pt/?lng=en" target="_blank">
                     {% endif %}
                     <img src="{{ url_for('static', filename='img/institutions/logo_ipt.png') }}"
-                      style="max-width: 80%;">
+                      style="max-height: 120px; max-width: 160px;">
                   </a>
               </div>
 
@@ -301,14 +395,14 @@
                   <a href="https://sigarra.up.pt/up/en/" target="_blank">
                     {% endif %}
                     <img src="{{ url_for('static', filename='img/institutions/logo_up_fcup.png') }}"
-                      style="max-width: 80%;">
+                      style="max-height: 120px; max-width: 160px;">
                   </a>
               </div>
 
               <div class="column">
                 <a href="https://www.uibk.ac.at/" target="_blank">
                   <img src="{{ url_for('static', filename='img/institutions/logo_universitaet_innsbruck.png') }}"
-                    style="max-width: 80%;">
+                    style="max-height: 120px; max-width: 160px;">
                 </a>
               </div>
 
@@ -317,16 +411,16 @@
             <div class="columns">
 
               <div class="column">
-                <a href="https://www.compete2020.gov.pt/" target="_blank">
-                  <img src="{{ url_for('static', filename='img/institutions/logo_compete2020.png') }}"
-                    style="max-width: 80%;">
+                <a href="https://www.norte2020.pt/" target="_blank">
+                  <img src="{{ url_for('static', filename='img/institutions/logo_norte2020.png') }}"
+                    style="max-height: 120px; max-width: 160px;">
                 </a>
               </div>
 
               <div class="column">
                 <a href="https://www.portugal2020.pt/" target="_blank">
                   <img src="{{ url_for('static', filename='img/institutions/logo_portugal2020.png') }}"
-                    style="max-width: 80%;">
+                    style="max-height: 120px; max-width: 160px;">
                 </a>
               </div>
 
@@ -337,7 +431,7 @@
                   <a href="https://www.fct.pt/index.phtml.en" target="_blank">
                     {% endif %}
                     <img src="{{ url_for('static', filename='img/institutions/logo_fct.png') }}"
-                      style="max-width: 80%;">
+                      style="max-height: 120px; max-width: 160px;">
                   </a>
               </div>
 
@@ -348,14 +442,14 @@
                   <a href="https://ec.europa.eu/regional_policy/en/funding/erdf/" target="_blank">
                     {% endif %}
                     <img src="{{ url_for('static', filename='img/institutions/logo_uniaoeuropeia.png') }}"
-                      style="max-width: 80%;">
+                      style="max-height: 120px; max-width: 160px;">
                   </a>
               </div>
 
               <div class="column">
                 <a href="https://www.humane-ai.eu/" target="_blank">
                   <img src="{{ url_for('static', filename='img/institutions/logo_humane-ai.svg') }}"
-                    style="max-width: 80%;">
+                    style="max-height: 120px; max-width: 160px;">
                 </a>
               </div>
 
