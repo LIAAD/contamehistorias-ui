@@ -198,6 +198,19 @@ def search():
     print('Index:', index)
     print('Lang code:', lang)
 
+    # Call API to available indices
+    r = requests.get(API_TLSCOVID_ENDPOINT +
+                        'get-indices')
+    available_indices = r.json()
+
+    # Call API to available domains
+    r = requests.get(API_TLSCOVID_ENDPOINT +
+                        'get-domains')
+    domains = r.json()
+    available_domains = {k:[] for k in available_indices}
+    for d in domains:
+        available_domains[d['lang']].append(d['name'])
+
     # Task already processed
     if 'id' in request.args:
 
@@ -209,11 +222,11 @@ def search():
             result = task.info['result']
         except TypeError:
             print('Invalid task')
-            return render_template('pages/tlscovid/search.html', lang=lang, form=SearchForm(), related_terms=[], result=None, query=None, has_narrative=has_narrative)
+            return render_template('pages/tlscovid/search.html', lang=lang, form=SearchForm(), related_terms=[], result=None, query=None, has_narrative=has_narrative, available_indices=available_indices, available_domains=available_domains)
         
         if not result:
             print('Invalid result')
-            return render_template('pages/tlscovid/search.html', lang=lang, form=form, related_terms=[], result=None, query=query, has_narrative=has_narrative)
+            return render_template('pages/tlscovid/search.html', lang=lang, form=form, related_terms=[], result=None, query=query, has_narrative=has_narrative, available_indices=available_indices, available_domains=available_domains)
 
         else:
             print('Result ok')
@@ -233,10 +246,10 @@ def search():
             domains = result["domains"]
 
             if(result["status"] != "OK"):
-                return render_template('pages/tlscovid/search.html', lang=lang, form=form, related_terms=[], result=None, result_header=result_header, has_narrative=has_narrative)
+                return render_template('pages/tlscovid/search.html', lang=lang, form=form, related_terms=[], result=None, result_header=result_header, has_narrative=has_narrative, available_indices=available_indices, available_domains=available_domains)
 
             if(int(result["stats"]["n_unique_docs"]) == 0):
-                return render_template('pages/tlscovid/search.html', lang=lang, form=form, related_terms=[], result=None, result_header=result_header, has_narrative=has_narrative)
+                return render_template('pages/tlscovid/search.html', lang=lang, form=form, related_terms=[], result=None, result_header=result_header, has_narrative=has_narrative, available_indices=available_indices, available_domains=available_domains)
 
             # Call API to get events and end_intervals_dates
             r = requests.get(API_TLSCOVID_ENDPOINT +
@@ -306,7 +319,9 @@ def search():
                                    lang=lang,
                                    index=index,
                                    is_topic=is_topic,
-                                   selected_sources=selected_sources)
+                                   selected_sources=selected_sources,
+                                   available_indices=available_indices,
+                                   available_domains=available_domains)
     
     else:
         # If request does not contain id
@@ -317,5 +332,5 @@ def search():
 
         # If request doesn't contain neither id nor query, redirect to search page to perform new search
         else:
-            return render_template('pages/tlscovid/search.html', lang=lang, form=SearchForm(), related_terms=[], result=None, query=None, index=index, has_narrative=has_narrative)
+            return render_template('pages/tlscovid/search.html', lang=lang, form=SearchForm(), related_terms=[], result=None, query=None, index=index, has_narrative=has_narrative, available_indices=available_indices, available_domains=available_domains)
         
