@@ -275,7 +275,7 @@ Main Components
 .cd-timeline-navigation a {
   position: absolute;
   z-index: 1;
-  top: 80%;
+  top: 82%;
   bottom: auto;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
