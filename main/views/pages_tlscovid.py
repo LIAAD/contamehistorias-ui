@@ -171,7 +171,7 @@ def search():
 
     # Lang Code
     lang = session.get("lang", "pt")
-    if(lang == None):
+    if(lang == None or lang not in LANGUAGES):
         lang = "pt"
     try:
         if(lang == "pt"):
@@ -190,7 +190,7 @@ def search():
     if 'form_index' in request.args:
         index = request.args.get('form_index', type=str)
     else:
-        index = request.args.get('index', default='pt', type=str)
+        index = request.args.get('index', default=lang, type=str)
 
     selected_sources = request.args.getlist('selected_sources')
 
