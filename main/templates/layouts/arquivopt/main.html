@@ -42,55 +42,11 @@
                   
                 </div>
 
-                <span class="nav-toggle">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-                
                 <div class="nav-right nav-menu">
 
                   <a href="{{ url_for('pages_arquivopt.about') }}" class="nav-item is-tab nav-inner is-not-mobile">
                     {{ _('Sobre') }}
                   </a>
-
-                  <!-- <a href="{{ url_for('pages_arquivopt.team') }}" class="nav-item is-tab nav-inner is-not-mobile">
-                    {{ _('Equipa') }}
-                  </a>
-                  
-                  <a href="{{ url_for('pages_arquivopt.press') }}" class="nav-item is-tab nav-inner is-not-mobile">
-                    {{ _('Media') }}
-                  </a>
-                  
-                  <a href="https://github.com/LIAAD/TemporalSummarizationFramework" target="_blank"
-                    class="nav-item is-tab nav-inner is-not-mobile">
-                    {{ _('Open Source') }}
-                  </a>
-                  
-                  <a href="https://play.google.com/store/apps/details?id=com.app.projetofinal" target="_blank"
-                    class="nav-item is-tab nav-inner is-not-mobile">
-                    {{ _('Aplicação Móvel') }}
-                  </a>
-
-                  <div class="nav-item is-tab nav-inner is-not-mobile">
-                    <div class="dropdown" id="dropdown-desktop">
-                      <div class="dropdown-trigger">
-                        <a class="nav-item is-tab nav-inner is-not-mobile" aria-haspopup="true" aria-controls="dropdown-menu">
-                          {{ _('Projetos Relacionados') }}
-                        </a>
-                      </div>
-                      <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                        <div class="dropdown-content">
-                          <a href="http://nlplab.inesctec.pt/tellmestories/" target="_blank" class="dropdown-item">
-                            Tell me stories
-                          </a>
-                          <a href="http://yake.inesctec.pt/" target="_blank" class="dropdown-item">
-                            YAKE!
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
 
                   {% if session.get('lang') == "en" %}
                     <a href="{{ url_for('pages_arquivopt.change', new_lang_code='pt') }}"
@@ -119,44 +75,6 @@
                   <a href="{{ url_for('pages_arquivopt.about') }}" class="nav-item is-tab nav-inner is-menu-mobile">
                     {{ _('Sobre') }}
                   </a>
-
-                  <!-- <a href="{{ url_for('pages_arquivopt.team') }}" class="nav-item is-tab nav-inner is-menu-mobile">
-                    {{ _('Equipa') }}
-                  </a>
-
-                  <a href="{{ url_for('pages_arquivopt.press') }}" class="nav-item is-tab nav-inner is-menu-mobile">
-                    {{ _('Media') }}
-                  </a>
-
-                  <a href="https://github.com/LIAAD/TemporalSummarizationFramework" target="_blank"
-                    class="nav-item is-tab nav-inner is-menu-mobile">
-                    {{ _('Open Source') }}
-                  </a>
-
-                  <a href="https://play.google.com/store/apps/details?id=com.app.projetofinal" target="_blank"
-                    class="nav-item is-tab nav-inner is-menu-mobile">
-                    {{ _('Aplicação Móvel') }}
-                  </a>
-
-                  <div class="nav-item is-tab nav-inner is-menu-mobile">
-                    <div class="dropdown" id="dropdown-mobile">
-                      <div class="dropdown-trigger">
-                        <a class="nav-item is-tab nav-inner" aria-haspopup="true" aria-controls="dropdown-menu">
-                          {{ _('Projetos Relacionados') }}
-                        </a>
-                      </div>
-                      <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                        <div class="dropdown-content">
-                          <a href="http://nlplab.inesctec.pt/tellmestories/" target="_blank" class="dropdown-item">
-                            Tell me stories
-                          </a>
-                          <a href="http://yake.inesctec.pt/" target="_blank" class="dropdown-item">
-                            YAKE!
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
 
                   {% if session.get('lang') == "en" %}
                     <a href="{{ url_for('pages_arquivopt.change', new_lang_code='pt') }}"
@@ -290,7 +208,7 @@
                     </li>
                   </ul>
                 </div>
-                
+
               </div>
             </div>
           </div>
@@ -315,40 +233,6 @@
       <script>
         $(document).ready(function () {
           
-          // // Toggle dropdown desktop
-          // var dropdownDesktop = document.querySelector('#dropdown-desktop');
-
-          // $(dropdownDesktop).click(function (event) {
-          //   event.stopPropagation();
-          //   dropdownDesktop.classList.toggle('is-active');
-          // });
-
-          // // Close dropdown if clicking anywhere
-          // $(document).click(function (event) {
-          //   var clickover = $(event.target);
-          //   var _opened = $("#dropdown-desktop").hasClass("is-active");
-          //   if (_opened === true && !clickover.hasClass("#dropdown-desktop")) {
-          //     dropdownDesktop.classList.toggle('is-active');
-          //   }
-          // });
-
-          // var dropdownMobile = document.querySelector('#dropdown-mobile');
-
-          // // Toggle dropdown mobile
-          // $(dropdownMobile).click(function (event) {
-          //   event.stopPropagation();
-          //   dropdownMobile.classList.toggle('is-active');
-          // });
-
-          // // Close dropdown if clicking anywhere
-          // $(document).click(function (event) {
-          //   var clickover = $(event.target);
-          //   var _opened = $("#dropdown-mobile").hasClass("is-active");
-          //   if (_opened === true && !clickover.hasClass("#dropdown-mobile")) {
-          //     dropdownMobile.classList.toggle('is-active');
-          //   }
-          // });
-
           $('.example-slick').slick({
             autoplay: true,
             autoplaySpeed: 6000,
