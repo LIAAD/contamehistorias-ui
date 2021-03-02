@@ -95,11 +95,13 @@
                   {% if session.get('lang') == "en" %}
                     <a href="{{ url_for('pages_arquivopt.change', new_lang_code='pt') }}"
                       class="nav-item is-tab nav-inner is-not-mobile">
+                      <img src="{{ url_for('static', filename='img/flag_pt.svg') }}" width="20" style="margin-right: 5px;">
                       {{ _('Português') }}
                     </a>
                   {% else %}
                     <a href="{{ url_for('pages_arquivopt.change', new_lang_code='en') }}"
                       class="nav-item is-tab nav-inner is-not-mobile">
+                      <img src="{{ url_for('static', filename='img/flag_gb.svg') }}" width="20" style="margin-right: 5px;">
                       {{ _('English') }}
                     </a>
                   {% endif %}
@@ -159,11 +161,13 @@
                   {% if session.get('lang') == "en" %}
                     <a href="{{ url_for('pages_arquivopt.change', new_lang_code='pt') }}"
                       class="nav-item is-tab nav-inner is-menu-mobile">
+                      <img src="{{ url_for('static', filename='img/flag_pt.svg') }}" width="20" style="margin-right: 5px; vertical-align: text-top;">
                       {{ _('Português') }}
                     </a>
                   {% else %}
                     <a href="{{ url_for('pages_arquivopt.change', new_lang_code='en') }}"
                       class="nav-item is-tab nav-inner is-menu-mobile">
+                      <img src="{{ url_for('static', filename='img/flag_gb.svg') }}" width="20" style="margin-right: 5px; vertical-align: text-top;">
                       {{ _('English') }}
                     </a>
                   {% endif %}
@@ -233,11 +237,20 @@
 
                     <li class="column-item">______</li>
 
-                    {% if session.get('lang') == "en" %}
-                      <li class="column-item"><a href="{{ url_for('pages_arquivopt.change', new_lang_code='pt') }}">{{ _('Português')}}</a></li>
-                    {% else %}
-                      <li class="column-item"><a href="{{ url_for('pages_arquivopt.change', new_lang_code='en') }}">{{ _('English')}}</a></li>
-                    {% endif %}
+                    <li class="column-item">
+                      {% if session.get('lang') == "en" %}
+                        <a href="{{ url_for('pages_arquivopt.change', new_lang_code='pt') }}">
+                          <img src="{{ url_for('static', filename='img/flag_pt.svg') }}" width="20" style="vertical-align: text-top;">
+                          {{ _('Português') }}
+                        </a>
+                      {% else %}
+                        <a href="{{ url_for('pages_arquivopt.change', new_lang_code='en') }}">
+                          <img src="{{ url_for('static', filename='img/flag_gb.svg') }}" width="20" style="vertical-align: text-top;">
+                          {{ _('English') }}
+                        </a>
+                      {% endif %}
+                    </li>
+
                   </ul>
 
                   <br/> <br/>
