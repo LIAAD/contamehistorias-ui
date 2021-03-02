@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-26 23:52+0000\n"
+"POT-Creation-Date: 2021-03-02 20:29+0000\n"
 "PO-Revision-Date: 2018-11-09 20:56+0000\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -19,93 +19,48 @@ msgstr ""
 "Generated-By: Babel 2.9.0\n"
 
 #: main/templates/layouts/arquivopt/main.html:37
-#: main/templates/layouts/arquivopt/main.html:110
+#: main/templates/layouts/arquivopt/main.html:68
 #: main/templates/layouts/tlscovid/main.html:37
-#: main/templates/layouts/tlscovid/main.html:110
+#: main/templates/layouts/tlscovid/main.html:68
 msgid "Início"
 msgstr "Home"
 
 #: main/templates/layouts/arquivopt/main.html:40
-#: main/templates/layouts/arquivopt/main.html:114
+#: main/templates/layouts/arquivopt/main.html:72
 #: main/templates/layouts/tlscovid/main.html:40
-#: main/templates/layouts/tlscovid/main.html:114
+#: main/templates/layouts/tlscovid/main.html:72
 msgid "Pesquisar"
 msgstr "Search"
 
-#: main/templates/layouts/arquivopt/main.html:54
-#: main/templates/layouts/arquivopt/main.html:118
-#: main/templates/layouts/arquivopt/main.html:227
-#: main/templates/layouts/tlscovid/main.html:54
-#: main/templates/layouts/tlscovid/main.html:118
-#: main/templates/layouts/tlscovid/main.html:227
+#: main/templates/layouts/arquivopt/main.html:48
+#: main/templates/layouts/arquivopt/main.html:76
+#: main/templates/layouts/arquivopt/main.html:158
+#: main/templates/layouts/tlscovid/main.html:48
+#: main/templates/layouts/tlscovid/main.html:76
+#: main/templates/layouts/tlscovid/main.html:158
 #: main/templates/pages/common/about.html:7
 msgid "Sobre"
 msgstr "About"
 
-#: main/templates/layouts/arquivopt/main.html:58
-#: main/templates/layouts/arquivopt/main.html:122
-#: main/templates/layouts/arquivopt/main.html:228
-#: main/templates/layouts/tlscovid/main.html:58
-#: main/templates/layouts/tlscovid/main.html:122
-#: main/templates/layouts/tlscovid/main.html:228
-#: main/templates/pages/common/team.html:7
-msgid "Equipa"
-msgstr "Team"
-
-#: main/templates/layouts/arquivopt/main.html:62
-#: main/templates/layouts/arquivopt/main.html:126
-#: main/templates/layouts/arquivopt/main.html:229
-#: main/templates/layouts/tlscovid/main.html:62
-#: main/templates/layouts/tlscovid/main.html:126
-#: main/templates/layouts/tlscovid/main.html:229
-#: main/templates/pages/common/press.html:7
-msgid "Media"
-msgstr "Press"
-
-#: main/templates/layouts/arquivopt/main.html:67
-#: main/templates/layouts/arquivopt/main.html:131
-#: main/templates/layouts/arquivopt/main.html:230
-#: main/templates/layouts/tlscovid/main.html:67
-#: main/templates/layouts/tlscovid/main.html:131
-#: main/templates/layouts/tlscovid/main.html:230
-msgid "Open Source"
-msgstr "Open Source"
-
-#: main/templates/layouts/arquivopt/main.html:72
-#: main/templates/layouts/arquivopt/main.html:136
-#: main/templates/layouts/arquivopt/main.html:231
-#: main/templates/layouts/tlscovid/main.html:72
-#: main/templates/layouts/tlscovid/main.html:136
-#: main/templates/layouts/tlscovid/main.html:231
-msgid "Aplicação Móvel"
-msgstr "Mobile Application"
-
-#: main/templates/layouts/arquivopt/main.html:79
-#: main/templates/layouts/arquivopt/main.html:143
-#: main/templates/layouts/tlscovid/main.html:79
-#: main/templates/layouts/tlscovid/main.html:143
-msgid "Projetos Relacionados"
-msgstr "Related Projects"
-
-#: main/templates/layouts/arquivopt/main.html:98
-#: main/templates/layouts/arquivopt/main.html:162
-#: main/templates/layouts/arquivopt/main.html:237
-#: main/templates/layouts/tlscovid/main.html:98
-#: main/templates/layouts/tlscovid/main.html:162
-#: main/templates/layouts/tlscovid/main.html:237
+#: main/templates/layouts/arquivopt/main.html:55
+#: main/templates/layouts/arquivopt/main.html:83
+#: main/templates/layouts/arquivopt/main.html:171
+#: main/templates/layouts/tlscovid/main.html:55
+#: main/templates/layouts/tlscovid/main.html:83
+#: main/templates/layouts/tlscovid/main.html:171
 msgid "Português"
 msgstr "Português"
 
-#: main/templates/layouts/arquivopt/main.html:103
-#: main/templates/layouts/arquivopt/main.html:167
-#: main/templates/layouts/arquivopt/main.html:239
-#: main/templates/layouts/tlscovid/main.html:103
-#: main/templates/layouts/tlscovid/main.html:167
-#: main/templates/layouts/tlscovid/main.html:239
+#: main/templates/layouts/arquivopt/main.html:61
+#: main/templates/layouts/arquivopt/main.html:89
+#: main/templates/layouts/arquivopt/main.html:176
+#: main/templates/layouts/tlscovid/main.html:61
+#: main/templates/layouts/tlscovid/main.html:89
+#: main/templates/layouts/tlscovid/main.html:176
 msgid "English"
 msgstr "English"
 
-#: main/templates/layouts/arquivopt/main.html:187
+#: main/templates/layouts/arquivopt/main.html:109
 msgid ""
 "O Conta-me Histórias é um projeto científico que permite aos utilizadores"
 " criarem automaticamente narrativas de notícias preservadas pelo "
@@ -115,47 +70,74 @@ msgstr ""
 "build news narratives based on news preserved by the Portuguese Web "
 "Archive."
 
-#: main/templates/layouts/arquivopt/main.html:192
-#: main/templates/layouts/tlscovid/main.html:192
+#: main/templates/layouts/arquivopt/main.html:114
+#: main/templates/layouts/tlscovid/main.html:114
 msgid "Desenvolvido por"
 msgstr "Developed by"
 
-#: main/templates/layouts/arquivopt/main.html:193
-#: main/templates/layouts/tlscovid/main.html:193
+#: main/templates/layouts/arquivopt/main.html:115
+#: main/templates/layouts/tlscovid/main.html:115
 msgid "investigadores"
 msgstr "researchers"
 
-#: main/templates/layouts/arquivopt/main.html:193
-#: main/templates/layouts/tlscovid/main.html:193
+#: main/templates/layouts/arquivopt/main.html:115
+#: main/templates/layouts/tlscovid/main.html:115
 msgid "do"
 msgstr "at"
 
-#: main/templates/layouts/arquivopt/main.html:204
-#: main/templates/layouts/tlscovid/main.html:204
+#: main/templates/layouts/arquivopt/main.html:126
+#: main/templates/layouts/tlscovid/main.html:126
 msgid "e afiliados às instituições"
 msgstr "and affiliated to"
 
-#: main/templates/layouts/arquivopt/main.html:214
-#: main/templates/layouts/tlscovid/main.html:214
+#: main/templates/layouts/arquivopt/main.html:136
+#: main/templates/layouts/tlscovid/main.html:136
 msgid "Universidade de Innsbruck"
 msgstr "University of Innsbruck"
 
-#: main/templates/layouts/arquivopt/main.html:225
-#: main/templates/layouts/tlscovid/main.html:225
-msgid "Conta-me Histórias"
-msgstr "Tell me stories"
-
-#: main/templates/layouts/arquivopt/main.html:232
-#: main/templates/layouts/tlscovid/main.html:232
-msgid "Fale Connosco"
-msgstr "Contact Us"
-
-#: main/templates/layouts/arquivopt/main.html:246
-#: main/templates/layouts/tlscovid/main.html:246
+#: main/templates/layouts/arquivopt/main.html:142
+#: main/templates/layouts/tlscovid/main.html:142
 msgid "O conteúdo deste site é licenciado sob"
 msgstr "The content presented here is licensed under"
 
-#: main/templates/layouts/tlscovid/main.html:187
+#: main/templates/layouts/arquivopt/main.html:156
+#: main/templates/layouts/tlscovid/main.html:156
+msgid "Conta-me Histórias"
+msgstr "Tell me stories"
+
+#: main/templates/layouts/arquivopt/main.html:159
+#: main/templates/layouts/tlscovid/main.html:159
+#: main/templates/pages/common/team.html:7
+msgid "Equipa"
+msgstr "Team"
+
+#: main/templates/layouts/arquivopt/main.html:160
+#: main/templates/layouts/tlscovid/main.html:160
+#: main/templates/pages/common/press.html:7
+msgid "Media"
+msgstr "Press"
+
+#: main/templates/layouts/arquivopt/main.html:161
+#: main/templates/layouts/tlscovid/main.html:161
+msgid "Open Source"
+msgstr "Open Source"
+
+#: main/templates/layouts/arquivopt/main.html:162
+#: main/templates/layouts/tlscovid/main.html:162
+msgid "Aplicação Móvel"
+msgstr "Mobile Application"
+
+#: main/templates/layouts/arquivopt/main.html:163
+#: main/templates/layouts/tlscovid/main.html:163
+msgid "Fale Connosco"
+msgstr "Contact Us"
+
+#: main/templates/layouts/arquivopt/main.html:186
+#: main/templates/layouts/tlscovid/main.html:186
+msgid "Projetos Relacionados"
+msgstr "Related Projects"
+
+#: main/templates/layouts/tlscovid/main.html:109
 msgid ""
 "O Conta-me Histórias é um projeto científico que permite aos utilizadores"
 " criarem automaticamente narrativas de notícias."
