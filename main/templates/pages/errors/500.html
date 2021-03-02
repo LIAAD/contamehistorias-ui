@@ -23,12 +23,12 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/icons.min.css') }}">
     </head>
 
-    <body class="hero" style="background-color: lightblue">
-        <div class="hero" style="background-color: lightblue;">
-            <div class="hero-body " style="background-color: lightblue;">
+    <body class="hero">
+        <div class="hero">
+            <div class="hero-body" style="background-color: #033F72;">
                 <div class="container has-text-centered">
-                    <div class="columns is-vcentered" style="color: darkslategray">
-                        <div class="column is-6 is-offset-3 has-text-centered" style="color: black">
+                    <div class="columns is-vcentered" style="color: white;">
+                        <div class="column is-6 is-offset-3 has-text-centered" style="color: white;">
 
                             {% if session.get('dataset') == "arquivopt" %}
                                 <a href="{{ url_for('pages_arquivopt.home')}}">
@@ -47,13 +47,13 @@
                                 </a>
                             {% endif %}
 
-                            <h1 class="title components-title is-2 ">
+                            <h1 class="title components-title is-2" style="color: white;">
                                 {{ _('Algo inesperado aconteceu') }}
                             </h1>
                             
                             <br>
                             
-                            <h1 class="subtitle is-3 dark-text " style="color: darkslategray">
+                            <h1 class="subtitle is-3" style="color: white;">
                                 {{ _('Já estamos a verificar o que aconteceu e esperamos que seja temporário.') }}
                                 <br>
                                 {{ _('Por favor tente novamente mais tarde.') }}
@@ -63,17 +63,17 @@
                             <p class="has-text-centered">
 
                                 {% if session.get('dataset') == "arquivopt" %}
-                                    <a href="{{ url_for('pages_arquivopt.home')}}" style="color: darkslategray"
+                                    <a href="{{ url_for('pages_arquivopt.home')}}" style="color: white;"
                                         class="button button-cta btn-align light-btn btn-outlined is-bold rounded z-index-2">
                                         {{ _('voltar ao início') }}
                                     </a>
                                 {% elif session.get('dataset') == "tls-covid19" %}
-                                    <a href="{{ url_for('pages_tlscovid.home')}}" style="color: darkslategray"
+                                    <a href="{{ url_for('pages_tlscovid.home')}}" style="color: white;"
                                         class="button button-cta btn-align light-btn btn-outlined is-bold rounded z-index-2">
                                         {{ _('voltar ao início') }}
                                     </a>
                                 {% else %}
-                                    <a href="{{ url_for('pages_arquivopt.home')}}" style="color: darkslategray"
+                                    <a href="{{ url_for('pages_arquivopt.home')}}" style="color: white;"
                                         class="button button-cta btn-align light-btn btn-outlined is-bold rounded z-index-2">
                                         {{ _('voltar ao início') }}
                                     </a>
