@@ -218,11 +218,20 @@
                   <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://www.uibk.ac.at/">{{ _('Universidade de Innsbruck') }}</a>
                 </span>
 
+                <br/> <br/>
+
+                <span class="moto">
+                  {{ _('O conteúdo deste site é licenciado sob') }} <a
+                    href="https://creativecommons.org/licenses/by/4.0/" style="color: #A9ABAC;text-decoration:underline"
+                    target="_blank">Creative Commons Attribution 4.0 International license</a>.
+                </span>
+
               </div>
             </div>
 
             <div class="column is-7 is-offset-2">
               <div class="columns">
+
                 <div class="column">
                   <ul class="footer-column">
                     <li class="column-header">
@@ -250,32 +259,38 @@
                         </a>
                       {% endif %}
                     </li>
-
                   </ul>
-
-                  <br/> <br/>
-
-                  <span class="moto">
-                    {{ _('O conteúdo deste site é licenciado sob') }} <a
-                      href="https://creativecommons.org/licenses/by/4.0/" style="color: #A9ABAC;text-decoration:underline"
-                      target="_blank">Creative Commons Attribution 4.0 International license</a>
-                  </span>
                 </div>
 
                 <div class="column">
                   <ul class="footer-column">
                     <li class="column-header">
-                      Arquivo.pt
+                      {{ _('Projetos Relacionados') }}
                     </li>
-                    {% if session.get('lang') == "en" %}
-                      <li class="column-item"><a target="_blank" href="https://sobre.arquivo.pt/en/collaborate/rd/">Research</a></li>
-                      <li class="column-item"><a target="_blank" href="https://sobre.arquivo.pt/en/help/">FAQs</a></li>
-                    {% else %}
-                      <li class="column-item"><a target="_blank" href="https://sobre.arquivo.pt/pt/colabore/id/">Investigação</a></li>
-                      <li class="column-item"><a target="_blank" href="https://sobre.arquivo.pt/pt/ajuda/">Perguntas frequentes</a></li>
-                    {% endif %}
+                    <li class="column-item">
+                      {% if session.get('lang') == "en" %}
+                        <a href="https://arquivo.pt/?l=en" target="_blank">
+                          Portuguese Web Archive
+                        </a>
+                      {% else %}
+                        <a href="https://arquivo.pt/" target="_blank">
+                          Arquivo.pt
+                        </a>
+                      {% endif %}
+                    </li>
+                    <li class="column-item">
+                      <a href="http://nlplab.inesctec.pt/tellmestories/" target="_blank">
+                        Tell me stories
+                      </a>
+                    </li>
+                    <li class="column-item">
+                      <a href="http://yake.inesctec.pt/" target="_blank">
+                        YAKE!
+                      </a>
+                    </li>
                   </ul>
                 </div>
+                
               </div>
             </div>
           </div>
