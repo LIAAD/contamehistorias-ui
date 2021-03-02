@@ -54,7 +54,7 @@
                     {{ _('Sobre') }}
                   </a>
 
-                  <a href="{{ url_for('pages_arquivopt.team') }}" class="nav-item is-tab nav-inner is-not-mobile">
+                  <!-- <a href="{{ url_for('pages_arquivopt.team') }}" class="nav-item is-tab nav-inner is-not-mobile">
                     {{ _('Equipa') }}
                   </a>
                   
@@ -90,7 +90,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
 
                   {% if session.get('lang') == "en" %}
                     <a href="{{ url_for('pages_arquivopt.change', new_lang_code='pt') }}"
@@ -120,7 +120,7 @@
                     {{ _('Sobre') }}
                   </a>
 
-                  <a href="{{ url_for('pages_arquivopt.team') }}" class="nav-item is-tab nav-inner is-menu-mobile">
+                  <!-- <a href="{{ url_for('pages_arquivopt.team') }}" class="nav-item is-tab nav-inner is-menu-mobile">
                     {{ _('Equipa') }}
                   </a>
 
@@ -156,7 +156,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
 
                   {% if session.get('lang') == "en" %}
                     <a href="{{ url_for('pages_arquivopt.change', new_lang_code='pt') }}"
@@ -300,39 +300,39 @@
       <script>
         $(document).ready(function () {
           
-          // Toggle dropdown desktop
-          var dropdownDesktop = document.querySelector('#dropdown-desktop');
+          // // Toggle dropdown desktop
+          // var dropdownDesktop = document.querySelector('#dropdown-desktop');
 
-          $(dropdownDesktop).click(function (event) {
-            event.stopPropagation();
-            dropdownDesktop.classList.toggle('is-active');
-          });
+          // $(dropdownDesktop).click(function (event) {
+          //   event.stopPropagation();
+          //   dropdownDesktop.classList.toggle('is-active');
+          // });
 
-          // Close dropdown if clicking anywhere
-          $(document).click(function (event) {
-            var clickover = $(event.target);
-            var _opened = $("#dropdown-desktop").hasClass("is-active");
-            if (_opened === true && !clickover.hasClass("#dropdown-desktop")) {
-              dropdownDesktop.classList.toggle('is-active');
-            }
-          });
+          // // Close dropdown if clicking anywhere
+          // $(document).click(function (event) {
+          //   var clickover = $(event.target);
+          //   var _opened = $("#dropdown-desktop").hasClass("is-active");
+          //   if (_opened === true && !clickover.hasClass("#dropdown-desktop")) {
+          //     dropdownDesktop.classList.toggle('is-active');
+          //   }
+          // });
 
-          var dropdownMobile = document.querySelector('#dropdown-mobile');
+          // var dropdownMobile = document.querySelector('#dropdown-mobile');
 
-          // Toggle dropdown mobile
-          $(dropdownMobile).click(function (event) {
-            event.stopPropagation();
-            dropdownMobile.classList.toggle('is-active');
-          });
+          // // Toggle dropdown mobile
+          // $(dropdownMobile).click(function (event) {
+          //   event.stopPropagation();
+          //   dropdownMobile.classList.toggle('is-active');
+          // });
 
-          // Close dropdown if clicking anywhere
-          $(document).click(function (event) {
-            var clickover = $(event.target);
-            var _opened = $("#dropdown-mobile").hasClass("is-active");
-            if (_opened === true && !clickover.hasClass("#dropdown-mobile")) {
-              dropdownMobile.classList.toggle('is-active');
-            }
-          });
+          // // Close dropdown if clicking anywhere
+          // $(document).click(function (event) {
+          //   var clickover = $(event.target);
+          //   var _opened = $("#dropdown-mobile").hasClass("is-active");
+          //   if (_opened === true && !clickover.hasClass("#dropdown-mobile")) {
+          //     dropdownMobile.classList.toggle('is-active');
+          //   }
+          // });
 
           $('.example-slick').slick({
             autoplay: true,
