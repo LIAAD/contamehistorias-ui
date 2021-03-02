@@ -101,17 +101,17 @@
 
       <footer class="footer footer-light-medium" style="margin-left: 0px !important;">
         <div class="container">
+
           <div class="columns">
-            <div class="column is-4">
-              <div class="pt-10 pb-10">
-                <img class="small-footer-logo" src="" alt="">
-                <div class="footer-description pt-10 pb-10">
+
+            <div class="column is-5">
+              <span class="moto">
+                <p>
                   {{ _('O Conta-me Histórias é um projeto científico que permite aos utilizadores criarem automaticamente narrativas de notícias preservadas pelo Arquivo.pt.') }}
-                </div>
-              </div>
-              <div>
-                
-                <span class="moto">{{ _('Desenvolvido por') }} 
+                </p>
+                <br>
+                <p>
+                  {{ _('Desenvolvido por') }} 
                   <a style="color: #A9ABAC; text-decoration:underline" href="{{ url_for('pages_arquivopt.team') }}"> {{ _('investigadores') }} </a> {{ _('do') }}
                   {% if session.get('lang') == "pt" %}
                     <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://www.inesctec.pt/pt/centros/liaad">Laboratório de Inteligência Artificial e Apoio a Decisão (LIAAD</a> -
@@ -120,98 +120,89 @@
                     <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://www.inesctec.pt/en/centres/liaad">Artificial Intelligence and Decision Support Laboratory (LIAAD</a> -
                     <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://www.inesctec.pt/en">INESCTEC</a>), 
                   {% endif %}
-                </span>
-
-                <span class="moto">
                   {{ _('e afiliados às instituições') }}
                   {% if session.get('lang') == "pt" %}
                     <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://www.ipt.pt/">Instituto Politécnico de Tomar</a> - 
                     <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://www.ci2.ipt.pt/">Centro de Investigação em Cidades Inteligentes (CI2)</a>;
-                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://sigarra.up.pt/up/">Universidade do Porto</a>;
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://sigarra.up.pt/up/">Universidade do Porto</a>
                   {% else %}
                     <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://www.ipt.pt/?lng=en">Polytechnic Institute of Tomar</a> - 
                     <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://www.ci2.ipt.pt/en/">Smart Cities Research Center (CI2)</a>;
-                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://sigarra.up.pt/up/en/">University of Porto</a>;
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://sigarra.up.pt/up/en/">University of Porto</a>
                   {% endif %}
-                  <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://www.uibk.ac.at/">{{ _('Universidade de Innsbruck') }}</a>
-                </span>
-
-                <br/> <br/>
-
-                <span class="moto">
+                  {{ _('e') }}
+                  <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://www.uibk.ac.at/">{{ _('Universidade de Innsbruck') }}</a>.
+                </p>
+                <br>
+                <p>
                   {{ _('O conteúdo deste site é licenciado sob') }} <a
-                    href="https://creativecommons.org/licenses/by/4.0/" style="color: #A9ABAC;text-decoration:underline"
-                    target="_blank">Creative Commons Attribution 4.0 International license</a>.
-                </span>
-
-              </div>
+                  href="https://creativecommons.org/licenses/by/4.0/" style="color: #A9ABAC;text-decoration:underline"
+                  target="_blank">Creative Commons Attribution 4.0 International license</a>.
+                </p>
+              </span>
             </div>
 
-            <div class="column is-7 is-offset-2">
-              <div class="columns">
+            <div class="column is-3 is-offset-1">
+              <ul class="footer-column" style="padding-top: 0px !important;">
+                <li class="column-header" style="margin-top: 0px !important;">
+                  {{ _('Conta-me Histórias') }}
+                </li>
+                <li class="column-item"><a href="{{ url_for('pages_arquivopt.about') }}">{{ _('Sobre') }}</a></li>
+                <li class="column-item"><a href="{{ url_for('pages_arquivopt.team') }}">{{ _('Equipa') }}</a></li>
+                <li class="column-item"><a href="{{ url_for('pages_arquivopt.press') }}">{{ _('Media') }}</a></li>
+                <li class="column-item"><a target="_blank" href="https://github.com/LIAAD/TemporalSummarizationFramework">{{ _('Open Source') }}</a></li>
+                <li class="column-item"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.app.projetofinal">{{ _('Aplicação Móvel') }}</a></li>
+                <li class="column-item"><a href="mailto:contamehistorias@googlegroups.com"> {{ _('Fale Connosco') }}</a></li>
 
-                <div class="column">
-                  <ul class="footer-column">
-                    <li class="column-header">
-                      {{ _('Conta-me Histórias') }}
-                    </li>
-                    <li class="column-item"><a href="{{ url_for('pages_arquivopt.about') }}">{{ _('Sobre') }}</a></li>
-                    <li class="column-item"><a href="{{ url_for('pages_arquivopt.team') }}">{{ _('Equipa') }}</a></li>
-                    <li class="column-item"><a href="{{ url_for('pages_arquivopt.press') }}">{{ _('Media') }}</a></li>
-                    <li class="column-item"><a target="_blank" href="https://github.com/LIAAD/TemporalSummarizationFramework">{{ _('Open Source') }}</a></li>
-                    <li class="column-item"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.app.projetofinal">{{ _('Aplicação Móvel') }}</a></li>
-                    <li class="column-item"><a href="mailto:contamehistorias@googlegroups.com"> {{ _('Fale Connosco') }}</a></li>
+                <li class="column-item">______</li>
 
-                    <li class="column-item">______</li>
-
-                    <li class="column-item">
-                      {% if session.get('lang') == "en" %}
-                        <a href="{{ url_for('pages_arquivopt.change', new_lang_code='pt') }}">
-                          <img src="{{ url_for('static', filename='img/flag_pt.svg') }}" width="20" style="vertical-align: text-top;">
-                          {{ _('Português') }}
-                        </a>
-                      {% else %}
-                        <a href="{{ url_for('pages_arquivopt.change', new_lang_code='en') }}">
-                          <img src="{{ url_for('static', filename='img/flag_gb.svg') }}" width="20" style="vertical-align: text-top;">
-                          {{ _('English') }}
-                        </a>
-                      {% endif %}
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="column">
-                  <ul class="footer-column">
-                    <li class="column-header">
-                      {{ _('Projetos Relacionados') }}
-                    </li>
-                    <li class="column-item">
-                      {% if session.get('lang') == "en" %}
-                        <a href="https://arquivo.pt/?l=en" target="_blank">
-                          Portuguese Web Archive
-                        </a>
-                      {% else %}
-                        <a href="https://arquivo.pt/" target="_blank">
-                          Arquivo.pt
-                        </a>
-                      {% endif %}
-                    </li>
-                    <li class="column-item">
-                      <a href="http://nlplab.inesctec.pt/tellmestories/" target="_blank">
-                        Tell me stories
-                      </a>
-                    </li>
-                    <li class="column-item">
-                      <a href="http://yake.inesctec.pt/" target="_blank">
-                        YAKE!
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
+                <li class="column-item">
+                  {% if session.get('lang') == "en" %}
+                    <a href="{{ url_for('pages_arquivopt.change', new_lang_code='pt') }}">
+                      <img src="{{ url_for('static', filename='img/flag_pt.svg') }}" width="20" style="vertical-align: text-top;">
+                      {{ _('Português') }}
+                    </a>
+                  {% else %}
+                    <a href="{{ url_for('pages_arquivopt.change', new_lang_code='en') }}">
+                      <img src="{{ url_for('static', filename='img/flag_gb.svg') }}" width="20" style="vertical-align: text-top;">
+                      {{ _('English') }}
+                    </a>
+                  {% endif %}
+                </li>
+              </ul>
             </div>
+            
+            <div class="column is-3">
+              <ul class="footer-column" style="padding-top: 0px !important;">
+                <li class="column-header" style="margin-top: 0px !important;">
+                  {{ _('Projetos Relacionados') }}
+                </li>
+                <li class="column-item">
+                  {% if session.get('lang') == "en" %}
+                    <a href="https://arquivo.pt/?l=en" target="_blank">
+                      Portuguese Web Archive
+                    </a>
+                  {% else %}
+                    <a href="https://arquivo.pt/" target="_blank">
+                      Arquivo.pt
+                    </a>
+                  {% endif %}
+                </li>
+                <li class="column-item">
+                  <a href="http://nlplab.inesctec.pt/tellmestories/" target="_blank">
+                    Tell me stories
+                  </a>
+                </li>
+                <li class="column-item">
+                  <a href="http://yake.inesctec.pt/" target="_blank">
+                    YAKE!
+                  </a>
+                </li>
+              </ul>
+            </div>
+          
           </div>
+
         </div>
       </footer>
 
