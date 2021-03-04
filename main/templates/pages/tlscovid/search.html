@@ -27,66 +27,68 @@
             </div>
             <form name="searchForm" method="get" action="{{ url_for('pages_tlscovid.search') }}" class="form-signin">
 
+                <!-- Query input -->
                 <div class="help-search-wrapper">
                     {{ form.query(class_ = 'form-control first-input', placeholder = form.query.label.text) }}
                     <i class="sl sl-icon-magnifier"></i>
                 </div>
 
-                <a id="advanced_options_btn" style="color: white;text-decoration: underline">{{ _('opções avançadas')}}</a>
-                <div id="advanced_options_view" style="display: none" class="field">
-                    <div class="control mt-20">
+                <!-- Headline type -->
+                <div class="control mt-10">
+                    <label class="form-label" style="color:white; vertical-align:middle">{{ _('headline')}}</label>
+                    <div class="">
+                        <select name="form_headline">
+                            <option value="content" selected="selected">{{ _('conteúdo')}}</option>
+                            <option value="title">{{ _('título')}}</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Advanced options -->
+                <div class="control mt-10">
+                    <a id="advanced_options_btn" style="color: white;text-decoration: underline">{{ _('opções avançadas')}}</a>
+                    <div id="advanced_options_view" style="display: none" class="field">
+                        <div class="control mt-10">
 
-                        <label class="form-label" style="color:white; vertical-align:middle">{{ _('headline')}}</label>
-                            <div class="">
-                                <select name="form_headline">
-                                    <option value="content" selected="selected">{{ _('conteúdo')}}</option>
-                                    <option value="title">{{ _('título')}}</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="form-label" style="color:white; vertical-align:middle">{{ _('lingua')}}</label>
-                            <div class="">
-                                <select name="form_index">
-                                    {% for idx in available_indices %}
-                                        <option value="{{idx}}" {{ "selected='selected'" if index == idx else "" }}>{{idx}}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="form-label" style="color:white; vertical-align:middle">{{ _('fontes')}}</label>
-                            <div class="">
-                                
-                                <div class="sources_pt" {% if index == "pt" %} style="display:inline;" {% else %} style="display:none;" {% endif %}>
-                                    {% for dom in available_domains['pt'] %}
-                                        <label class="checkbox">
-                                            <input type="checkbox" class="checkbox_pt" name="selected_sources" value="{{dom}}" {{ 'checked' if dom in selected_sources else "" }} {{ 'checked' if not selected_sources and index == "pt" else "" }}>
-                                            <span style="color: white;">{{dom}}</span>
-                                        </label>
-                                    {% endfor %}
+                            <div class="field">
+                                <label class="form-label" style="color:white; vertical-align:middle">{{ _('lingua')}}</label>
+                                <div class="">
+                                    <select name="form_index">
+                                        {% for idx in available_indices %}
+                                            <option value="{{idx}}" {{ "selected='selected'" if index == idx else "" }}>{{idx}}</option>
+                                        {% endfor %}
+                                    </select>
                                 </div>
-
-                                <div class="sources_en" {% if index == "en" %} style="display:inline;" {% else %} style="display:none;" {% endif %}>
-                                    {% for dom in available_domains['en'] %}
-                                        <label class="checkbox">
-                                            <input type="checkbox" class="checkbox_en" name="selected_sources" value="{{dom}}" {{ 'checked' if dom in selected_sources else "" }} {{ 'checked' if not selected_sources and index == "en" else "" }}>
-                                            <span style="color: white;">{{dom}}</span>
-                                        </label>
-                                    {% endfor %}
-                                </div>
-                                
                             </div>
+
+                            <div class="field">
+                                <label class="form-label" style="color:white; vertical-align:middle">{{ _('fontes')}}</label>
+                                <div class="">
+                                    <div class="sources_pt" {% if index == "pt" %} style="display:inline;" {% else %} style="display:none;" {% endif %}>
+                                        {% for dom in available_domains['pt'] %}
+                                            <label class="checkbox">
+                                                <input type="checkbox" class="checkbox_pt" name="selected_sources" value="{{dom}}" {{ 'checked' if dom in selected_sources else "" }} {{ 'checked' if not selected_sources and index == "pt" else "" }}>
+                                                <span style="color: white;">{{dom}}</span>
+                                            </label>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="sources_en" {% if index == "en" %} style="display:inline;" {% else %} style="display:none;" {% endif %}>
+                                        {% for dom in available_domains['en'] %}
+                                            <label class="checkbox">
+                                                <input type="checkbox" class="checkbox_en" name="selected_sources" value="{{dom}}" {{ 'checked' if dom in selected_sources else "" }} {{ 'checked' if not selected_sources and index == "en" else "" }}>
+                                                <span style="color: white;">{{dom}}</span>
+                                            </label>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="button btn-align info-btn raised">{{ _('aplicar') }}</button>
                         </div>
-                        
-                        <button type="submit" class="button btn-align info-btn raised">{{ _('aplicar') }}</button>
                     </div>
                 </div>
                 <input type="hidden" id="lang" name="lang" value="{{lang}}">
             </form>
-
         </div>
     </div>
 </div>
