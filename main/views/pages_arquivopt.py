@@ -239,6 +239,9 @@ def search():
 
             domains = result["domains"]
 
+            # List of lists. Each inner list is [term, tf, h]
+            relevant_terms = result['most_relevant_terms']
+
             # Call API to get blacklist ngrams
             r = requests.get(API_ARQUIVOPT_ENDPOINT + 'get-examples')
             blacklist_ngrams = r.json()['blacklist_ngrams']
@@ -310,7 +313,8 @@ def search():
                                    blacklist_ngrams=blacklist_ngrams,
                                    query=query,
                                    lang=lang,
-                                   last_years=last_years)
+                                   last_years=last_years,
+                                   relevant_terms=relevant_terms)
     
     else:
         # If request does not contain id

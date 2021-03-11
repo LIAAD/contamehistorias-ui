@@ -31,6 +31,18 @@
                     <i class="sl sl-icon-magnifier"></i>
                 </div>
 
+                {% if relevant_terms %}
+
+                <div class="control mt-10">
+                    <label class="form-label" style="color:white; vertical-align:middle">{{ _('Assinalar termos relevantes')}}</label>
+                    <div class="field mt-2">
+                        <input id="form_flagTerms" type="checkbox" class="switch is-info">
+                        <label for="form_flagTerms"></label>
+                    </div>
+                </div>
+
+                {% endif %}
+
                 <a id="advanced_options_btn" style="color: white;text-decoration: underline">{{ _('opções avançadas')}}</a>
                 <div id="advanced_options_view" style="display: none" class="field">
                     <div class="control mt-20 ">
@@ -392,6 +404,44 @@
             let url = "https://arquivo.pt/search.jsp?l=pt&query="+query+"&btnSubmit=Pesquisar&dateStart="+newdate_str+"&dateEnd="+newdate_str;
             window.open(url, '_blank');
         }
+
+        // Timeline
+        {% if relevant_terms %}
+
+            let relevant_terms = {{ relevant_terms | safe }};
+
+            $('#form_flagTerms').on('change', function() {
+
+                if($('#form_flagTerms').is(":checked")) {
+                    $(document).find('.classToken.is-tooltip-info.tooltip > a').each(function () {
+                        let headline = $(this);
+
+                        for (let i = 0; i < relevant_terms.length; i++) {
+                            
+                            let term = relevant_terms[i][0];
+
+                            // Check if headline includes term as a word
+                            if(headline.text().includes(" " + term + " ")){
+                                headline.html(headline.text().replace(term, "<b>" + term + "</b>"));
+                            }
+                        }
+                    
+                    });
+                }
+                else {
+                    $(document).find('.classToken.is-tooltip-info.tooltip > a').each(function () {
+                        let headline = $(this);
+                        
+                        // Remove bolds
+                        headline.html(headline.text().replace("<b>", ""));
+                        headline.html(headline.text().replace("</b>", ""));
+                    
+                    });
+                }
+            });
+
+        {% endif %}
+
 
 
         // Timeline

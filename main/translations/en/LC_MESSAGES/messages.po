@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-03 13:13+0000\n"
+"POT-Creation-Date: 2021-03-11 16:47+0000\n"
 "PO-Revision-Date: 2018-11-09 20:56+0000\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -92,8 +92,8 @@ msgstr "and affiliated to"
 
 #: main/templates/layouts/arquivopt/main.html:139
 #: main/templates/layouts/tlscovid/main.html:139
-#: main/templates/pages/arquivopt/search.html:175
-#: main/templates/pages/tlscovid/search.html:220
+#: main/templates/pages/arquivopt/search.html:187
+#: main/templates/pages/tlscovid/search.html:222
 msgid "e"
 msgstr "and"
 
@@ -191,133 +191,137 @@ msgstr "Politics, Justice and Journalism"
 msgid "Desporto e Cultura"
 msgstr "Sports and Culture"
 
-#: main/templates/pages/arquivopt/search.html:34
-#: main/templates/pages/tlscovid/search.html:35
+#: main/templates/pages/arquivopt/search.html:37
+msgid "Assinalar termos relevantes"
+msgstr "Flag relevant terms"
+
+#: main/templates/pages/arquivopt/search.html:46
+#: main/templates/pages/tlscovid/search.html:49
 msgid "opções avançadas"
 msgstr "advanced options"
 
-#: main/templates/pages/arquivopt/search.html:39
+#: main/templates/pages/arquivopt/search.html:51
 msgid "Últimos 5 anos"
 msgstr "Last 5 years"
 
-#: main/templates/pages/arquivopt/search.html:40
+#: main/templates/pages/arquivopt/search.html:52
 msgid "Últimos 10 anos"
 msgstr "Last 10 years"
 
-#: main/templates/pages/arquivopt/search.html:41
+#: main/templates/pages/arquivopt/search.html:53
 msgid "Últimos 15 anos"
 msgstr "Last 15 years"
 
-#: main/templates/pages/arquivopt/search.html:42
+#: main/templates/pages/arquivopt/search.html:54
 msgid "Últimos 20 anos"
 msgstr "Last 20 years"
 
-#: main/templates/pages/arquivopt/search.html:45
-#: main/templates/pages/tlscovid/search.html:84
+#: main/templates/pages/arquivopt/search.html:57
+#: main/templates/pages/tlscovid/search.html:86
 msgid "aplicar"
 msgstr "confirm"
 
-#: main/templates/pages/arquivopt/search.html:70
-#: main/templates/pages/tlscovid/search.html:109
+#: main/templates/pages/arquivopt/search.html:82
+#: main/templates/pages/tlscovid/search.html:111
 msgid "Narrativa"
 msgstr "Narrative"
 
-#: main/templates/pages/arquivopt/search.html:71
-#: main/templates/pages/tlscovid/search.html:110
+#: main/templates/pages/arquivopt/search.html:83
+#: main/templates/pages/tlscovid/search.html:112
 msgid "Termos relacionados"
 msgstr "Related terms"
 
-#: main/templates/pages/arquivopt/search.html:79
-#: main/templates/pages/tlscovid/search.html:118
+#: main/templates/pages/arquivopt/search.html:91
+#: main/templates/pages/tlscovid/search.html:120
 msgid "Termos relacionados com"
 msgstr "Terms related with"
 
-#: main/templates/pages/arquivopt/search.html:79
-#: main/templates/pages/arquivopt/search.html:121
+#: main/templates/pages/arquivopt/search.html:91
+#: main/templates/pages/arquivopt/search.html:133
 #: main/templates/pages/arquivopt/searching.html:27
 msgid "durante os últimos"
 msgstr "during the last"
 
-#: main/templates/pages/arquivopt/search.html:79
-#: main/templates/pages/arquivopt/search.html:121
+#: main/templates/pages/arquivopt/search.html:91
+#: main/templates/pages/arquivopt/search.html:133
 #: main/templates/pages/arquivopt/searching.html:27
 msgid "anos"
 msgstr "years"
 
-#: main/templates/pages/arquivopt/search.html:93
-#: main/templates/pages/tlscovid/search.html:132
+#: main/templates/pages/arquivopt/search.html:105
+#: main/templates/pages/tlscovid/search.html:134
 msgid "Entidades"
 msgstr "Entities"
 
-#: main/templates/pages/arquivopt/search.html:94
-#: main/templates/pages/tlscovid/search.html:133
+#: main/templates/pages/arquivopt/search.html:106
+#: main/templates/pages/tlscovid/search.html:135
 msgid "Termos"
 msgstr "Terms"
 
-#: main/templates/pages/arquivopt/search.html:100
-#: main/templates/pages/arquivopt/search.html:272
+#: main/templates/pages/arquivopt/search.html:112
+#: main/templates/pages/arquivopt/search.html:284
 #: main/templates/pages/common/about.html:132
-#: main/templates/pages/tlscovid/search.html:139
-#: main/templates/pages/tlscovid/search.html:316
+#: main/templates/pages/tlscovid/search.html:141
+#: main/templates/pages/tlscovid/search.html:318
 msgid "Portais de Notícias"
 msgstr "News sources"
 
-#: main/templates/pages/arquivopt/search.html:121
-#: main/templates/pages/tlscovid/search.html:162
+#: main/templates/pages/arquivopt/search.html:133
+#: main/templates/pages/tlscovid/search.html:164
 msgid "Narrativa sobre"
 msgstr "Narrative about"
 
-#: main/templates/pages/arquivopt/search.html:174
-#: main/templates/pages/tlscovid/search.html:219
+#: main/templates/pages/arquivopt/search.html:186
+#: main/templates/pages/tlscovid/search.html:221
 msgid "Notícias relevantes entre"
 msgstr "Relevant news between"
 
-#: main/templates/pages/arquivopt/search.html:295
+#: main/templates/pages/arquivopt/search.html:307
 msgid "Número de páginas encontradas em Arquivo.pt"
 msgstr "Number of pages found in Arquivo.pt"
 
-#: main/templates/pages/arquivopt/search.html:297
-#: main/templates/pages/tlscovid/search.html:343
+#: main/templates/pages/arquivopt/search.html:309
+#: main/templates/pages/tlscovid/search.html:345
 msgid "Páginas encontradas"
 msgstr "Pages found"
 
-#: main/templates/pages/arquivopt/search.html:304
-#: main/templates/pages/tlscovid/search.html:350
+#: main/templates/pages/arquivopt/search.html:316
+#: main/templates/pages/tlscovid/search.html:352
 msgid "Número de notícias consideradas para construir a narrativa"
 msgstr "Number of news articles considered to build narrative"
 
-#: main/templates/pages/arquivopt/search.html:307
-#: main/templates/pages/tlscovid/search.html:353
+#: main/templates/pages/arquivopt/search.html:319
+#: main/templates/pages/tlscovid/search.html:355
 msgid "Notícias consideradas"
 msgstr "Considered news articles"
 
-#: main/templates/pages/arquivopt/search.html:314
-#: main/templates/pages/tlscovid/search.html:360
+#: main/templates/pages/arquivopt/search.html:326
+#: main/templates/pages/tlscovid/search.html:362
 msgid "Número de portais de notícias considerados para construir a narrativa"
 msgstr "Number of news sources considered to build narrative"
 
-#: main/templates/pages/arquivopt/search.html:316
-#: main/templates/pages/tlscovid/search.html:362
+#: main/templates/pages/arquivopt/search.html:328
+#: main/templates/pages/tlscovid/search.html:364
 msgid "Portais de notícia"
 msgstr "News sources"
 
-#: main/templates/pages/arquivopt/search.html:328
-#: main/templates/pages/tlscovid/search.html:374
+#: main/templates/pages/arquivopt/search.html:340
+#: main/templates/pages/tlscovid/search.html:376
 msgid "Narrativa construída em"
 msgstr "Narrative built in"
 
-#: main/templates/pages/arquivopt/search.html:329
-#: main/templates/pages/tlscovid/search.html:375
+#: main/templates/pages/arquivopt/search.html:341
+#: main/templates/pages/tlscovid/search.html:377
 msgid "segundos"
 msgstr "seconds"
 
-#: main/templates/pages/arquivopt/search.html:352
-#: main/templates/pages/tlscovid/search.html:398
+#: main/templates/pages/arquivopt/search.html:364
+#: main/templates/pages/tlscovid/search.html:400
 msgid "Não foram identificadas notícias suficientes sobre"
 msgstr "There are not enough news articles about"
 
-#: main/templates/pages/arquivopt/search.html:352
-#: main/templates/pages/tlscovid/search.html:398
+#: main/templates/pages/arquivopt/search.html:364
+#: main/templates/pages/tlscovid/search.html:400
 msgid "que permitam construir uma narrativa."
 msgstr "to build a narrative."
 
@@ -554,35 +558,35 @@ msgstr "Please try again later."
 msgid "Sistema com muita procura"
 msgstr "System too busy"
 
-#: main/templates/pages/tlscovid/search.html:39
+#: main/templates/pages/tlscovid/search.html:38
 msgid "headline"
 msgstr ""
 
-#: main/templates/pages/tlscovid/search.html:42
+#: main/templates/pages/tlscovid/search.html:41
 msgid "conteúdo"
 msgstr "content"
 
-#: main/templates/pages/tlscovid/search.html:43
+#: main/templates/pages/tlscovid/search.html:42
 msgid "título"
 msgstr "title"
 
-#: main/templates/pages/tlscovid/search.html:49
+#: main/templates/pages/tlscovid/search.html:54
 msgid "lingua"
 msgstr "language"
 
-#: main/templates/pages/tlscovid/search.html:60
+#: main/templates/pages/tlscovid/search.html:65
 msgid "fontes"
 msgstr "news sources"
 
-#: main/templates/pages/tlscovid/search.html:164
+#: main/templates/pages/tlscovid/search.html:166
 msgid "com"
 msgstr "with"
 
-#: main/templates/pages/tlscovid/search.html:165
+#: main/templates/pages/tlscovid/search.html:167
 msgid "momentos chave"
 msgstr "key moments"
 
-#: main/templates/pages/tlscovid/search.html:341
+#: main/templates/pages/tlscovid/search.html:343
 msgid "Número de páginas encontradas"
 msgstr "Number of pages found"
 
