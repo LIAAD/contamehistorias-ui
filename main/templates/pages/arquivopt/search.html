@@ -253,7 +253,7 @@
                                                                                             <a href="{{ kw.docs[0][1] }}"
                                                                                                 target="_blank"
                                                                                                 title="{{kw.docs[0][0]}}">
-                                                                                                <span style="color:black">
+                                                                                                <span class="timeline-vertical-item" style="color:black">
                                                                                                     {{kw.kw}}
                                                                                                 </span>
                                                                                             </a>
@@ -407,6 +407,7 @@
             window.open(url, '_blank');
         }
 
+        
         // Relevant terms
         {% if relevant_terms %}
 
@@ -415,7 +416,24 @@
             $('#form_flagTerms').on('change', function() {
 
                 if($('#form_flagTerms').is(":checked")) {
+                    // Horizontal timeline
                     $(document).find('.classToken.is-tooltip-info.tooltip > a').each(function () {
+                        let headline = $(this);
+
+                        for (let i = 0; i < relevant_terms.length; i++) {
+                            
+                            let term = relevant_terms[i][0];
+
+                            // Check if headline includes term as a word
+                            if(headline.text().includes(" " + term + " ")){
+                                headline.html(headline.text().replace(term, "<b>" + term + "</b>"));
+                            }
+                        }
+                    
+                    });
+
+                    // Vertical timeline
+                    $(document).find('.timeline-vertical-item').each(function () {
                         let headline = $(this);
 
                         for (let i = 0; i < relevant_terms.length; i++) {
@@ -431,7 +449,18 @@
                     });
                 }
                 else {
+                    // Horizontal timeline
                     $(document).find('.classToken.is-tooltip-info.tooltip > a').each(function () {
+                        let headline = $(this);
+                        
+                        // Remove bolds
+                        headline.html(headline.text().replace("<b>", ""));
+                        headline.html(headline.text().replace("</b>", ""));
+                    
+                    });
+
+                    // Vertical timeline
+                    $(document).find('.timeline-vertical-item').each(function () {
                         let headline = $(this);
                         
                         // Remove bolds
@@ -443,7 +472,6 @@
             });
 
         {% endif %}
-
 
 
         // Timeline
