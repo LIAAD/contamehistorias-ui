@@ -411,62 +411,61 @@
         // Relevant terms
         {% if relevant_terms %}
 
-            let relevant_terms = {{ relevant_terms | safe }};
+            const relevant_terms = {{ relevant_terms | safe }};
+
+            function addBolds(headline, relevant_terms) {
+                for (let i = 0; i < relevant_terms.length; i++) {
+                            
+                    const term = relevant_terms[i][0];
+
+                    // match (case-insensitive) terms as words, so they must be delimited by whitespaces (\s)
+                    // some terms in the end of headline contain the "downwards arrow with corner leftwards" (\u21b5)
+                    const pattern = new RegExp("\\s" + term + "(\\s|\u21b5)", "gi");
+
+                    const matches = headline.html().matchAll(pattern);
+                    
+                    let seen = []
+                    for (const match of matches) {
+                        const toModify = match[0];
+                        if (!seen.includes(toModify)) {
+                            headline.html(headline.html().replaceAll(toModify, " <b>" + toModify + "</b> "));
+                            seen.push(toModify);
+                        }
+                    }
+                }
+            }
+
+            function removeBolds(headline) {
+                headline.html(headline.html().replaceAll("<b>", ""));
+                headline.html(headline.html().replaceAll("</b>", ""));
+            }
 
             $('#form_flagTerms').on('change', function() {
 
                 if($('#form_flagTerms').is(":checked")) {
                     // Horizontal timeline
                     $(document).find('.classToken.is-tooltip-info.tooltip > a').each(function () {
-                        let headline = $(this);
-
-                        for (let i = 0; i < relevant_terms.length; i++) {
-                            
-                            let term = relevant_terms[i][0];
-
-                            // Check if headline includes term as a word
-                            if(headline.text().includes(" " + term + " ")){
-                                headline.html(headline.text().replaceAll(term, "<b>" + term + "</b>"));
-                            }
-                        }
-                    
+                        const headline = $(this);
+                        addBolds(headline, relevant_terms);
                     });
 
                     // Vertical timeline
                     $(document).find('.timeline-vertical-item').each(function () {
-                        let headline = $(this);
-
-                        for (let i = 0; i < relevant_terms.length; i++) {
-                            
-                            let term = relevant_terms[i][0];
-
-                            // Check if headline includes term as a word
-                            if(headline.text().includes(" " + term + " ")){
-                                headline.html(headline.text().replaceAll(term, "<b>" + term + "</b>"));
-                            }
-                        }
-                    
+                        const headline = $(this);
+                        addBolds(headline, relevant_terms);
                     });
                 }
                 else {
                     // Horizontal timeline
                     $(document).find('.classToken.is-tooltip-info.tooltip > a').each(function () {
-                        let headline = $(this);
-                        
-                        // Remove bolds
-                        headline.html(headline.text().replaceAll("<b>", ""));
-                        headline.html(headline.text().replaceAll("</b>", ""));
-                    
+                        const headline = $(this);
+                        removeBolds(headline);
                     });
 
                     // Vertical timeline
                     $(document).find('.timeline-vertical-item').each(function () {
-                        let headline = $(this);
-                        
-                        // Remove bolds
-                        headline.html(headline.text().replaceAll("<b>", ""));
-                        headline.html(headline.text().replaceAll("</b>", ""));
-                    
+                        const headline = $(this);
+                        removeBolds(headline);
                     });
                 }
             });
