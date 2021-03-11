@@ -42,24 +42,26 @@
                 </div>
 
                 {% endif %}
-
-                <a id="advanced_options_btn" style="color: white;text-decoration: underline">{{ _('opções avançadas')}}</a>
-                <div id="advanced_options_view" style="display: none" class="field">
-                    <div class="control mt-20 ">
-                        <div class="select">
-                            <select name="form_lastyears">
-                                <option value="5" {{ "selected='selected'" if last_years == 5 else "" }}>{{ _('Últimos 5 anos') }}</option>
-                                <option value="10" {{ "selected='selected'" if last_years == 10 else "" }}>{{ _('Últimos 10 anos') }}</option>
-                                <option value="15" {{ "selected='selected'" if last_years == 15 else "" }}>{{ _('Últimos 15 anos') }}</option>
-                                <option value="20" {{ "selected='selected'" if last_years == 20 else "" }}>{{ _('Últimos 20 anos') }}</option>
-                            </select>
+                
+                <div class="control mt-10">
+                    <a id="advanced_options_btn" style="color: white;text-decoration: underline">{{ _('opções avançadas')}}</a>
+                    <div id="advanced_options_view" style="display: none" class="field">
+                        <div class="control mt-20 ">
+                            <div class="select">
+                                <select name="form_lastyears">
+                                    <option value="5" {{ "selected='selected'" if last_years == 5 else "" }}>{{ _('Últimos 5 anos') }}</option>
+                                    <option value="10" {{ "selected='selected'" if last_years == 10 else "" }}>{{ _('Últimos 10 anos') }}</option>
+                                    <option value="15" {{ "selected='selected'" if last_years == 15 else "" }}>{{ _('Últimos 15 anos') }}</option>
+                                    <option value="20" {{ "selected='selected'" if last_years == 20 else "" }}>{{ _('Últimos 20 anos') }}</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="button btn-align info-btn raised">{{ _('aplicar') }}</button>
                         </div>
-                        <button type="submit" class="button btn-align info-btn raised">{{ _('aplicar') }}</button>
                     </div>
                 </div>
+
                 <input type="hidden" id="lang" name="lang" value="{{lang}}">
             </form>
-
         </div>
     </div>
 </div>
