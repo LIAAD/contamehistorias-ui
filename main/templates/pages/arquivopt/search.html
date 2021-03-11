@@ -407,7 +407,7 @@
             window.open(url, '_blank');
         }
 
-        // Timeline
+        // Relevant terms
         {% if relevant_terms %}
 
             let relevant_terms = {{ relevant_terms | safe }};
@@ -447,7 +447,7 @@
 
 
         // Timeline
-        {% if sources_overall %}
+        {% if has_narrative %}
             
             let ctx = document.getElementById("overallTimeseriesChart").getContext('2d');
 
