@@ -418,9 +418,8 @@
                             
                     const term = relevant_terms[i][0];
 
-                    // match (case-insensitive) terms as words, so they must be delimited by whitespaces (\s)
-                    // some terms in the end of headline contain the "downwards arrow with corner leftwards" (\u21b5)
-                    const pattern = new RegExp("\\s" + term + "(\\s|\u21b5)", "gi");
+                    // match (case-insensitive) terms as words, so they must be delimited by any non-alphanumeric char
+                    const pattern = new RegExp("\\W" + term + "\\W", "gi");
 
                     const matches = headline.html().matchAll(pattern);
                     
