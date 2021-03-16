@@ -249,6 +249,9 @@ def search():
 
             domains = result["domains"]
 
+            # List of lists. Each inner list is [term, tf, h]
+            relevant_terms = result['most_relevant_terms']
+
             if(result["status"] != "OK"):
                 return render_template('pages/tlscovid/search.html', lang=lang, form=form, related_terms=[], result=None, result_header=result_header, has_narrative=has_narrative, available_indices=available_indices, available_domains=available_domains)
 
@@ -325,7 +328,8 @@ def search():
                                    is_topic=is_topic,
                                    selected_sources=selected_sources,
                                    available_indices=available_indices,
-                                   available_domains=available_domains)
+                                   available_domains=available_domains,
+                                   relevant_terms=relevant_terms)
     
     else:
         # If request does not contain id
