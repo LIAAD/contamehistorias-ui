@@ -435,8 +435,8 @@
             }
 
             function removeBolds(headline) {
-                headline.html(headline.html().replaceAll("<b>", ""));
-                headline.html(headline.html().replaceAll("</b>", ""));
+                headline.html(headline.html().replaceAll(" <b>", ""));
+                headline.html(headline.html().replaceAll("</b> ", ""));
             }
 
             $('#form_flagTerms').on('change', function() {
