@@ -492,8 +492,8 @@
                             
                     const term = relevant_terms[i][0];
 
-                    // match (case-insensitive) terms as words, so they must be delimited by any non-alphanumeric char
-                    const pattern = new RegExp("\\W" + term + "\\W", "gi");
+                    // match (case-insensitive) terms as words, so they must be delimited by any non-alphanumeric char or be at the beginning or end of string
+                    const pattern = new RegExp("(\\W|^)" + term + "(\\W|$)", "gi");
 
                     const matches = headline.html().matchAll(pattern);
                     
