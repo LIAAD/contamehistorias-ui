@@ -72,6 +72,11 @@
                                         <option value="titles" {{ "selected='selected'" if not use_headline else "" }}>{{ _('títulos')}}</option>
                                         <option value="contents" {{ "selected='selected'" if use_headline else "" }}>{{ _('conteúdos')}}</option>
                                     </select>
+
+                                    <span class="warning-contents" {% if use_headline %} style="color:red; display:inline;" {% else %} style="color:red; display:none;" {% endif %}>
+                                        Método experimental. O sistema pode deixar de responder.
+                                    </span>
+
                                 </div>
                             </div>
 
@@ -469,6 +474,15 @@
         // Advanced Options
         $("#advanced_options_btn").click(function () {
             $("#advanced_options_view").toggle();
+        });
+
+        $('select[name="form_content_type"]').on('change', function() {
+            if (this.value == 'contents') {
+                $('.warning-contents').show();
+            }
+            else if (this.value == 'titles') {
+                $('.warning-contents').hide();
+            }
         });
 
         $('select[name="form_headline"]').on('change', function() {
