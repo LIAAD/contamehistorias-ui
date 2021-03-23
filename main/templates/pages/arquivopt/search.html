@@ -31,7 +31,7 @@
                     <i class="sl sl-icon-magnifier"></i>
                 </div>
 
-                {% if has_narrative %}
+                <!-- {% if has_narrative %}
 
                 <div class="control mt-10">
                     <label class="form-label" style="color:white; vertical-align:middle">{{ _('Assinalar termos relevantes')}}</label>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
 
-                {% endif %}
+                {% endif %} -->
                 
                 <div class="control mt-10">
                     <a id="advanced_options_btn" style="color: white;text-decoration: underline">{{ _('opções avançadas')}}</a>
@@ -408,67 +408,67 @@
 
 
         // Relevant terms
-        {% if relevant_terms %}
+        // {% if relevant_terms %}
 
-            const relevant_terms = {{ relevant_terms | safe }};
+        //     const relevant_terms = {{ relevant_terms | safe }};
 
-            function addBolds(headline, relevant_terms) {
-                for (let i = 0; i < relevant_terms.length; i++) {
+        //     function addBolds(headline, relevant_terms) {
+        //         for (let i = 0; i < relevant_terms.length; i++) {
                             
-                    const term = relevant_terms[i][0];
+        //             const term = relevant_terms[i][0];
 
-                    // match (case-insensitive) terms as words, so they must be delimited by any non-alphanumeric char or be at the beginning or end of string
-                    const pattern = new RegExp("(\\W|^)" + term + "(\\W|$)", "gi");
+        //             // match (case-insensitive) terms as words, so they must be delimited by any non-alphanumeric char or be at the beginning or end of string
+        //             const pattern = new RegExp("(\\W|^)" + term + "(\\W|$)", "gi");
 
-                    const matches = headline.html().matchAll(pattern);
+        //             const matches = headline.html().matchAll(pattern);
                     
-                    let seen = []
-                    for (const match of matches) {
-                        const toModify = match[0];
-                        if (!seen.includes(toModify)) {
-                            headline.html(headline.html().replaceAll(toModify, " <b>" + toModify + "</b> "));
-                            seen.push(toModify);
-                        }
-                    }
-                }
-            }
+        //             let seen = []
+        //             for (const match of matches) {
+        //                 const toModify = match[0];
+        //                 if (!seen.includes(toModify)) {
+        //                     headline.html(headline.html().replaceAll(toModify, " <b>" + toModify + "</b> "));
+        //                     seen.push(toModify);
+        //                 }
+        //             }
+        //         }
+        //     }
 
-            function removeBolds(headline) {
-                headline.html(headline.html().replaceAll(" <b>", ""));
-                headline.html(headline.html().replaceAll("</b> ", ""));
-            }
+        //     function removeBolds(headline) {
+        //         headline.html(headline.html().replaceAll(" <b>", ""));
+        //         headline.html(headline.html().replaceAll("</b> ", ""));
+        //     }
 
-            $('#form_flagTerms').on('change', function() {
+        //     $('#form_flagTerms').on('change', function() {
 
-                if($('#form_flagTerms').is(":checked")) {
-                    // Horizontal timeline
-                    $(document).find('.classToken.is-tooltip-info.tooltip > a').each(function () {
-                        const headline = $(this);
-                        addBolds(headline, relevant_terms);
-                    });
+        //         if($('#form_flagTerms').is(":checked")) {
+        //             // Horizontal timeline
+        //             $(document).find('.classToken.is-tooltip-info.tooltip > a').each(function () {
+        //                 const headline = $(this);
+        //                 addBolds(headline, relevant_terms);
+        //             });
 
-                    // Vertical timeline
-                    $(document).find('.timeline-vertical-item').each(function () {
-                        const headline = $(this);
-                        addBolds(headline, relevant_terms);
-                    });
-                }
-                else {
-                    // Horizontal timeline
-                    $(document).find('.classToken.is-tooltip-info.tooltip > a').each(function () {
-                        const headline = $(this);
-                        removeBolds(headline);
-                    });
+        //             // Vertical timeline
+        //             $(document).find('.timeline-vertical-item').each(function () {
+        //                 const headline = $(this);
+        //                 addBolds(headline, relevant_terms);
+        //             });
+        //         }
+        //         else {
+        //             // Horizontal timeline
+        //             $(document).find('.classToken.is-tooltip-info.tooltip > a').each(function () {
+        //                 const headline = $(this);
+        //                 removeBolds(headline);
+        //             });
 
-                    // Vertical timeline
-                    $(document).find('.timeline-vertical-item').each(function () {
-                        const headline = $(this);
-                        removeBolds(headline);
-                    });
-                }
-            });
+        //             // Vertical timeline
+        //             $(document).find('.timeline-vertical-item').each(function () {
+        //                 const headline = $(this);
+        //                 removeBolds(headline);
+        //             });
+        //         }
+        //     });
 
-        {% endif %}
+        // {% endif %}
 
 
         // Timeline
