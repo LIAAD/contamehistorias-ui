@@ -54,11 +54,14 @@
         var selected_sources = '{{ selected_sources|tojson|safe }}';
         selected_sources = JSON.parse(selected_sources);
 
+        var use_headline = '{{ use_headline|tojson|safe }}';
+        use_headline = JSON.parse(use_headline);
+
         // send ajax GET request to start background job
         $.ajax({
             type: 'GET',
             url: '/tls-covid19/longtask',
-            data: { 'query': query, 'index': index, 'selected_sources': selected_sources},
+            data: { 'query': query, 'index': index, 'selected_sources': selected_sources, 'use_headline': use_headline},
             traditional: true,
             success: function (data, status, request) {
                 status_url = request.getResponseHeader('Location');

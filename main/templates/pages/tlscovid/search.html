@@ -43,16 +43,18 @@
                     </div>
                 </div>
 
-                <!-- Headline type -->
-                <div class="control mt-10">
-                    <label class="form-label" style="color:white; vertical-align:middle">{{ _('headline')}}</label>
-                    <div class="">
-                        <select name="form_headline">
-                            <option value="content" selected="selected">{{ _('conteúdo')}}</option>
-                            <option value="title">{{ _('título')}}</option>
-                        </select>
-                    </div>
-                </div>
+                    {% if use_headline %}
+                        <!-- Type of headline to show -->
+                        <div class="control mt-10">
+                            <label class="form-label" style="color:white; vertical-align:middle">{{ _('mostrar')}}</label>
+                            <div class="">
+                                <select name="form_headline">
+                                    <option value="titles" {{ "selected='selected'" if not use_headline else "" }}>{{ _('títulos')}}</option>
+                                    <option value="contents" {{ "selected='selected'" if use_headline else "" }}>{{ _('conteúdos')}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    {% endif %}
                 
                 {% endif %}
                 
@@ -62,8 +64,19 @@
                     <div id="advanced_options_view" style="display: none" class="field">
                         <div class="control mt-10">
 
+                            <!-- Which content to process -->
+                            <div class="control mt-10">
+                                <label class="form-label" style="color:white; vertical-align:middle">{{ _('processar')}}</label>
+                                <div class="">
+                                    <select name="form_content_type">
+                                        <option value="titles" {{ "selected='selected'" if not use_headline else "" }}>{{ _('títulos')}}</option>
+                                        <option value="contents" {{ "selected='selected'" if use_headline else "" }}>{{ _('conteúdos')}}</option>
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="field">
-                                <label class="form-label" style="color:white; vertical-align:middle">{{ _('lingua')}}</label>
+                                <label class="form-label" style="color:white; vertical-align:middle">{{ _('língua')}}</label>
                                 <div class="">
                                     <select name="form_index">
                                         {% for idx in available_indices %}
@@ -248,8 +261,8 @@
                                                                                 <a {% if kw.is_km == "True" %} style="font-size:16px; color:green;" {% else %} style="font-size:16px; color:black;" {% endif %}
                                                                                     href="{{ kw.docs[0][1] }}" target="_blank"
                                                                                     title="{{kw.docs[0][0]}}">
-                                                                                        <span class="headline_content" style="display:inline;">{{kw.kw}}</span>
-                                                                                        <span class="headline_title" style="display:none;">{{kw.title}}</span>
+                                                                                        <span class="headline_title" {% if not use_headline %} style="display:inline;" {% else %} style="display:none;" {% endif %}>{{kw.title}}</span>
+                                                                                        <span class="headline_content" {% if not use_headline %} style="display:none;" {% else %} style="display:inline;" {% endif %}>{{kw.kw}}</span>
                                                                                 </a>
 
                                                                             </span>
@@ -296,8 +309,8 @@
                                                                                             <a {% if kw.is_km == "True" %} style="font-size:16px; color:green;" {% else %} style="font-size:16px; color:black;" {% endif %}
                                                                                                 href="{{ kw.docs[0][1] }}" target="_blank"
                                                                                                 title="{{kw.docs[0][0]}}">
-                                                                                                    <span class="headline_content timeline-vertical-item" style="display:inline;">{{kw.kw}}</span>
-                                                                                                    <span class="headline_title timeline-vertical-item" style="display:none;">{{kw.title}}</span>
+                                                                                                    <span class="headline_title timeline-vertical-item" {% if not use_headline %} style="display:inline;" {% else %} style="display:none;" {% endif %}>{{kw.title}}</span>
+                                                                                                    <span class="headline_content timeline-vertical-item" {% if not use_headline %} style="display:none;" {% else %} style="display:inline;" {% endif %}>{{kw.kw}}</span>
                                                                                             </a>
 
                                                                                             <br/>
@@ -459,11 +472,11 @@
         });
 
         $('select[name="form_headline"]').on('change', function() {
-            if (this.value == 'content') {
+            if (this.value == 'contents') {
                 $('.headline_content').show();
                 $('.headline_title').hide();
             }
-            else if (this.value == 'title') {
+            else if (this.value == 'titles') {
                 $('.headline_title').show();
                 $('.headline_content').hide();
             }

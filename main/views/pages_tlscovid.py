@@ -60,8 +60,9 @@ def searching():
     query = request.args.get('query', type=str)
     index = request.args.get('index', default='pt', type=str)
     selected_sources = request.args.getlist('selected_sources')
+    use_headline = request.args.get('use_headline', type=str)
 
-    return render_template('pages/tlscovid/searching.html', query=query, index=index, selected_sources=selected_sources)
+    return render_template('pages/tlscovid/searching.html', query=query, index=index, selected_sources=selected_sources, use_headline=use_headline)
 
 
 @blueprint.route('/longtask', methods=['GET'])
@@ -70,9 +71,10 @@ def long_task():
     query = request.args.get('query', type=str)
     index = request.args.get('index', default='pt', type=str)
     selected_sources = request.args.getlist('selected_sources')
+    use_headline = request.args.get('use_headline', type=str)
 
     task_id = current_app.celery.send_task(
-        'celery_tasks.execute_engine_tlscovid', args=[query, index, selected_sources])
+        'celery_tasks.execute_engine_tlscovid', args=[query, index, selected_sources, use_headline])
 
     return jsonify({}), 202, {'Location': url_for('pages_tlscovid.task_status',
                                                   task_id=task_id)}
@@ -100,7 +102,7 @@ def task_status(task_id):
             response['task_id'] = task_id
             response['result'] = task.info['result']
             response['url_for'] = url_for(
-                'pages_tlscovid.search', query=task.info['query'], index=task.info['index'], selected_sources=task.info['selected_sources'])
+                'pages_tlscovid.search', query=task.info['query'], index=task.info['index'], selected_sources=task.info['selected_sources'], use_headline=task.info['use_headline'])
     else:
         # something went wrong in the background job
         response = {
@@ -186,6 +188,27 @@ def search():
 
     query = request.args.get('query', type=str)
     form.query.data = query
+
+    # Get type of content to process
+    # If user selected in form
+    if 'form_content_type' in request.args:
+        use_headline = request.args.get('form_content_type', type=str)
+
+        if use_headline == 'contents':
+            use_headline = True
+        else:
+            use_headline = False
+    # Parameter passed in url
+    elif 'use_headline' in request.args:
+        use_headline = request.args.get('use_headline', type=str)
+
+        if use_headline == 'True':
+            use_headline = True
+        else:
+            use_headline = False
+    # Defaults to False and use titles
+    else:
+        use_headline = False
 
     if 'form_index' in request.args:
         index = request.args.get('form_index', type=str)
@@ -329,14 +352,15 @@ def search():
                                    selected_sources=selected_sources,
                                    available_indices=available_indices,
                                    available_domains=available_domains,
-                                   relevant_terms=relevant_terms)
+                                   relevant_terms=relevant_terms,
+                                   use_headline=use_headline)
     
     else:
         # If request does not contain id
 
         # If request contains query, redirect to searching and process for the first time
         if 'query' in request.args:
-            return redirect(url_for('pages_tlscovid.searching', query=query, index=index, selected_sources=selected_sources))
+            return redirect(url_for('pages_tlscovid.searching', query=query, index=index, selected_sources=selected_sources, use_headline=use_headline))
 
         # If request doesn't contain neither id nor query, redirect to search page to perform new search
         else:
