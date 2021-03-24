@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-23 17:53+0000\n"
+"POT-Creation-Date: 2021-03-24 23:41+0000\n"
 "PO-Revision-Date: 2018-11-09 20:56+0000\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -37,8 +37,9 @@ msgstr "Search"
 #: main/templates/layouts/arquivopt/main.html:156
 #: main/templates/layouts/tlscovid/main.html:54
 #: main/templates/layouts/tlscovid/main.html:82
-#: main/templates/layouts/tlscovid/main.html:156
-#: main/templates/pages/common/about.html:7
+#: main/templates/layouts/tlscovid/main.html:165
+#: main/templates/pages/arquivopt/about.html:7
+#: main/templates/pages/tlscovid/about.html:7
 msgid "Sobre"
 msgstr "About"
 
@@ -47,7 +48,7 @@ msgstr "About"
 #: main/templates/layouts/arquivopt/main.html:169
 #: main/templates/layouts/tlscovid/main.html:61
 #: main/templates/layouts/tlscovid/main.html:89
-#: main/templates/layouts/tlscovid/main.html:169
+#: main/templates/layouts/tlscovid/main.html:178
 msgid "Português"
 msgstr "Português"
 
@@ -56,7 +57,7 @@ msgstr "Português"
 #: main/templates/layouts/arquivopt/main.html:174
 #: main/templates/layouts/tlscovid/main.html:67
 #: main/templates/layouts/tlscovid/main.html:95
-#: main/templates/layouts/tlscovid/main.html:174
+#: main/templates/layouts/tlscovid/main.html:183
 msgid "English"
 msgstr "English"
 
@@ -71,86 +72,269 @@ msgstr ""
 "Archive."
 
 #: main/templates/layouts/arquivopt/main.html:120
-#: main/templates/layouts/tlscovid/main.html:120
+#: main/templates/layouts/tlscovid/main.html:129
 msgid "Desenvolvido por"
 msgstr "Developed by"
 
 #: main/templates/layouts/arquivopt/main.html:121
-#: main/templates/layouts/tlscovid/main.html:121
+#: main/templates/layouts/tlscovid/main.html:130
 msgid "investigadores"
 msgstr "researchers"
 
 #: main/templates/layouts/arquivopt/main.html:121
-#: main/templates/layouts/tlscovid/main.html:121
+#: main/templates/layouts/tlscovid/main.html:130
 msgid "do"
 msgstr "at"
 
 #: main/templates/layouts/arquivopt/main.html:129
-#: main/templates/layouts/tlscovid/main.html:129
+#: main/templates/layouts/tlscovid/main.html:138
 msgid "e afiliados às instituições"
 msgstr "and affiliated to"
 
 #: main/templates/layouts/arquivopt/main.html:139
-#: main/templates/layouts/tlscovid/main.html:139
+#: main/templates/layouts/tlscovid/main.html:148
 #: main/templates/pages/arquivopt/search.html:188
 #: main/templates/pages/tlscovid/search.html:251
 msgid "e"
 msgstr "and"
 
 #: main/templates/layouts/arquivopt/main.html:140
-#: main/templates/layouts/tlscovid/main.html:140
+#: main/templates/layouts/tlscovid/main.html:149
 msgid "Universidade de Innsbruck"
 msgstr "University of Innsbruck"
 
 #: main/templates/layouts/arquivopt/main.html:144
-#: main/templates/layouts/tlscovid/main.html:144
+#: main/templates/layouts/tlscovid/main.html:153
 msgid "O conteúdo deste site é licenciado sob"
 msgstr "The content presented here is licensed under"
 
 #: main/templates/layouts/arquivopt/main.html:154
-#: main/templates/layouts/tlscovid/main.html:154
+#: main/templates/layouts/tlscovid/main.html:163
 msgid "Conta-me Histórias"
 msgstr "Tell me stories"
 
 #: main/templates/layouts/arquivopt/main.html:157
-#: main/templates/layouts/tlscovid/main.html:157
+#: main/templates/layouts/tlscovid/main.html:166
 #: main/templates/pages/common/team.html:7
 msgid "Equipa"
 msgstr "Team"
 
 #: main/templates/layouts/arquivopt/main.html:158
-#: main/templates/layouts/tlscovid/main.html:158
+#: main/templates/layouts/tlscovid/main.html:167
 #: main/templates/pages/common/press.html:7
 msgid "Media"
 msgstr "Press"
 
 #: main/templates/layouts/arquivopt/main.html:159
-#: main/templates/layouts/tlscovid/main.html:159
+#: main/templates/layouts/tlscovid/main.html:168
 msgid "Open Source"
 msgstr "Open Source"
 
 #: main/templates/layouts/arquivopt/main.html:160
-#: main/templates/layouts/tlscovid/main.html:160
+#: main/templates/layouts/tlscovid/main.html:169
 msgid "Aplicação Móvel"
 msgstr "Mobile Application"
 
 #: main/templates/layouts/arquivopt/main.html:161
-#: main/templates/layouts/tlscovid/main.html:161
+#: main/templates/layouts/tlscovid/main.html:170
 msgid "Fale Connosco"
 msgstr "Contact Us"
 
 #: main/templates/layouts/arquivopt/main.html:184
-#: main/templates/layouts/tlscovid/main.html:184
+#: main/templates/layouts/tlscovid/main.html:193
 msgid "Projetos Relacionados"
 msgstr "Related Projects"
 
-#: main/templates/layouts/tlscovid/main.html:116
+#: main/templates/layouts/tlscovid/main.html:124
+msgid "utilizando o dataset"
+msgstr "using the dataset"
+
+#: main/templates/pages/arquivopt/about.html:20
+#: main/templates/pages/tlscovid/about.html:20
+msgid "sobre"
+msgstr "about"
+
+#: main/templates/pages/arquivopt/about.html:32
+#: main/templates/pages/tlscovid/about.html:32
+msgid "O que é o Conta-me Histórias?"
+msgstr "What is Tell me stories?"
+
+#: main/templates/pages/arquivopt/about.html:36
+#: main/templates/pages/tlscovid/about.html:36
 msgid ""
-"O Conta-me Histórias é um projeto científico que permite aos utilizadores"
-" criarem automaticamente narrativas de notícias."
+"O Conta-me Histórias é um projeto científico, criado no âmbito dos "
+"Prémios Arquivo.pt 2018, que\n"
+"                    permite aos utilizadores criarem automaticamente "
+"narrativas de notícias\n"
+"                    preservadas pelo"
 msgstr ""
-"Tell me stories is a research project that allows users to automatically "
-"build news narratives."
+"Tell me stories is a research project\n"
+"              that allows users to automatically build news narratives "
+"based on news preserved by the "
+
+#: main/templates/pages/arquivopt/about.html:44
+#: main/templates/pages/tlscovid/about.html:44
+msgid ""
+"Numa era marcada pela pós-verdade e pelas fake news, o\n"
+"                    Conta-me Histórias é um importante contributo para "
+"uma democracia mais transparente. Esta aplicação\n"
+"                    permite a qualquer cidadão um acesso livre e "
+"democrático a informação contextualizada, assente em fatos e\n"
+"                    tendencialmente livre de filtros, fazendo uso de "
+"diversas fontes. Jornalistas, estudantes e investigadores\n"
+"                    de diversas áreas, tais como a sociologia, a ciência "
+"política, as ciências da comunicaçãos, a história e\n"
+"                    outras humanidades, encontram aqui uma ferramenta "
+"poderosa para o seu trabalho."
+msgstr ""
+"During the last decade, we have been witnessing an ever-growing number of"
+" online content posing new challenges for those who aim to understand a "
+"given event. This exponential growth of the volume of data, together with"
+" the phenomenon of media bias, fake news and filter bubbles, has "
+"contributed to the creation of new challenges in information access and "
+"transparency. For instance, following the media coverage of long-lasting "
+"events like wars, migration or economic crises can be oftentimes "
+"confusing and demanding. One possible solution is the adoption of "
+"timelines to support story-telling as a way to organize the different "
+"phases of complex events. In this context, we invite students, "
+"journalists and researchers to explore our solution in this beta "
+"application."
+
+#: main/templates/pages/arquivopt/about.html:63
+#: main/templates/pages/tlscovid/about.html:63
+msgid "Como funciona?"
+msgstr "How does it work?"
+
+#: main/templates/pages/arquivopt/about.html:68
+#: main/templates/pages/tlscovid/about.html:68
+msgid ""
+"O Arquivo.pt preserva milhões de ficheiros recolhidos da web desde 1996 e"
+" disponibiliza um serviço\n"
+"                      público de pesquisa sobre esta informação. "
+"Periodicamente recolhe e armazena informação publicada na Web.\n"
+"                      Este processo de preservação é realizado de forma "
+"automática através de um sistema informático distribuído\n"
+"                      de larga-escala."
+msgstr ""
+"The Portuguese Web Archive project archives the web periodically. It "
+"collects and stores entire websites, processing the data to make it "
+"searchable and finally providing a full-text search service that enables "
+"the retrieval of the past versions of the site."
+
+#: main/templates/pages/arquivopt/about.html:74
+#: main/templates/pages/tlscovid/about.html:74
+msgid ""
+"Para mostrar os dados do Arquivo.pt, mostramos ao utilizador os excertos "
+"mais importantes\n"
+"                      (nomeadamente títulos noticiosos) de um tópico ao "
+"longo do tempo. Para a seleção dos melhores títulos de\n"
+"                      notícias, recorremos a "
+msgstr ""
+"To showcase the data archived by the Portuguese Web Arquive, we show the "
+"user the most important excerpts (namely text titles) of a topic over "
+"time. For the selection of the best news titles we resort to "
+
+#: main/templates/pages/arquivopt/about.html:77
+#: main/templates/pages/tlscovid/about.html:77
+msgid ""
+"um extrator de\n"
+"                      palavras-chave desenvolvido pela nossa equipa, e "
+"que recentemente foi premiado como Best Short Paper na\n"
+"                      40ª edição da European Conference for Information "
+"Retrieval "
+msgstr ""
+"a keyword extractor designed by our team, and recently awarded as Best "
+"Short Paper at the 40th European Conference for Information Retrieval "
+
+#: main/templates/pages/arquivopt/about.html:90
+#: main/templates/pages/tlscovid/about.html:90
+msgid "Contribuições"
+msgstr "Contributions"
+
+#: main/templates/pages/arquivopt/about.html:95
+#: main/templates/pages/tlscovid/about.html:95
+msgid ""
+"Acreditamos que o Conta-me Histórias é, neste contexto, um importante "
+"contributo para uma democracia\n"
+"                      mais transparente, ao permitir a qualquer cidadão "
+"(incluindo jornalistas, estudantes, cientistas sociais\n"
+"                      de áreas como sociologia, ciência política, "
+"ciências da comunicação e história, etc) um acesso livre e\n"
+"                      democrático a informação contextualizada (assente "
+"em fatos e tendencialmente livre de filtros ao fazer uso\n"
+"                      de diversas fontes jornalísticas)."
+msgstr ""
+"We presented a web application that allows users to generate temporal "
+"summarization on large news data sets. One of the main goals of this work"
+" is to attract the attention of the public for this promising research "
+"area. In the era of post-truth and fake news, web and news archives "
+"initiatives are important contributions to preserve history. In this "
+"context, our project may be considered an additional solution that allows"
+" users to better explore this kind of data."
+
+#: main/templates/pages/arquivopt/about.html:109
+#: main/templates/pages/tlscovid/about.html:109
+msgid "Origem do nome"
+msgstr "Origins of the project name"
+
+#: main/templates/pages/arquivopt/about.html:114
+#: main/templates/pages/tlscovid/about.html:114
+msgid ""
+"O nome \"Conta-me Histórias\" é uma homenagem à música dos Xutos & "
+"Pontapés de mesmo nome, com o\n"
+"                      intuito de retratar um dos objetivos do projeto, ou"
+" seja, o de quereremos contar histórias ao utilizador,\n"
+"                      que, tal como diz a música, sejam relativas a algo "
+"que este não viu ou do qual não se recorda."
+msgstr ""
+"The name  ‘Conta-me Histórias’ is a reference to a popular song from one "
+"of the most important Portuguese rock musicians group  Xutos & Pontapés."
+
+#: main/templates/pages/arquivopt/about.html:124
+#: main/templates/pages/tlscovid/about.html:124
+msgid "Design da apresentação e edição"
+msgstr "Design, video and presentation"
+
+#: main/templates/pages/arquivopt/about.html:132
+#: main/templates/pages/arquivopt/search.html:114
+#: main/templates/pages/arquivopt/search.html:285
+#: main/templates/pages/tlscovid/about.html:132
+#: main/templates/pages/tlscovid/search.html:171
+#: main/templates/pages/tlscovid/search.html:347
+msgid "Portais de Notícias"
+msgstr "News sources"
+
+#: main/templates/pages/arquivopt/about.html:288
+#: main/templates/pages/tlscovid/about.html:170
+msgid "Referências académicas"
+msgstr "Academic references"
+
+#: main/templates/pages/arquivopt/about.html:358
+#: main/templates/pages/tlscovid/about.html:248
+msgid "Agradecimentos"
+msgstr "Acknowledgements"
+
+#: main/templates/pages/arquivopt/about.html:364
+#: main/templates/pages/tlscovid/about.html:254
+msgid ""
+"Este projeto é financiado pelo FEDER - Fundo Europeu de Desenvolvimento\n"
+"                      Regional através do Programa Operacional Regional "
+"do Norte (NORTE 2020), sob o\n"
+"                      Programa PORTUGAL 2020 e por fundos nacionais "
+"através da agência de financiamento\n"
+"                      portuguesa, FCT - Fundação para a Ciência e a "
+"Tecnologia dentro do projeto\n"
+"                      PTDC/CCI-COM/31857/2017 "
+"(NORTE-01-0145-FEDER-03185). Este financiamento\n"
+"                      enquadra-se na linha de investigação do projeto "
+"Text2Story."
+msgstr ""
+"This project is financed by the ERDF – European Regional Development Fund"
+" through the North Portugal Regional Operational Programme (NORTE 2020), "
+"under the PORTUGAL 2020 and by National Funds through thePortuguese "
+"funding agency, FCT - Fundação para a Ciência e a Tecnologia within "
+"project PTDC/CCI-COM/31857/2017 (NORTE-01-0145-FEDER-03185). This funding"
+" fits under the research line of the Text2Story project."
 
 #: main/templates/pages/arquivopt/home.html:2
 #: main/templates/pages/arquivopt/home.html:11
@@ -259,14 +443,6 @@ msgstr "Entities"
 msgid "Termos"
 msgstr "Terms"
 
-#: main/templates/pages/arquivopt/search.html:114
-#: main/templates/pages/arquivopt/search.html:285
-#: main/templates/pages/common/about.html:132
-#: main/templates/pages/tlscovid/search.html:171
-#: main/templates/pages/tlscovid/search.html:347
-msgid "Portais de Notícias"
-msgstr "News sources"
-
 #: main/templates/pages/arquivopt/search.html:135
 #: main/templates/pages/tlscovid/search.html:194
 msgid "Narrativa sobre"
@@ -335,168 +511,6 @@ msgstr "Searching thousands of news about"
 #: main/templates/pages/tlscovid/searching.html:31
 msgid "Pode demorar algum tempo..."
 msgstr "It may take a while..."
-
-#: main/templates/pages/common/about.html:20
-msgid "sobre"
-msgstr "about"
-
-#: main/templates/pages/common/about.html:32
-msgid "O que é o Conta-me Histórias?"
-msgstr "What is Tell me stories?"
-
-#: main/templates/pages/common/about.html:36
-msgid ""
-"O Conta-me Histórias é um projeto científico, criado no âmbito dos "
-"Prémios Arquivo.pt 2018, que\n"
-"                    permite aos utilizadores criarem automaticamente "
-"narrativas de notícias\n"
-"                    preservadas pelo"
-msgstr ""
-"Tell me stories is a research project\n"
-"              that allows users to automatically build news narratives "
-"based on news preserved by the "
-
-#: main/templates/pages/common/about.html:44
-msgid ""
-"Numa era marcada pela pós-verdade e pelas fake news, o\n"
-"                    Conta-me Histórias é um importante contributo para "
-"uma democracia mais transparente. Esta aplicação\n"
-"                    permite a qualquer cidadão um acesso livre e "
-"democrático a informação contextualizada, assente em fatos e\n"
-"                    tendencialmente livre de filtros, fazendo uso de "
-"diversas fontes. Jornalistas, estudantes e investigadores\n"
-"                    de diversas áreas, tais como a sociologia, a ciência "
-"política, as ciências da comunicaçãos, a história e\n"
-"                    outras humanidades, encontram aqui uma ferramenta "
-"poderosa para o seu trabalho."
-msgstr ""
-"During the last decade, we have been witnessing an ever-growing number of"
-" online content posing new challenges for those who aim to understand a "
-"given event. This exponential growth of the volume of data, together with"
-" the phenomenon of media bias, fake news and filter bubbles, has "
-"contributed to the creation of new challenges in information access and "
-"transparency. For instance, following the media coverage of long-lasting "
-"events like wars, migration or economic crises can be oftentimes "
-"confusing and demanding. One possible solution is the adoption of "
-"timelines to support story-telling as a way to organize the different "
-"phases of complex events. In this context, we invite students, "
-"journalists and researchers to explore our solution in this beta "
-"application."
-
-#: main/templates/pages/common/about.html:63
-msgid "Como funciona?"
-msgstr "How does it work?"
-
-#: main/templates/pages/common/about.html:68
-msgid ""
-"O Arquivo.pt preserva milhões de ficheiros recolhidos da web desde 1996 e"
-" disponibiliza um serviço\n"
-"                      público de pesquisa sobre esta informação. "
-"Periodicamente recolhe e armazena informação publicada na Web.\n"
-"                      Este processo de preservação é realizado de forma "
-"automática através de um sistema informático distribuído\n"
-"                      de larga-escala."
-msgstr ""
-"The Portuguese Web Archive project archives the web periodically. It "
-"collects and stores entire websites, processing the data to make it "
-"searchable and finally providing a full-text search service that enables "
-"the retrieval of the past versions of the site."
-
-#: main/templates/pages/common/about.html:74
-msgid ""
-"Para mostrar os dados do Arquivo.pt, mostramos ao utilizador os excertos "
-"mais importantes\n"
-"                      (nomeadamente títulos noticiosos) de um tópico ao "
-"longo do tempo. Para a seleção dos melhores títulos de\n"
-"                      notícias, recorremos a "
-msgstr ""
-"To showcase the data archived by the Portuguese Web Arquive, we show the "
-"user the most important excerpts (namely text titles) of a topic over "
-"time. For the selection of the best news titles we resort to "
-
-#: main/templates/pages/common/about.html:77
-msgid ""
-"um extrator de\n"
-"                      palavras-chave desenvolvido pela nossa equipa, e "
-"que recentemente foi premiado como Best Short Paper na\n"
-"                      40ª edição da European Conference for Information "
-"Retrieval "
-msgstr ""
-"a keyword extractor designed by our team, and recently awarded as Best "
-"Short Paper at the 40th European Conference for Information Retrieval "
-
-#: main/templates/pages/common/about.html:90
-msgid "Contribuições"
-msgstr "Contributions"
-
-#: main/templates/pages/common/about.html:95
-msgid ""
-"Acreditamos que o Conta-me Histórias é, neste contexto, um importante "
-"contributo para uma democracia\n"
-"                      mais transparente, ao permitir a qualquer cidadão "
-"(incluindo jornalistas, estudantes, cientistas sociais\n"
-"                      de áreas como sociologia, ciência política, "
-"ciências da comunicação e história, etc) um acesso livre e\n"
-"                      democrático a informação contextualizada (assente "
-"em fatos e tendencialmente livre de filtros ao fazer uso\n"
-"                      de diversas fontes jornalísticas)."
-msgstr ""
-"We presented a web application that allows users to generate temporal "
-"summarization on large news data sets. One of the main goals of this work"
-" is to attract the attention of the public for this promising research "
-"area. In the era of post-truth and fake news, web and news archives "
-"initiatives are important contributions to preserve history. In this "
-"context, our project may be considered an additional solution that allows"
-" users to better explore this kind of data."
-
-#: main/templates/pages/common/about.html:109
-msgid "Origem do nome"
-msgstr "Origins of the project name"
-
-#: main/templates/pages/common/about.html:114
-msgid ""
-"O nome \"Conta-me Histórias\" é uma homenagem à música dos Xutos & "
-"Pontapés de mesmo nome, com o\n"
-"                      intuito de retratar um dos objetivos do projeto, ou"
-" seja, o de quereremos contar histórias ao utilizador,\n"
-"                      que, tal como diz a música, sejam relativas a algo "
-"que este não viu ou do qual não se recorda."
-msgstr ""
-"The name  ‘Conta-me Histórias’ is a reference to a popular song from one "
-"of the most important Portuguese rock musicians group  Xutos & Pontapés."
-
-#: main/templates/pages/common/about.html:124
-msgid "Design da apresentação e edição"
-msgstr "Design, video and presentation"
-
-#: main/templates/pages/common/about.html:288
-msgid "Referências académicas"
-msgstr "Academic references"
-
-#: main/templates/pages/common/about.html:352
-msgid "Agradecimentos"
-msgstr "Acknowledgements"
-
-#: main/templates/pages/common/about.html:358
-msgid ""
-"Este projeto é financiado pelo FEDER - Fundo Europeu de Desenvolvimento\n"
-"                      Regional através do Programa Operacional Regional "
-"do Norte (NORTE 2020), sob o\n"
-"                      Programa PORTUGAL 2020 e por fundos nacionais "
-"através da agência de financiamento\n"
-"                      portuguesa, FCT - Fundação para a Ciência e a "
-"Tecnologia dentro do projeto\n"
-"                      PTDC/CCI-COM/31857/2017 "
-"(NORTE-01-0145-FEDER-03185). Este financiamento\n"
-"                      enquadra-se na linha de investigação do projeto "
-"Text2Story."
-msgstr ""
-"This project is financed by the ERDF – European Regional Development Fund"
-" through the North Portugal Regional Operational Programme (NORTE 2020), "
-"under the PORTUGAL 2020 and by National Funds through thePortuguese "
-"funding agency, FCT - Fundação para a Ciência e a Tecnologia within "
-"project PTDC/CCI-COM/31857/2017 (NORTE-01-0145-FEDER-03185). This funding"
-" fits under the research line of the Text2Story project."
 
 #: main/templates/pages/common/press.html:12
 msgid "nos media"

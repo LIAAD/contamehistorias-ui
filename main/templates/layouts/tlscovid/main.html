@@ -113,9 +113,16 @@
             <div class="column is-5">
               <span class="moto">
                 <p>
-                  {{ _('Este website é uma demonstração com fins unicamente académicos do projeto de investigação 
-                  <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://contamehistorias.pt/arquivopt/">Conta-me Histórias</a> utilizando o dataset 
-                  <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://github.com/LIAAD/tls-covid19">TLS-Covid19</a>.') }}
+                  {% if session.get('lang') == "pt" %}
+                    Este website é uma demonstração com fins unicamente académicos do projeto de investigação
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://contamehistorias.pt/arquivopt/">Conta-me Histórias</a> 
+                  {% else %}
+                    This website is a demo for academic purposes only of the
+                    <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://nlplab.inesctec.pt/tellmestories/">Tell me stories</a>
+                    research project
+                  {% endif %}
+                  {{ _('utilizando o dataset') }}
+                  <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://github.com/LIAAD/tls-covid19">TLS-Covid19</a>.
                 </p>
                 <br>
                 <p>
