@@ -147,7 +147,7 @@ def press():
 
 @blueprint.route('/about')
 def about():
-    return render_template('pages/common/about.html')
+    return render_template('pages/tlscovid/about.html')
 
 
 @blueprint.route('/change/<new_lang_code>')
