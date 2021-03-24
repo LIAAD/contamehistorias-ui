@@ -113,7 +113,9 @@
             <div class="column is-5">
               <span class="moto">
                 <p>
-                  {{ _('O Conta-me Histórias é um projeto científico que permite aos utilizadores criarem automaticamente narrativas de notícias.') }}
+                  {{ _('Este website é uma demonstração com fins unicamente académicos do projeto de investigação 
+                  <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="http://contamehistorias.pt/arquivopt/">Conta-me Histórias</a> utilizando o dataset 
+                  <a style="color: #A9ABAC; text-decoration:underline" target="_blank" href="https://github.com/LIAAD/tls-covid19">TLS-Covid19</a>.') }}
                 </p>
                 <br>
                 <p>
@@ -184,9 +186,20 @@
                   {{ _('Projetos Relacionados') }}
                 </li>
                 <li class="column-item">
-                  <a href="http://nlplab.inesctec.pt/tellmestories/" target="_blank">
-                    Tell me stories
+                  <a href="https://github.com/LIAAD/tls-covid19" target="_blank">
+                    TLS-Covid19
                   </a>
+                </li>
+                <li class="column-item">
+                  {% if session.get('lang') == "en" %}
+                    <a href="http://nlplab.inesctec.pt/tellmestories/" target="_blank">
+                      Tell me stories
+                    </a>
+                  {% else %}
+                    <a href="http://contamehistorias.pt/arquivopt/" target="_blank">
+                      Conta-me Histórias
+                    </a>
+                  {% endif %}
                 </li>
                 <li class="column-item">
                   <a href="http://yake.inesctec.pt/" target="_blank">
