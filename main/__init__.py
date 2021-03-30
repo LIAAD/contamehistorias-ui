@@ -30,7 +30,7 @@ def create_app(config_filename):
 
     app.register_blueprint(pages.blueprint)
     app.register_blueprint(pages_arquivopt.blueprint, url_prefix='/arquivopt')
-    app.register_blueprint(pages_tlscovid.blueprint, url_prefix='/tls-covid19')
+    # app.register_blueprint(pages_tlscovid.blueprint, url_prefix='/tls-covid19')
 
     # Talisman(app, content_security_policy={
     #     'style-src': [
