@@ -95,6 +95,8 @@
                 }
                 else {
                     // something unexpected happened
+                    let route = data['url_for'];
+                    window.location.href = route;
                 }
             }
             else {

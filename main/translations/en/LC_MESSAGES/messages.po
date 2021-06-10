@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-24 23:41+0000\n"
+"POT-Creation-Date: 2021-06-10 17:54+0100\n"
 "PO-Revision-Date: 2018-11-09 20:56+0000\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -502,6 +502,18 @@ msgstr "There are not enough news articles about"
 msgid "que permitam construir uma narrativa."
 msgstr "to build a narrative."
 
+#: main/templates/pages/arquivopt/search.html:381
+#: main/templates/pages/tlscovid/search.html:445
+msgid "O sistema demorou muito tempo a recolher resultados para"
+msgstr "The system took too long to retrieve results for"
+
+#: main/templates/pages/arquivopt/search.html:381
+#: main/templates/pages/errors/500.html:59
+#: main/templates/pages/errors/502.html:59
+#: main/templates/pages/tlscovid/search.html:445
+msgid "Por favor tente novamente mais tarde."
+msgstr "Please try again later."
+
 #: main/templates/pages/arquivopt/searching.html:26
 #: main/templates/pages/tlscovid/searching.html:26
 msgid "A pesquisar milhares de notícias sobre"
@@ -564,11 +576,6 @@ msgstr "Something unexpected happened"
 msgid "Já estamos a verificar o que aconteceu e esperamos que seja temporário."
 msgstr "We are investigating and we hope it is temporary."
 
-#: main/templates/pages/errors/500.html:59
-#: main/templates/pages/errors/502.html:59
-msgid "Por favor tente novamente mais tarde."
-msgstr "Please try again later."
-
 #: main/templates/pages/errors/502.html:51
 msgid "Sistema com muita procura"
 msgstr "System too busy"
@@ -614,4 +621,3 @@ msgstr "key moments"
 #: main/templates/pages/tlscovid/search.html:372
 msgid "Número de páginas encontradas"
 msgstr "Number of pages found"
-
