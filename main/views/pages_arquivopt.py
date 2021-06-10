@@ -99,12 +99,16 @@ def task_status(task_id):
             response['result'] = task.info['result']
             response['url_for'] = url_for(
                 'pages_arquivopt.search', query=task.info['query'], last_years=task.info['last_years'])
+        else:
+            response['url_for'] = url_for(
+                'pages_arquivopt.search', query=task.info['query'], timeout=True)
     else:
         # something went wrong in the background job
         response = {
             'task_id': task_id,
             'state': task.state,
-            'status': str(task.info)  # this is the exception raised
+            'status': str(task.info),  # this is the exception raised,
+            'url_for': url_for('pages_arquivopt.search', query=task.info['query'], timeout=True)
         }
     return jsonify(response)
 #####################################################################################
@@ -204,6 +208,9 @@ def search():
     print('Query:', query)
     print('Last years:', last_years)
     print('Lang code:', lang)
+
+    if 'timeout' in request.args:
+        return render_template('pages/arquivopt/search.html', lang=lang, form=SearchForm(), related_terms=[], result=None, query=query, has_narrative=has_narrative, timeout=True)
 
     # Task already processed
     if 'id' in request.args:

@@ -103,12 +103,16 @@ def task_status(task_id):
             response['result'] = task.info['result']
             response['url_for'] = url_for(
                 'pages_tlscovid.search', query=task.info['query'], index=task.info['index'], selected_sources=task.info['selected_sources'], use_headline=task.info['use_headline'])
+        else:
+            response['url_for'] = url_for(
+                'pages_tlscovid.search', query=task.info['query'], timeout=True)
     else:
         # something went wrong in the background job
         response = {
             'task_id': task_id,
             'state': task.state,
-            'status': str(task.info)  # this is the exception raised
+            'status': str(task.info),  # this is the exception raised,
+            'url_for': url_for('pages_tlscovid.search', query=task.info['query'], timeout=True)
         }
     return jsonify(response)
 #####################################################################################
@@ -237,6 +241,9 @@ def search():
     # Insert sources if not in query string
     if not selected_sources:
         selected_sources = available_domains[index]
+
+    if 'timeout' in request.args:
+        return render_template('pages/tlscovid/search.html', lang=lang, form=SearchForm(), related_terms=[], result=None, query=query, has_narrative=has_narrative, available_indices=available_indices, available_domains=available_domains, timeout=True)
 
     # Task already processed
     if 'id' in request.args:

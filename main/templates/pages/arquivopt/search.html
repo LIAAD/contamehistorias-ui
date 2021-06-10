@@ -353,7 +353,7 @@
 
 {% else %}
 
-{%if (has_narrative == False and (query != None and query != "")) %}
+{%if (has_narrative == False and (query != None and query != "") and timeout is not defined) %}
 <section class="section">
     <div class="container has-text-centered">
         
@@ -363,6 +363,22 @@
 
         <h3 class="subtitle is-3 dark-text">
             {{ _('Não foram identificadas notícias suficientes sobre') }} <b>{{ query }}</b> {{ _('que permitam construir uma narrativa.') }}
+        </h3>
+
+    </div>
+</section>
+{%endif%}
+
+{%if timeout %}
+<section class="section">
+    <div class="container has-text-centered">
+        
+        <div class='card-content is-flex' style="justify-content: center;">
+            <img class="has-ratio" width="320" height="180" src="{{ url_for('static', filename='img/vintage-typewriter-ops.png') }}" alt=""/>
+        </div>
+
+        <h3 class="subtitle is-3 dark-text">
+            {{ _('O sistema demorou muito tempo a recolher resultados para') }} <b>{{ query }}</b>. {{ _('Por favor tente novamente mais tarde.') }}
         </h3>
 
     </div>
