@@ -6,7 +6,7 @@ API_ARQUIVOPT_ENDPOINT = 'http://localhost:5001/api/arquivopt/'
 API_TLSCOVID_ENDPOINT = 'http://localhost:5001/api/tlscovid/'
 
 
-@shared_task(name='celery_tasks.execute_engine_arquivopt', bind=True, soft_time_limit=30)
+@shared_task(name='celery_tasks.execute_engine_arquivopt', bind=True, soft_time_limit=60)
 def execute_engine_arquivopt(self, query, last_years):
 
     payload = {'query': query, 'last_years': last_years}
@@ -20,7 +20,7 @@ def execute_engine_arquivopt(self, query, last_years):
         return {'status': 'Task timeout', 'query': query}
 
 
-@shared_task(name='celery_tasks.execute_engine_tlscovid', bind=True, soft_time_limit=30)
+@shared_task(name='celery_tasks.execute_engine_tlscovid', bind=True, soft_time_limit=60)
 def execute_engine_tlscovid(self, query, index, selected_sources, use_headline):
 
     payload = {'query': query, 'index': index, 'sources': selected_sources, 'use_headline': use_headline}
